@@ -1,0 +1,1608 @@
+[
+  {
+    "QueryId": "google_standard_D2_C3_P01_R1",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 0,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Altium Designer\u0022,\n    \u0022verdict\u0022: \u0022Altium Designer serves as the professional industry standard that bridges the gap between theoretical impedance calculation and physical layout execution. It provides the integrated environment necessary to apply the values derived from Skottans Elektronik directly into stackup and routing rules.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Advanced layer stackup management\u0022,\n      \u0022Real-time design rule checking (DRC)\u0022,\n      \u0022Integrated field solver for post-layout verification\u0022,\n      \u0022Extensive component library and supply chain integration\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Steep learning curve for beginners\u0022,\n      \u0022High licensing cost compared to entry-level tools\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Complex multi-layer PCB designs requiring high-speed signal integrity and impedance control.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans Elektronik handles isolated impedance math, comprehensive tools manage the entire physical implementation and validation process.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022KiCad\u0022, \u0022note\u0022: \u0022Excellent open-source alternative for schematic and layout with basic impedance control features.\u0022},\n      {\u0022tool\u0022: \u0022Ansys HFSS\u0022, \u0022note\u0022: \u0022High-end 3D EM simulation tool for critical signal integrity analysis beyond simple calculator math.\u0022},\n      {\u0022tool\u0022: \u0022Polar SI9000\u0022, \u0022note\u0022: \u0022The industry benchmark for precise PCB impedance modeling and stackup design.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Signal Integrity Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to ensuring impedance targets are met from design to fabrication.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Stackup Planning\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Calculate trace widths based on target impedance and board dielectric materials.\u0022},\n      {\u0022phase\u0022: \u0022Schematic Capture\u0022, \u0022tool\u0022: \u0022Altium Designer\u0022, \u0022action\u0022: \u0022Define net classes and signal integrity requirements.\u0022},\n      {\u0022phase\u0022: \u0022PCB Layout\u0022, \u0022tool\u0022: \u0022Altium Designer\u0022, \u0022action\u0022: \u0022Apply calculated trace widths using design rule constraints for controlled impedance routing.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022Ansys HFSS\u0022, \u0022action\u0022: \u0022Perform 3D electromagnetic simulation on critical high-speed differential pairs.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always verify manufacturer stackup tolerances before finalizing trace width calculations.\u0022,\n    \u0022Use impedance coupons on the PCB panel to validate your physical trace performance post-fabrication.\u0022,\n    \u0022Account for solder mask thickness in your impedance calculations as it significantly impacts microstrip performance.\u0022,\n    \u0022Maintain consistent reference planes to ensure the return path remains undisturbed.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022ODB\u002B\u002B, IPC-2581, Gerber X2\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with most major ECAD suites via neutral file formats.\u0022,\n    \u0022dataExchange\u0022: \u0022Export impedance reports from Skottans and import constraints directly into ECAD design rule manager.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Altium Designer",
+      "KiCad",
+      "Ansys HFSS",
+      "Polar SI9000",
+      "Skottans Elektronik"
+    ],
+    "HallucinatedToolNames": [
+      "Altium Designer",
+      "Ansys HFSS",
+      "Polar SI9000",
+      "Skottans Elektronik"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:49:17.7943829Z",
+    "PromptTokens": 421,
+    "CompletionTokens": 667,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3206.7582,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P01_R2",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 0,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Altium Designer\u0022,\n    \u0022verdict\u0022: \u0022Altium Designer provides the robust PCB layout and integrated field solver capabilities necessary to transition from basic impedance calculations to finalized manufacturing files. It bridges the gap between theoretical impedance targets and physical routing constraints.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Integrated Layer Stack Manager\u0022,\n      \u0022Real-time impedance-controlled routing\u0022,\n      \u0022Advanced 3D modeling and clearance analysis\u0022,\n      \u0022Comprehensive manufacturing output generation\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022High licensing cost\u0022,\n      \u0022Steep learning curve for advanced features\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Professional-grade PCB design requiring high-speed signal integrity and impedance matching.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is excellent for quick, targeted impedance checks, a complete workflow requires an EDA suite for layout and a dedicated solver for complex geometry validation.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022KiCad\u0022, \u0022note\u0022: \u0022Best open-source alternative for schematic capture and layout.\u0022},\n      {\u0022tool\u0022: \u0022Ansys SIwave\u0022, \u0022note\u0022: \u0022Advanced field solver for high-frequency signal integrity analysis beyond simple geometry.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated PCB Impedance Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to ensuring signal integrity from initial design through to fabrication.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Stackup Design\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Calculate initial trace widths for target impedance.\u0022},\n      {\u0022phase\u0022: \u0022Schematic Capture\u0022, \u0022tool\u0022: \u0022Altium Designer\u0022, \u0022action\u0022: \u0022Define net classes and signal integrity constraints.\u0022},\n      {\u0022phase\u0022: \u0022Layout \u0026 Routing\u0022, \u0022tool\u0022: \u0022Altium Designer\u0022, \u0022action\u0022: \u0022Apply impedance-controlled routing based on calculated values.\u0022},\n      {\u0022phase\u0022: \u0022Validation\u0022, \u0022tool\u0022: \u0022Ansys SIwave\u0022, \u0022action\u0022: \u0022Verify complex geometries and crosstalk performance.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always verify substrate dielectric constants (Dk) with your PCB fabricator before finalizing calculations.\u0022,\n    \u0022Include manufacturing tolerances in your impedance margin to ensure boards pass TDR testing.\u0022,\n    \u0022Use ground plane stitching vias to minimize return path inductance.\u0022,\n    \u0022Perform a post-layout simulation to account for non-ideal trace geometries.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022IPC-2581, ODB\u002B\u002B, Gerber X2\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with most industry-standard EDA tools via neutral file formats.\u0022,\n    \u0022dataExchange\u0022: \u0022Export stackup parameters from CAD software to Excel or CSV for direct comparison with Skottans results.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Altium Designer",
+      "KiCad",
+      "Ansys SIwave",
+      "Skottans Elektronik",
+      "Integrated Layer Stack Manager"
+    ],
+    "HallucinatedToolNames": [
+      "Altium Designer",
+      "Ansys SIwave",
+      "Skottans Elektronik",
+      "Integrated Layer Stack Manager"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:49:26.0252172Z",
+    "PromptTokens": 421,
+    "CompletionTokens": 607,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2784.4886,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P01_R3",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 0,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Altium Designer\u0022,\n    \u0022verdict\u0022: \u0022Altium Designer serves as the robust PCB CAD backbone that integrates seamlessly with your impedance calculations. It provides the necessary design environment to implement the trace widths and spacing values derived from your Skottans calculations.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Integrated design rule checking\u0022,\n      \u0022Advanced layer stackup management\u0022,\n      \u0022High-speed design constraints\u0022,\n      \u0022Extensive component library support\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Steep learning curve for beginners\u0022,\n      \u0022High licensing costs\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Professional-grade PCB layout and high-speed signal integrity integration.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans handles the physics of impedance, you need a layout tool to apply them. KiCad is the best open-source alternative, while Altium is the industry standard for complex high-speed designs.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022KiCad\u0022, \u0022note\u0022: \u0022Excellent free, open-source alternative for schematic capture and layout.\u0022},\n      {\u0022tool\u0022: \u0022HyperLynx\u0022, \u0022note\u0022: \u0022Used for post-layout 3D electromagnetic simulation beyond basic 2D trace calculators.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Signal Integrity Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to ensuring impedance controlled design.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Stackup Design\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Calculate required track widths based on dielectric constants.\u0022},\n      {\u0022phase\u0022: \u0022Schematic Capture\u0022, \u0022tool\u0022: \u0022Altium Designer\u0022, \u0022action\u0022: \u0022Define net classes and design rules for impedance control.\u0022},\n      {\u0022phase\u0022: \u0022Layout Execution\u0022, \u0022tool\u0022: \u0022Altium Designer\u0022, \u0022action\u0022: \u0022Route traces using calculated dimensions while maintaining reference planes.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022Altium Designer DRC\u0022, \u0022action\u0022: \u0022Run design rule checks to ensure width and clearance constraints are met.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always define your dielectric constant (Dk) accurately based on your specific PCB substrate datasheet.\u0022,\n    \u0022Ensure your reference planes are continuous to prevent impedance discontinuities.\u0022,\n    \u0022Use internal layers for high-speed signals to minimize EMI and maintain controlled impedance.\u0022,\n    \u0022Request a TDR (Time Domain Reflectometry) test from your fabricator to verify your impedance calculations.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022ODB\u002B\u002B, IPC-2581, Gerber X2\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with most major CAD platforms via standard export formats.\u0022,\n    \u0022dataExchange\u0022: \u0022Manually input calculated values from Skottans into the PCB CAD constraint manager.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Altium Designer",
+      "KiCad",
+      "HyperLynx",
+      "Skottans Elektronik",
+      "Altium Designer DRC"
+    ],
+    "HallucinatedToolNames": [
+      "Altium Designer",
+      "HyperLynx",
+      "Skottans Elektronik",
+      "Altium Designer DRC"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:49:33.8242022Z",
+    "PromptTokens": 421,
+    "CompletionTokens": 621,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2748.9509,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P02_R1",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 1,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Skottans Elektronik Impedance Calculator\u0022,\n    \u0022verdict\u0022: \u0022For high-speed designs, Skottans is superior because it specifically calculates characteristic impedance based on dielectric properties and geometry, whereas the Circuit Digest tool is limited to thermal current-carrying capacity. High-speed signals require precise impedance matching to prevent reflections, which only the Skottans tool addresses.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Calculates characteristic impedance (Zo)\u0022,\n      \u0022Supports microstrip and stripline configurations\u0022,\n      \u0022Accounts for dielectric constant (Er) and substrate height\u0022,\n      \u0022Essential for signal integrity analysis\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Does not calculate current-carrying capacity\u0022,\n      \u0022Lacks advanced EM field solving features\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Controlled impedance trace design for high-speed digital interfaces.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022The two tools serve fundamentally different engineering purposes: Skottans focuses on signal integrity and transmission line physics, while Circuit Digest focuses on thermal management and power delivery.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022note\u0022: \u0022Primary tool for geometry-based impedance control.\u0022},\n      {\u0022tool\u0022: \u0022Circuit Digest\u0022, \u0022note\u0022: \u0022Primary tool for determining minimum width based on temperature rise and current.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022High-Speed PCB Design Workflow\u0022,\n    \u0022description\u0022: \u0022A multi-stage approach ensuring both thermal reliability and signal integrity.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Thermal Sizing\u0022, \u0022tool\u0022: \u0022Circuit Digest PCB Trace Width Calculator\u0022, \u0022action\u0022: \u0022Determine minimum width for power traces to prevent overheating.\u0022},\n      {\u0022phase\u0022: \u0022Impedance Matching\u0022, \u0022tool\u0022: \u0022Skottans Elektronik Impedance Calculator\u0022, \u0022action\u0022: \u0022Calculate track width and spacing required for target 50/100 ohm impedance.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always use the higher width value if there is a conflict between thermal and impedance requirements.\u0022,\n    \u0022Verify the dielectric constant (Er) with your PCB manufacturer\u0027s datasheet.\u0022,\n    \u0022Account for copper thickness variations after plating.\u0022,\n    \u0022Use 2D field solvers for critical high-speed lines exceeding 5GHz.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022N/A - Web-based browser calculation\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with all major PCB design suites (Altium, KiCad, Cadence)\u0022,\n    \u0022dataExchange\u0022: \u0022Manual entry of calculated values into design rule constraints (DRC)\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Skottans Elektronik Impedance Calculator",
+      "Skottans Elektronik",
+      "Circuit Digest",
+      "Circuit Digest PCB Trace Width Calculator",
+      "KiCad"
+    ],
+    "HallucinatedToolNames": [
+      "Skottans Elektronik"
+    ],
+    "GroundedToolNames": [
+      "Skottans Elektronik Impedance Calculator",
+      "Circuit Digest",
+      "Circuit Digest PCB Trace Width Calculator",
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 4,
+    "WorkflowStages": [
+      "Selection",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:49:41.5919053Z",
+    "PromptTokens": 419,
+    "CompletionTokens": 587,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2825.9341,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P02_R2",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 1,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Skottans Elektronik Impedance Calculator\u0022,\n    \u0022verdict\u0022: \u0022For high-speed designs, Skottans Elektronik is superior because it focuses on field-solver based impedance calculations rather than just thermal current capacity. Circuit Digest is purely for thermal trace width sizing and does not account for the electromagnetic properties required for controlled impedance.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Field solver accuracy for complex stackups\u0022,\n      \u0022Support for differential pair modeling\u0022,\n      \u0022Considers dielectric constant and substrate thickness\u0022,\n      \u0022Visualizes field distribution\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Does not calculate thermal current capacity\u0022,\n      \u0022Steeper learning curve for non-RF engineers\u0022\n    ],\n    \u0022bestFor\u0022: \u0022High-speed digital and RF signal integrity design\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022The tools serve fundamentally different purposes: one is for signal integrity and impedance matching, while the other is for power delivery and current-carrying safety.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022note\u0022: \u0022Calculates impedance based on trace geometry and material properties.\u0022},\n      {\u0022tool\u0022: \u0022Circuit Digest\u0022, \u0022note\u0022: \u0022Calculates maximum current capacity based on temperature rise (IPC-2221 standards).\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Comprehensive Trace Design Workflow\u0022,\n    \u0022description\u0022: \u0022A dual-tool approach ensuring both signal integrity and thermal safety.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Impedance Design\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Calculate trace width and spacing for required characteristic impedance.\u0022},\n      {\u0022phase\u0022: \u0022Thermal Validation\u0022, \u0022tool\u0022: \u0022Circuit Digest\u0022, \u0022action\u0022: \u0022Verify if the calculated trace width can safely handle the expected current without excessive heating.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper roughness in high-speed designs\u0022,\n    \u0022Verify the dielectric constant (Dk) with your PCB manufacturer\u0027s datasheet\u0022,\n    \u0022Ensure your stackup configuration matches the calculator inputs exactly\u0022,\n    \u0022Use thicker copper traces if thermal limits are exceeded to maintain impedance\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022N/A (Web-based calculators)\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with standard PCB design software (Altium, KiCad, Cadence Allegro)\u0022,\n    \u0022dataExchange\u0022: \u0022Manually transfer width and spacing results from calculators into your PCB CAD constraints manager\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Skottans Elektronik Impedance Calculator",
+      "Skottans Elektronik",
+      "Circuit Digest",
+      "KiCad",
+      "Cadence Allegro"
+    ],
+    "HallucinatedToolNames": [
+      "Skottans Elektronik",
+      "Cadence Allegro"
+    ],
+    "GroundedToolNames": [
+      "Skottans Elektronik Impedance Calculator",
+      "Circuit Digest",
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:49:49.4300906Z",
+    "PromptTokens": 419,
+    "CompletionTokens": 564,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2623.0038,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P02_R3",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 1,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Skottans Elektronik Impedance Calculator\u0022,\n    \u0022verdict\u0022: \u0022For high-speed designs, Skottans is superior because it specifically addresses electromagnetic field parameters like dielectric constant and substrate height. Circuit Digest is better suited for DC current capacity and thermal management rather than RF/high-speed signal integrity.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Advanced impedance modeling\u0022,\n      \u0022Accounts for substrate dielectric properties\u0022,\n      \u0022Supports differential pair calculations\u0022,\n      \u0022High precision for signal integrity\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Does not calculate thermal trace limits\u0022,\n      \u0022Requires accurate material data input\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Controlled impedance design for high-speed digital and RF signals.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022Skottans is an RF/SI analysis tool, while Circuit Digest is a power/thermal design tool.\u0022,\n    \u0022toolNotes\u0022: [\n      {\n        \u0022tool\u0022: \u0022Skottans Elektronik\u0022,\n        \u0022note\u0022: \u0022Calculates impedance based on geometry and material permittivity.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022Circuit Digest\u0022,\n        \u0022note\u0022: \u0022Calculates current-carrying capacity based on IPC-2221 standards.\u0022\n      }\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022High-Speed PCB Design Workflow\u0022,\n    \u0022description\u0022: \u0022A dual-tool approach to balance signal integrity and thermal reliability.\u0022,\n    \u0022steps\u0022: [\n      {\n        \u0022phase\u0022: \u0022Impedance Design\u0022,\n        \u0022tool\u0022: \u0022Skottans Elektronik\u0022,\n        \u0022action\u0022: \u0022Calculate trace width and spacing for required characteristic impedance.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Thermal Validation\u0022,\n        \u0022tool\u0022: \u0022Circuit Digest\u0022,\n        \u0022action\u0022: \u0022Verify if the calculated width meets current carrying requirements for power traces.\u0022\n      }\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always verify the dielectric constant (Er) of your specific PCB material.\u0022,\n    \u0022Account for copper thickness variations after the etching process.\u0022,\n    \u0022Use ground planes adjacent to signal layers to ensure return path integrity.\u0022,\n    \u0022Validate calculated traces using a professional field solver for critical nets.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022N/A - Manual data entry required\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with all major EDA software (Altium, KiCad, Cadence)\u0022,\n    \u0022dataExchange\u0022: \u0022Manually transfer width/gap dimensions into your PCB footprint constraints.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Skottans Elektronik Impedance Calculator",
+      "Skottans Elektronik",
+      "Circuit Digest",
+      "KiCad"
+    ],
+    "HallucinatedToolNames": [
+      "Skottans Elektronik"
+    ],
+    "GroundedToolNames": [
+      "Skottans Elektronik Impedance Calculator",
+      "Circuit Digest",
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 4,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification"
+    ],
+    "Timestamp": "2026-05-06T20:49:57.057156Z",
+    "PromptTokens": 419,
+    "CompletionTokens": 567,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2398.8701,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P03_R1",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 2,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Altium Designer with Integrated Field Solver\u0022,\n    \u0022verdict\u0022: \u0022Altium Designer provides a robust, professional-grade environment that complements the Skottans Elektronik calculator by offering high-fidelity simulation and automated rule checking. It bridges the gap between theoretical impedance calculations and physical layout implementation.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Integrated Layer Stack Manager\u0022,\n      \u0022Real-time impedance rule checking\u0022,\n      \u0022Embedded Simbeor field solver\u0022,\n      \u0022Seamless ECAD/MCAD collaboration\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022High licensing cost\u0022,\n      \u0022Steep learning curve for advanced features\u0022\n    ],\n    \u0022bestFor\u0022: \u0022High-speed digital design and controlled impedance PCB manufacturing.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is excellent for quick theoretical validation, professional projects require integration with a full-suite EDA tool to ensure layout adherence.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022note\u0022: \u0022Best for rapid, specialized impedance estimation.\u0022},\n      {\u0022tool\u0022: \u0022Altium Designer\u0022, \u0022note\u0022: \u0022Best for end-to-end design and manufacturing output.\u0022},\n      {\u0022tool\u0022: \u0022Keysight ADS\u0022, \u0022note\u0022: \u0022Best for deep electromagnetic analysis beyond standard trace geometry.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Impedance Design Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to ensuring signal integrity from calculation to fabrication.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Stackup Definition\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Calculate target trace widths for specific dielectric constants.\u0022},\n      {\u0022phase\u0022: \u0022Layout Design\u0022, \u0022tool\u0022: \u0022Altium Designer\u0022, \u0022action\u0022: \u0022Apply calculated constraints to design rules and route traces.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022Altium Designer\u0022, \u0022action\u0022: \u0022Run built-in DRC to verify impedance constraints against physical layout.\u0022},\n      {\u0022phase\u0022: \u0022Fabrication Output\u0022, \u0022tool\u0022: \u0022Altium Designer\u0022, \u0022action\u0022: \u0022Generate Gerber and IPC-2581 files with stackup specifications.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always verify dielectric constant (Dk) values with your specific PCB manufacturer before final calculation.\u0022,\n    \u0022Account for copper thickness and plating variations in your impedance budget.\u0022,\n    \u0022Use ground planes as reference layers to maintain stable return paths.\u0022,\n    \u0022Document your impedance requirements clearly in the fabrication notes.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022IPC-2581, ODB\u002B\u002B, Gerber X2\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with most major PCB fabrication houses\u0022,\n    \u0022dataExchange\u0022: \u0022Export calculated parameters from Skottans to Altium\u0027s Layer Stack Manager via manual entry for maximum accuracy.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Altium Designer with Integrated Field Solver",
+      "Skottans Elektronik",
+      "Altium Designer",
+      "Keysight ADS",
+      "Integrated Field Solver",
+      "Integrated Layer Stack Manager",
+      "Layer Stack Manager"
+    ],
+    "HallucinatedToolNames": [
+      "Altium Designer with Integrated Field Solver",
+      "Skottans Elektronik",
+      "Altium Designer",
+      "Keysight ADS",
+      "Integrated Field Solver",
+      "Integrated Layer Stack Manager",
+      "Layer Stack Manager"
+    ],
+    "GroundedToolNames": [],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:50:04.460537Z",
+    "PromptTokens": 411,
+    "CompletionTokens": 630,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2943.0308,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P03_R2",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 2,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Altium Designer with Integrated Field Solver\u0022,\n    \u0022verdict\u0022: \u0022Altium Designer provides a robust, professional-grade environment that complements the Skottans Elektronik calculator by offering native layer stack management and real-time design rule checking. It bridges the gap between simple impedance calculations and high-speed multi-layer PCB layout execution.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Industry-standard unified design environment\u0022,\n      \u0022Integrated Simberian field solver\u0022,\n      \u0022Advanced layer stack manager\u0022,\n      \u0022Comprehensive design rule checking\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Significant learning curve for beginners\u0022,\n      \u0022High licensing cost compared to entry-level tools\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Professional high-speed digital and RF PCB design projects\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans Elektronik handles precise impedance math, Altium manages the physical implementation, and KiCad provides an open-source alternative for simpler designs.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022KiCad\u0022, \u0022note\u0022: \u0022Excellent open-source alternative with a built-in impedance calculator for basic needs.\u0022},\n      {\u0022tool\u0022: \u0022Polar SI9000\u0022, \u0022note\u0022: \u0022The industry gold standard for high-accuracy commercial impedance verification.\u0022},\n      {\u0022tool\u0022: \u0022Ansys HFSS\u0022, \u0022note\u0022: \u0022Used for advanced 3D electromagnetic modeling when standard calculators are insufficient.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022High-Speed PCB Design Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to ensuring impedance-controlled signal integrity.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Stackup Definition\u0022, \u0022tool\u0022: \u0022Altium Layer Stack Manager\u0022, \u0022action\u0022: \u0022Define dielectric constants and copper thicknesses.\u0022},\n      {\u0022phase\u0022: \u0022Impedance Calculation\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Calculate trace widths and spacing based on stackup parameters.\u0022},\n      {\u0022phase\u0022: \u0022Layout Design\u0022, \u0022tool\u0022: \u0022Altium Designer\u0022, \u0022action\u0022: \u0022Apply calculated constraints to design rules and route traces.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022Altium DRC\u0022, \u0022action\u0022: \u0022Run final design rule checks to ensure compliance with impedance targets.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper etching tolerances in your impedance calculations.\u0022,\n    \u0022Verify dielectric constants (Dk) with your PCB manufacturer\u0027s datasheet.\u0022,\n    \u0022Maintain consistent reference planes to avoid impedance discontinuities.\u0022,\n    \u0022Include impedance coupons on your PCB panels for manufacturing verification.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022ODB\u002B\u002B, IPC-2581, Gerber X2\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with most major EDA software suites via standard interchange formats\u0022,\n    \u0022dataExchange\u0022: \u0022Export stackup parameters as CSV for consistent input into calculation tools\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Altium Designer with Integrated Field Solver",
+      "KiCad",
+      "Polar SI9000",
+      "Ansys HFSS",
+      "Altium Layer Stack Manager",
+      "Skottans Elektronik",
+      "Altium Designer",
+      "Altium DRC",
+      "Integrated Field Solver"
+    ],
+    "HallucinatedToolNames": [
+      "Altium Designer with Integrated Field Solver",
+      "Polar SI9000",
+      "Ansys HFSS",
+      "Altium Layer Stack Manager",
+      "Skottans Elektronik",
+      "Altium Designer",
+      "Altium DRC",
+      "Integrated Field Solver"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:50:12.4207709Z",
+    "PromptTokens": 411,
+    "CompletionTokens": 641,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2732.8172,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P03_R3",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 2,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Altium Designer with Integrated Field Solver\u0022,\n    \u0022verdict\u0022: \u0022Altium Designer provides a robust, professional-grade environment that bridges the gap between theoretical calculations and physical layout. Using the Skottans Elektronik calculator as a sanity check alongside Altium\u0027s internal impedance engine ensures high-confidence signal integrity for complex high-speed designs.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Unified design environment\u0022,\n      \u0022Integrated Layer Stack Manager\u0022,\n      \u0022Real-time impedance driven routing\u0022,\n      \u0022Advanced 3D field solver capabilities\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022High licensing cost\u0022,\n      \u0022Steep learning curve for advanced features\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Professional high-speed PCB design requiring strict impedance control.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans Elektronik is excellent for quick, standalone impedance verification, a full toolchain requires an integrated CAD package to apply these values to the physical layout.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022note\u0022: \u0022Best for rapid, early-stage impedance feasibility calculations.\u0022},\n      {\u0022tool\u0022: \u0022Altium Designer\u0022, \u0022note\u0022: \u0022Best for applying constraints directly to the routing engine.\u0022},\n      {\u0022tool\u0022: \u0022Ansys SIwave\u0022, \u0022note\u0022: \u0022Best for post-layout full-wave electromagnetic analysis.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Impedance-Controlled Design Flow\u0022,\n    \u0022description\u0022: \u0022A workflow prioritizing early-stage validation followed by constraint-driven design execution.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Stackup Definition\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Calculate initial dielectric and copper requirements.\u0022},\n      {\u0022phase\u0022: \u0022Constraint Setup\u0022, \u0022tool\u0022: \u0022Altium Designer\u0022, \u0022action\u0022: \u0022Input calculated parameters into the Layer Stack Manager.\u0022},\n      {\u0022phase\u0022: \u0022Layout Execution\u0022, \u0022tool\u0022: \u0022Altium Designer\u0022, \u0022action\u0022: \u0022Route traces using impedance-controlled routing modes.\u0022},\n      {\u0022phase\u0022: \u0022Final Verification\u0022, \u0022tool\u0022: \u0022Ansys SIwave\u0022, \u0022action\u0022: \u0022Perform post-layout EM simulation for sign-off.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always verify Skottans\u0027 results against manufacturer stackup capabilities.\u0022,\n    \u0022Use design rule constraints to prevent manual routing errors.\u0022,\n    \u0022Account for manufacturing tolerances in your impedance targets.\u0022,\n    \u0022Perform TDR (Time Domain Reflectometry) testing on prototypes to correlate simulation results.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022IPC-2581, ODB\u002B\u002B, Gerber X2\u0022,\n    \u0022compatibility\u0022: \u0022Native integration between Altium and common field solvers\u0022,\n    \u0022dataExchange\u0022: \u0022Export stackup parameters via CSV to ensure consistency across tools\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Altium Designer with Integrated Field Solver",
+      "Skottans Elektronik",
+      "Altium Designer",
+      "Ansys SIwave",
+      "Integrated Field Solver",
+      "Integrated Layer Stack Manager",
+      "Layer Stack Manager"
+    ],
+    "HallucinatedToolNames": [
+      "Altium Designer with Integrated Field Solver",
+      "Skottans Elektronik",
+      "Altium Designer",
+      "Ansys SIwave",
+      "Integrated Field Solver",
+      "Integrated Layer Stack Manager",
+      "Layer Stack Manager"
+    ],
+    "GroundedToolNames": [],
+    "WorkflowStepsCount": 6,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing",
+      "Prototyping"
+    ],
+    "Timestamp": "2026-05-06T20:50:20.1805932Z",
+    "PromptTokens": 411,
+    "CompletionTokens": 631,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3865.6453,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P04_R1",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 3,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Ansys HFSS\u0022,\n    \u0022verdict\u0022: \u0022Ansys HFSS is the industry-standard 3D electromagnetic solver that complements Skottans Elektronik by validating the calculated impedance values in a full 3D environment. It provides the necessary high-fidelity field analysis to verify complex stackups where 2D calculators may encounter limitations.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Unmatched accuracy for complex geometries\u0022,\n      \u0022Full-wave 3D electromagnetic field solution\u0022,\n      \u0022Excellent integration with high-speed PCB design flows\u0022,\n      \u0022Advanced material modeling capabilities\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Steep learning curve for new users\u0022,\n      \u0022High computational resource requirements\u0022\n    ],\n    \u0022bestFor\u0022: \u0022High-speed signal integrity analysis and complex multi-layer board validation.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans Elektronik provides rapid 2D/analytical impedance estimation, simulation tools like HFSS or CST Studio Suite offer 3D verification for complex structures.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022CST Studio Suite\u0022, \u0022note\u0022: \u0022Superior for time-domain transient analysis and broad-band frequency response.\u0022},\n      {\u0022tool\u0022: \u0022Keysight ADS\u0022, \u0022note\u0022: \u0022Best for system-level signal integrity and circuit co-simulation.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Impedance Design and Verification Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to ensuring signal integrity from calculation to final verification.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Estimation\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Define stackup parameters and calculate initial trace width/spacing.\u0022},\n      {\u0022phase\u0022: \u0022Layout\u0022, \u0022tool\u0022: \u0022Altium Designer\u0022, \u0022action\u0022: \u0022Implement board design based on calculated impedance constraints.\u0022},\n      {\u0022phase\u0022: \u0022Validation\u0022, \u0022tool\u0022: \u0022Ansys HFSS\u0022, \u0022action\u0022: \u0022Import design geometry to perform 3D electromagnetic field simulation for final sign-off.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always correlate analytical calculations with simulation results to identify discrepancies in dielectric properties.\u0022,\n    \u0022Perform sensitivity analysis on trace width variations to understand manufacturing tolerances.\u0022,\n    \u0022Ensure the dielectric constant (Dk) used in Skottans matches the frequency-dependent values used in simulation.\u0022,\n    \u0022Use TDR (Time Domain Reflectometry) measurement data from prototypes to calibrate your simulation models.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022ODB\u002B\u002B, IPC-2581, STEP\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with all major EDA platforms via neutral file formats.\u0022,\n    \u0022dataExchange\u0022: \u0022Export geometry from PCB CAD tools as 3D STEP files for seamless import into electromagnetic solvers.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Ansys HFSS",
+      "CST Studio Suite",
+      "Keysight ADS",
+      "Skottans Elektronik",
+      "Altium Designer"
+    ],
+    "HallucinatedToolNames": [
+      "Ansys HFSS",
+      "CST Studio Suite",
+      "Keysight ADS",
+      "Skottans Elektronik",
+      "Altium Designer"
+    ],
+    "GroundedToolNames": [],
+    "WorkflowStepsCount": 6,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing",
+      "Prototyping"
+    ],
+    "Timestamp": "2026-05-06T20:50:29.0482739Z",
+    "PromptTokens": 406,
+    "CompletionTokens": 622,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2751.6619,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P04_R2",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 3,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Ansys HFSS\u0022,\n    \u0022verdict\u0022: \u0022Ansys HFSS is the industry standard for full-wave electromagnetic simulation, making it the perfect follow-up to Skottans Elektronik for validating complex impedance profiles. While Skottans provides quick analytical calculations, HFSS offers the high-fidelity 3D modeling required to verify board-level effects like vias, pads, and connector transitions.\u0022,\n    \u0022strengths\u0022: [\u0022Industry-leading solver accuracy\u0022, \u0022Comprehensive 3D field visualization\u0022, \u0022Advanced material property modeling\u0022, \u0022Seamless integration with PCB layout software\u0022],\n    \u0022limitations\u0022: [\u0022Steep learning curve for new users\u0022, \u0022High computational resource requirements\u0022],\n    \u0022bestFor\u0022: \u0022High-speed digital and RF design verification\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is a 2D analytical calculator, simulation tools range from field solvers to SPICE-based circuit simulators.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Keysight ADS\u0022, \u0022note\u0022: \u0022Best for system-level co-simulation and channel analysis.\u0022},\n      {\u0022tool\u0022: \u0022CST Studio Suite\u0022, \u0022note\u0022: \u0022Excellent for time-domain transient analysis of complex structures.\u0022},\n      {\u0022tool\u0022: \u0022LTspice\u0022, \u0022note\u0022: \u0022Lightweight choice for basic signal integrity and termination matching.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Signal Integrity Workflow\u0022,\n    \u0022description\u0022: \u0022A multi-step process moving from initial estimation to final physical validation.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Estimation\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Calculate baseline trace widths and gaps for target impedance.\u0022},\n      {\u0022phase\u0022: \u0022Layout\u0022, \u0022tool\u0022: \u0022Altium Designer\u0022, \u0022action\u0022: \u0022Implement trace geometry based on Skottans calculations.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022Ansys HFSS\u0022, \u0022action\u0022: \u0022Perform 3D field simulation to confirm impedance continuity across stackup transitions.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always perform a sensitivity analysis on dielectric constant variations.\u0022,\n    \u0022Use Skottans for quick iteration during the layout phase to avoid costly re-spins.\u0022,\n    \u0022Ensure your stackup definitions match exactly between the calculator and simulation tool.\u0022,\n    \u0022Validate simulation results with TDR (Time Domain Reflectometry) measurements on physical prototypes.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022ODB\u002B\u002B, IPC-2581, STEP\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with all major ECAD suites including Altium, Cadence Allegro, and Mentor Graphics.\u0022,\n    \u0022dataExchange\u0022: \u0022Export trace geometry parameters from Skottans and manually input them into the simulation tool\u0027s stackup manager.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Ansys HFSS",
+      "Keysight ADS",
+      "CST Studio Suite",
+      "LTspice",
+      "Skottans Elektronik",
+      "Altium Designer",
+      "Cadence Allegro",
+      "Mentor Graphics"
+    ],
+    "HallucinatedToolNames": [
+      "Ansys HFSS",
+      "Keysight ADS",
+      "CST Studio Suite",
+      "LTspice",
+      "Skottans Elektronik",
+      "Altium Designer",
+      "Cadence Allegro",
+      "Mentor Graphics"
+    ],
+    "GroundedToolNames": [],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Prototyping"
+    ],
+    "Timestamp": "2026-05-06T20:50:36.8028807Z",
+    "PromptTokens": 406,
+    "CompletionTokens": 613,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3140.0797,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P04_R3",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 3,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Ansys HFSS\u0022,\n    \u0022verdict\u0022: \u0022Ansys HFSS is the industry standard for full-wave electromagnetic simulation, making it the perfect partner for validating the theoretical impedance values calculated by Skottans. While Skottans provides quick 2D cross-section estimates, HFSS allows for precise 3D modeling of complex board geometries and discontinuities.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Unmatched accuracy for high-frequency designs\u0022,\n      \u0022Full 3D electromagnetic field solver\u0022,\n      \u0022Advanced material property modeling\u0022,\n      \u0022Robust integration with most PCB layout suites\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022High learning curve for new users\u0022,\n      \u0022Requires significant computational resources\u0022\n    ],\n    \u0022bestFor\u0022: \u0022High-speed signal integrity analysis and final design verification\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans Elektronik provides rapid impedance estimations, specialized simulation tools fill the gap for complex signal behavior.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Keysight ADS\u0022, \u0022note\u0022: \u0022Excellent for system-level signal integrity and channel simulation.\u0022},\n      {\u0022tool\u0022: \u0022CST Studio Suite\u0022, \u0022note\u0022: \u0022Stronger at handling complex 3D structures and thermal-electromagnetic co-simulation.\u0022},\n      {\u0022tool\u0022: \u0022HyperLynx\u0022, \u0022note\u0022: \u0022Most intuitive for board-level SI/PI analysis within the design flow.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Impedance Design Flow\u0022,\n    \u0022description\u0022: \u0022A streamlined process from initial estimation to final sign-off.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Estimation\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Calculate initial stackup and trace width requirements.\u0022},\n      {\u0022phase\u0022: \u0022Layout\u0022, \u0022tool\u0022: \u0022Altium/Cadence\u0022, \u0022action\u0022: \u0022Apply calculated dimensions to the PCB physical layout.\u0022},\n      {\u0022phase\u0022: \u0022Simulation\u0022, \u0022tool\u0022: \u0022Ansys HFSS\u0022, \u0022action\u0022: \u0022Verify impedance discontinuities and signal integrity on critical nets.\u0022},\n      {\u0022phase\u0022: \u0022Fabrication\u0022, \u0022tool\u0022: \u0022Gerber/ODB\u002B\u002B\u0022, \u0022action\u0022: \u0022Export design files for manufacturing with embedded impedance coupons.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always correlate Skottans results with your PCB fabricator\u0027s stackup capabilities.\u0022,\n    \u0022Use 2D field solvers for preliminary routing and 3D solvers only for critical signal paths.\u0022,\n    \u0022Account for manufacturing tolerances like etching factors in your simulation models.\u0022,\n    \u0022Regularly update your dielectric constant (Dk) values based on real-world test data.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022DXF, GDSII, ODB\u002B\u002B, IPC-2581\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with all major EDA suites including Altium, Cadence Allegro, and Mentor Graphics.\u0022,\n    \u0022dataExchange\u0022: \u0022Export cross-section geometry from Skottans and import as a profile into 3D solvers to minimize manual setup time.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Ansys HFSS",
+      "Keysight ADS",
+      "CST Studio Suite",
+      "HyperLynx",
+      "Skottans Elektronik",
+      "Altium/Cadence",
+      "Gerber/ODB\u002B\u002B",
+      "Cadence Allegro",
+      "Mentor Graphics"
+    ],
+    "HallucinatedToolNames": [
+      "Ansys HFSS",
+      "Keysight ADS",
+      "CST Studio Suite",
+      "HyperLynx",
+      "Skottans Elektronik",
+      "Altium/Cadence",
+      "Gerber/ODB\u002B\u002B",
+      "Cadence Allegro",
+      "Mentor Graphics"
+    ],
+    "GroundedToolNames": [],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:50:44.965369Z",
+    "PromptTokens": 406,
+    "CompletionTokens": 681,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3260.3654,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P05_R1",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 4,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Polar Instruments Si8000m\u0022,\n    \u0022verdict\u0022: \u0022The Si8000m is the industry-standard field solver that provides significantly higher accuracy than simple 2D calculators. It is the gold standard for verifying results from basic tools like Skottans Elektronik.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Boundary element method field solver\u0022,\n      \u0022Extensive library of trace geometries\u0022,\n      \u0022Industry-standard for PCB manufacturing\u0022,\n      \u0022High reliability for complex stackups\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022High licensing cost\u0022,\n      \u0022Steeper learning curve than web calculators\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Professional production-level impedance verification\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While web-based calculators are great for initial estimates, dedicated field solvers are required for final sign-off.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022note\u0022: \u0022Excellent for quick estimations and educational purposes.\u0022},\n      {\u0022tool\u0022: \u0022Polar Si8000m\u0022, \u0022note\u0022: \u0022Provides rigorous field solving for production accuracy.\u0022},\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022note\u0022: \u0022Broad set of utilities beyond just impedance.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Impedance Verification Workflow\u0022,\n    \u0022description\u0022: \u0022A multi-stage approach to ensure reliable signal integrity.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Estimation\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Calculate initial trace widths and spacing.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022Polar Si8000m\u0022, \u0022action\u0022: \u0022Import stackup and run field solver analysis to confirm targets.\u0022},\n      {\u0022phase\u0022: \u0022Manufacturing\u0022, \u0022tool\u0022: \u0022PCB Fabricator\u0022, \u0022action\u0022: \u0022Submit final impedance reports to the board house for coupon testing.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper roughness in high-speed designs.\u0022,\n    \u0022Verify dielectric constants (Dk) provided by your specific laminate manufacturer.\u0022,\n    \u0022Include manufacturing tolerances in your impedance range calculations.\u0022,\n    \u0022Use TDR coupons on every production panel to validate results.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022IPC-2581, ODB\u002B\u002B, Gerber\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with most major CAD platforms including Altium, Cadence Allegro, and KiCad.\u0022,\n    \u0022dataExchange\u0022: \u0022Export stackup data directly from your PCB design tool to the field solver.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Polar Instruments Si8000m",
+      "Skottans Elektronik",
+      "Polar Si8000m",
+      "Saturn PCB Toolkit",
+      "PCB Fabricator",
+      "KiCad",
+      "Cadence Allegro"
+    ],
+    "HallucinatedToolNames": [
+      "Polar Instruments Si8000m",
+      "Skottans Elektronik",
+      "Polar Si8000m",
+      "Saturn PCB Toolkit",
+      "PCB Fabricator",
+      "Cadence Allegro"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 4,
+    "WorkflowStages": [
+      "Selection",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:50:53.238911Z",
+    "PromptTokens": 409,
+    "CompletionTokens": 579,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2526.194,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P05_R2",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 4,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Polar Instruments Si9000e\u0022,\n    \u0022verdict\u0022: \u0022Polar Si9000e is the industry-standard field solver that offers significantly higher accuracy than simple 2D calculators. It is the essential tool for validating complex stack-ups and ensuring your impedance results meet manufacturing requirements.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Boundary Element Method (BEM) solver for high precision\u0022,\n      \u0022Extensive library of complex structure models\u0022,\n      \u0022Accounts for surface roughness and frequency-dependent dielectric properties\u0022,\n      \u0022Direct integration with major PCB fabrication houses\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Commercial licensing costs are high\u0022,\n      \u0022Steeper learning curve for advanced modeling\u0022\n    ],\n    \u0022bestFor\u0022: \u0022High-speed design verification and sign-off for manufacturing\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is excellent for quick, accessible estimations, professional validation requires a field solver to handle non-ideal PCB geometries.\u0022,\n    \u0022toolNotes\u0022: [\n      {\n        \u0022tool\u0022: \u0022Skottans Elektronik\u0022,\n        \u0022note\u0022: \u0022Best for rapid prototyping and initial estimations.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022Polar Si9000e\u0022,\n        \u0022note\u0022: \u0022Industry-standard for high-frequency accuracy and manufacturing sign-off.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022,\n        \u0022note\u0022: \u0022Excellent free multi-purpose utility for thermal and impedance calculations.\u0022\n      }\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Impedance Verification Workflow\u0022,\n    \u0022description\u0022: \u0022A multi-stage approach to ensure accuracy from initial design to fabrication.\u0022,\n    \u0022steps\u0022: [\n      {\n        \u0022phase\u0022: \u0022Initial Design\u0022,\n        \u0022tool\u0022: \u0022Skottans Elektronik\u0022,\n        \u0022action\u0022: \u0022Use for rapid trace width and spacing estimations during layout.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Pre-Layout Validation\u0022,\n        \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022,\n        \u0022action\u0022: \u0022Cross-reference calculations with a secondary independent tool.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Manufacturing Sign-off\u0022,\n        \u0022tool\u0022: \u0022Polar Si9000e\u0022,\n        \u0022action\u0022: \u0022Perform field solver verification on final stack-up files.\u0022\n      }\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always include copper surface roughness in your field solver settings for signals above 5GHz.\u0022,\n    \u0022Verify dielectric constant (Dk) values with your PCB manufacturer\u0027s specific material datasheet.\u0022,\n    \u0022Run sensitivity analysis on trace width tolerances (e.g., \u002B/- 10%) to see the impact on impedance.\u0022,\n    \u0022Ensure your reference plane is continuous and directly adjacent to the signal layer.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022IPC-2581, ODB\u002B\u002B, Gerber\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with most major EDA suites like Altium, Cadence Allegro, and KiCad.\u0022,\n    \u0022dataExchange\u0022: \u0022Use IPC-2581 to export stack-up and geometry data directly to field solver tools.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Polar Instruments Si9000e",
+      "Skottans Elektronik",
+      "Polar Si9000e",
+      "Saturn PCB Toolkit",
+      "KiCad",
+      "Cadence Allegro"
+    ],
+    "HallucinatedToolNames": [
+      "Polar Instruments Si9000e",
+      "Skottans Elektronik",
+      "Polar Si9000e",
+      "Saturn PCB Toolkit",
+      "Cadence Allegro"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 6,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing",
+      "Prototyping"
+    ],
+    "Timestamp": "2026-05-06T20:51:00.7916665Z",
+    "PromptTokens": 409,
+    "CompletionTokens": 711,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3146.5412,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P05_R3",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 4,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Polar Instruments Si8000m\u0022,\n    \u0022verdict\u0022: \u0022The Si8000m is the industry-standard field solver used to validate and calibrate simpler calculators like Skottans. It provides high-accuracy boundary element method analysis that accounts for complex material properties and trace geometry.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Industry-standard field solver engine\u0022,\n      \u0022High accuracy for complex stackups\u0022,\n      \u0022Comprehensive material library\u0022,\n      \u0022Excellent visualization of field distribution\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022High licensing cost\u0022,\n      \u0022Steeper learning curve for advanced features\u0022\n    ],\n    \u0022bestFor\u0022: \u0022High-speed digital design and final production sign-off\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is excellent for quick estimation, professional verification requires a full field solver to account for frequency-dependent losses and advanced geometry.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022note\u0022: \u0022Best free alternative for quick, multi-purpose electronics calculations.\u0022},\n      {\u0022tool\u0022: \u0022Ansys HFSS\u0022, \u0022note\u0022: \u0022Ultimate 3D EM simulation for complex signal integrity beyond simple impedance.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Impedance Verification Workflow\u0022,\n    \u0022description\u0022: \u0022A tiered approach to ensure design accuracy from estimation to manufacturing.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Estimation\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Calculate initial trace geometries based on stackup requirements.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022Polar Si8000m\u0022, \u0022action\u0022: \u0022Run field solver analysis to validate the results against real-world material parameters.\u0022},\n      {\u0022phase\u0022: \u0022Manufacturing\u0022, \u0022tool\u0022: \u0022PCB Manufacturer Tooling\u0022, \u0022action\u0022: \u0022Confirm final impedance coupons with the board house\u0027s internal solver.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper roughness (PCL factor) at frequencies above 1GHz.\u0022,\n    \u0022Ensure your dielectric constant (Dk) values are provided by the laminate manufacturer for your specific frequency.\u0022,\n    \u0022Perform a sensitivity analysis by varying trace width and height by \u002B/- 10% to understand manufacturing tolerances.\u0022,\n    \u0022Use impedance coupons on the edge of your panels for physical verification after production.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022IPC-2581, ODB\u002B\u002B, Gerber\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with Altium Designer, Cadence Allegro, and Mentor Graphics\u0022,\n    \u0022dataExchange\u0022: \u0022Export stackup data via IPC-2581 to minimize manual entry errors between tools\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Polar Instruments Si8000m",
+      "Saturn PCB Toolkit",
+      "Ansys HFSS",
+      "Skottans Elektronik",
+      "Polar Si8000m",
+      "PCB Manufacturer Tooling",
+      "Altium Designer",
+      "Cadence Allegro",
+      "Mentor Graphics"
+    ],
+    "HallucinatedToolNames": [
+      "Polar Instruments Si8000m",
+      "Saturn PCB Toolkit",
+      "Ansys HFSS",
+      "Skottans Elektronik",
+      "Polar Si8000m",
+      "PCB Manufacturer Tooling",
+      "Altium Designer",
+      "Cadence Allegro",
+      "Mentor Graphics"
+    ],
+    "GroundedToolNames": [],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:51:08.9609154Z",
+    "PromptTokens": 409,
+    "CompletionTokens": 607,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2903.4146,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P06_R1",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 5,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Polar Instruments Si8000m\u0022,\n    \u0022verdict\u0022: \u0022Polar Instruments is the industry gold standard for controlled impedance modeling and field-solving. It provides the high-precision validation required once you transition from initial calculator estimates to final manufacturing-ready design files.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Industry-standard field solver accuracy\u0022,\n      \u0022Extensive library of complex PCB structures\u0022,\n      \u0022Detailed manufacturing tolerance analysis\u0022,\n      \u0022Seamless integration with PCB fabrication shop requirements\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022High licensing cost compared to free calculators\u0022,\n      \u0022Steeper learning curve for advanced stackup modeling\u0022\n    ],\n    \u0022bestFor\u0022: \u0022High-speed digital design validation and final impedance sign-off before fabrication.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is excellent for quick estimation, professional field solvers like Polar offer greater accuracy for complex geometries and manufacturing variations.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022note\u0022: \u0022Excellent free, multi-purpose utility for both impedance and current capacity.\u0022},\n      {\u0022tool\u0022: \u0022Ansys HFSS\u0022, \u0022note\u0022: \u0022Overkill for simple trace impedance, but essential for full-wave EM analysis of complex signal integrity.\u0022},\n      {\u0022tool\u0022: \u0022KiCad Calculator\u0022, \u0022note\u0022: \u0022Built-in, convenient, but lacks the advanced material property modeling of dedicated solvers.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Impedance Design Flow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to ensuring signal integrity from layout to manufacturing.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Initial Estimation\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Define initial trace widths and stackup requirements during floorplanning.\u0022},\n      {\u0022phase\u0022: \u0022Detailed Analysis\u0022, \u0022tool\u0022: \u0022Polar Si8000m\u0022, \u0022action\u0022: \u0022Validate the final stackup with specific dielectric constants and manufacturing tolerances.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022PCB Manufacturer\u0022, \u0022action\u0022: \u0022Send design files and impedance requirements for final DFM review.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper roughness in your field solver settings for signals above 5GHz.\u0022,\n    \u0022Verify dielectric constant (Dk) values with your PCB manufacturer\u0027s specific material datasheets.\u0022,\n    \u0022Perform sensitivity analysis to see how a \u002B/- 10% change in trace width affects impedance.\u0022,\n    \u0022Maintain a library of stackup templates to ensure consistency across projects.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022IPC-2581, ODB\u002B\u002B, Gerber X2\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with Altium, Cadence Allegro, and Siemens EDA.\u0022,\n    \u0022dataExchange\u0022: \u0022Export stackup parameters directly from CAD software to the solver to minimize manual entry errors.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Polar Instruments Si8000m",
+      "Saturn PCB Toolkit",
+      "Ansys HFSS",
+      "KiCad Calculator",
+      "Skottans Elektronik",
+      "Polar Si8000m",
+      "PCB Manufacturer",
+      "KiCad",
+      "Cadence Allegro"
+    ],
+    "HallucinatedToolNames": [
+      "Polar Instruments Si8000m",
+      "Saturn PCB Toolkit",
+      "Ansys HFSS",
+      "KiCad Calculator",
+      "Skottans Elektronik",
+      "Polar Si8000m",
+      "PCB Manufacturer",
+      "Cadence Allegro"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:51:16.8733609Z",
+    "PromptTokens": 405,
+    "CompletionTokens": 643,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3251.416,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P06_R2",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 5,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Polar Instruments Si9000e\u0022,\n    \u0022verdict\u0022: \u0022Polar Instruments is the industry gold standard for PCB impedance modeling and field solving. It provides high-accuracy, 2D boundary element analysis that far exceeds the capabilities of basic web-based calculators for complex stackups.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Industry-standard field solver accuracy\u0022,\n      \u0022Extensive library of complex transmission line structures\u0022,\n      \u0022Support for frequency-dependent dielectric modeling\u0022,\n      \u0022Direct integration with PCB manufacturing specifications\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022High licensing cost compared to free alternatives\u0022,\n      \u0022Steep learning curve for advanced multi-layer stackup modeling\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Professional high-speed digital and RF PCB design sign-off\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is excellent for quick baseline estimations, professional-grade tools offer field-solving accuracy required for high-speed signal integrity.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Ansys HFSS\u0022, \u0022note\u0022: \u0022Best for full-wave 3D electromagnetic simulation and complex parasitic extraction.\u0022},\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022note\u0022: \u0022Excellent free, comprehensive utility for quick reference and trace current/temperature analysis.\u0022},\n      {\u0022tool\u0022: \u0022KiCad Calculator\u0022, \u0022note\u0022: \u0022Integrated directly into the design workflow for quick checks during layout.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022High-Speed PCB Design Integrity Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to ensuring signal integrity from initial design to final production verification.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Pre-Layout\u0022, \u0022tool\u0022: \u0022Skottans/Saturn\u0022, \u0022action\u0022: \u0022Establish initial trace width and dielectric spacing baselines.\u0022},\n      {\u0022phase\u0022: \u0022Design Verification\u0022, \u0022tool\u0022: \u0022Polar Si9000e\u0022, \u0022action\u0022: \u0022Perform rigorous field solving on the final stackup and geometry.\u0022},\n      {\u0022phase\u0022: \u0022Manufacturing\u0022, \u0022tool\u0022: \u0022Polar/Gerber\u0022, \u0022action\u0022: \u0022Generate impedance coupons for fabrication house verification.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper roughness in high-frequency designs above 5GHz.\u0022,\n    \u0022Request impedance coupons from your PCB fabricator to verify actual manufactured results.\u0022,\n    \u0022Use TDR (Time Domain Reflectometry) testing on prototypes to validate simulated impedance targets.\u0022,\n    \u0022Ensure your dielectric constant (Dk) values are sourced from the specific laminate manufacturer\u0027s datasheet.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022IPC-2581, ODB\u002B\u002B, Gerber X2\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with Altium Designer, Cadence Allegro, and Mentor Graphics\u0022,\n    \u0022dataExchange\u0022: \u0022Export stackup definitions directly to fabricators to minimize manufacturing variance\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Polar Instruments Si9000e",
+      "Ansys HFSS",
+      "Saturn PCB Toolkit",
+      "KiCad Calculator",
+      "Skottans/Saturn",
+      "Polar Si9000e",
+      "Polar/Gerber",
+      "KiCad",
+      "Altium Designer",
+      "Cadence Allegro",
+      "Mentor Graphics"
+    ],
+    "HallucinatedToolNames": [
+      "Polar Instruments Si9000e",
+      "Ansys HFSS",
+      "Saturn PCB Toolkit",
+      "KiCad Calculator",
+      "Skottans/Saturn",
+      "Polar Si9000e",
+      "Polar/Gerber",
+      "Altium Designer",
+      "Cadence Allegro",
+      "Mentor Graphics"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 6,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing",
+      "Prototyping"
+    ],
+    "Timestamp": "2026-05-06T20:51:25.1529398Z",
+    "PromptTokens": 405,
+    "CompletionTokens": 643,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3134.9568,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P06_R3",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 5,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Polar Instruments Si8000m\u0022,\n    \u0022verdict\u0022: \u0022The Si8000m is the industry-standard field solver for high-speed PCB impedance modeling. It provides superior accuracy over simple calculator tools by accounting for complex geometry and frequency-dependent dielectric properties.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Industry-standard field solver engine\u0022,\n      \u0022Extensive library of pre-defined impedance structures\u0022,\n      \u0022Support for frequency-dependent dielectric models\u0022,\n      \u0022High correlation with real-world TDR measurements\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022High licensing cost compared to free calculators\u0022,\n      \u0022Steeper learning curve for advanced substrate modeling\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Professional high-speed PCB design and manufacturing validation\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is excellent for quick estimates, Si8000m provides the rigorous physics-based analysis required for high-speed signal integrity sign-off.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022note\u0022: \u0022Best free alternative for general-purpose current and impedance calculations.\u0022},\n      {\u0022tool\u0022: \u0022Keysight ADS\u0022, \u0022note\u0022: \u0022Targeted at full-wave EM simulation rather than simple trace impedance.\u0022},\n      {\u0022tool\u0022: \u0022Ansys HFSS\u0022, \u0022note\u0022: \u0022Overkill for trace impedance, used for complex 3D electromagnetic field analysis.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Signal Integrity Workflow\u0022,\n    \u0022description\u0022: \u0022A streamlined process from initial estimation to final sign-off validation.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Initial Design\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Use for quick feasibility checks during component placement.\u0022},\n      {\u0022phase\u0022: \u0022Stackup Design\u0022, \u0022tool\u0022: \u0022Polar Si8000m\u0022, \u0022action\u0022: \u0022Perform rigorous field solver analysis to finalize trace widths and dielectric spacing.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022TDR Equipment\u0022, \u0022action\u0022: \u0022Validate board production impedance against the Si8000m model.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper roughness in high-frequency designs above 5GHz.\u0022,\n    \u0022Verify manufacturer capability before finalizing trace widths.\u0022,\n    \u0022Ensure the dielectric constant (Dk) is modeled at the intended operating frequency.\u0022,\n    \u0022Use test coupons on the PCB panel to verify impedance after fabrication.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, XML, Gerber (for stackup import)\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with most major PCB CAD suites via data import\u0022,\n    \u0022dataExchange\u0022: \u0022Export impedance reports directly to fabrication houses for stackup confirmation\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Polar Instruments Si8000m",
+      "Saturn PCB Toolkit",
+      "Keysight ADS",
+      "Ansys HFSS",
+      "Skottans Elektronik",
+      "Polar Si8000m",
+      "TDR Equipment"
+    ],
+    "HallucinatedToolNames": [
+      "Polar Instruments Si8000m",
+      "Saturn PCB Toolkit",
+      "Keysight ADS",
+      "Ansys HFSS",
+      "Skottans Elektronik",
+      "Polar Si8000m",
+      "TDR Equipment"
+    ],
+    "GroundedToolNames": [],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:51:33.3035768Z",
+    "PromptTokens": 405,
+    "CompletionTokens": 621,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2871.0664,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P07_R1",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 6,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Polar Instruments Si9000e\u0022,\n    \u0022verdict\u0022: \u0022Polar Instruments is the industry standard for field-solver based impedance modeling. It provides the high-precision verification required when moving beyond the estimation capabilities of Skottans Elektronik.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Industry-standard BEM field solver\u0022,\n      \u0022Extensive dielectric constant and loss tangent library\u0022,\n      \u0022Advanced modeling for complex structures like differential pairs and coplanar waveguides\u0022,\n      \u0022Excellent reporting features for fabrication houses\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022High licensing cost\u0022,\n      \u0022Steeper learning curve for non-specialists\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Final verification and sign-off for high-speed PCB manufacturing.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is excellent for quick, lightweight calculations, Polar Si9000e offers rigorous numerical analysis for complex stackups.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022note\u0022: \u0022Best free, all-in-one alternative for current capacity and thermal analysis.\u0022},\n      {\u0022tool\u0022: \u0022KiCad Calculator\u0022, \u0022note\u0022: \u0022Integrated directly into the design environment for immediate, iterative feedback.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022High-Speed PCB Design Workflow\u0022,\n    \u0022description\u0022: \u0022A multi-stage approach ensuring impedance accuracy from initial layout through to production.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Initial Design\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Perform rapid feasibility checks and initial trace width estimations.\u0022},\n      {\u0022phase\u0022: \u0022Refinement\u0022, \u0022tool\u0022: \u0022KiCad Calculator\u0022, \u0022action\u0022: \u0022Adjust trace geometries based on project-specific stackup constraints.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022Polar Si9000e\u0022, \u0022action\u0022: \u0022Perform field-solver analysis to confirm impedance targets before submitting to manufacturing.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper roughness in your field solver settings.\u0022,\n    \u0022Verify manufacturer stackup specs before finalizing impedance calculations.\u0022,\n    \u0022Include manufacturing tolerances in your analysis to ensure yield.\u0022,\n    \u0022Use TDR measurements on test coupons to validate your theoretical models.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, PDF, and proprietary Polar stackup files\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with all major EDA suites including Altium, Cadence Allegro, and KiCad\u0022,\n    \u0022dataExchange\u0022: \u0022Export stackup parameters as CSV to maintain consistency across different calculation tools.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Polar Instruments Si9000e",
+      "Saturn PCB Toolkit",
+      "KiCad Calculator",
+      "Skottans Elektronik",
+      "Polar Si9000e",
+      "KiCad",
+      "Cadence Allegro"
+    ],
+    "HallucinatedToolNames": [
+      "Polar Instruments Si9000e",
+      "Saturn PCB Toolkit",
+      "KiCad Calculator",
+      "Skottans Elektronik",
+      "Polar Si9000e",
+      "Cadence Allegro"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:51:41.2027675Z",
+    "PromptTokens": 410,
+    "CompletionTokens": 587,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3034.0247,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P07_R2",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 6,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Saturn PCB Toolkit\u0022,\n    \u0022verdict\u0022: \u0022Saturn PCB Toolkit is the industry-standard companion to Skottans Elektronik, offering a more extensive suite of physics-based solvers. It excels at complex calculations like via current capacity and differential pair coupling which go beyond basic trace impedance.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Extensive library of PCB material properties\u0022,\n      \u0022Advanced current capacity and temperature rise analysis\u0022,\n      \u0022Comprehensive via impedance and thermal calculators\u0022,\n      \u0022Industry-trusted accuracy in high-speed design\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Windows-only desktop application\u0022,\n      \u0022User interface is functional but dated\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Comprehensive signal integrity and thermal analysis for complex high-speed PCBs.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is excellent for quick, accessible trace impedance checks, Saturn provides the heavy-duty analytical depth required for production-grade designs.\u0022,\n    \u0022toolNotes\u0022: [\n      {\n        \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022,\n        \u0022note\u0022: \u0022Deep physics-based analysis for thermal and current limits.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022TX-Line (AWR)\u0022,\n        \u0022note\u0022: \u0022Specialized for transmission line modeling and complex substrate integration.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022KiCad Calculator\u0022,\n        \u0022note\u0022: \u0022Integrated directly into the design workflow for quick local checks.\u0022\n      }\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Signal Integrity Workflow\u0022,\n    \u0022description\u0022: \u0022A multi-stage approach to ensure impedance accuracy and thermal reliability.\u0022,\n    \u0022steps\u0022: [\n      {\n        \u0022phase\u0022: \u0022Initial Stackup\u0022,\n        \u0022tool\u0022: \u0022Skottans Elektronik\u0022,\n        \u0022action\u0022: \u0022Perform preliminary trace width and impedance calculations.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Advanced Validation\u0022,\n        \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022,\n        \u0022action\u0022: \u0022Verify via current limits and complex differential pair coupling.\u0022\n      }\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper plating thickness in your impedance calculations.\u0022,\n    \u0022Use Saturn\u0027s thermal calculator to ensure trace width is sufficient for current, not just impedance.\u0022,\n    \u0022Validate your material dielectric constant (Dk) against the manufacturer\u0027s datasheet rather than using defaults.\u0022,\n    \u0022Perform a sensitivity analysis on trace width tolerances provided by your PCB fabricator.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, TXT, and direct clipboard copy-paste\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with all major ECAD software including Altium, KiCad, and Cadence Allegro\u0022,\n    \u0022dataExchange\u0022: \u0022Export calculated impedance values to your PCB design constraints manager\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Saturn PCB Toolkit",
+      "TX-Line (AWR)",
+      "KiCad Calculator",
+      "Skottans Elektronik",
+      "KiCad",
+      "Cadence Allegro"
+    ],
+    "HallucinatedToolNames": [
+      "Saturn PCB Toolkit",
+      "TX-Line (AWR)",
+      "KiCad Calculator",
+      "Skottans Elektronik",
+      "Cadence Allegro"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:51:49.2597329Z",
+    "PromptTokens": 410,
+    "CompletionTokens": 631,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3105.7285,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P07_R3",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 6,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Saturn PCB Toolkit\u0022,\n    \u0022verdict\u0022: \u0022Saturn PCB Toolkit is the industry-standard companion to Skottans Elektronik, providing a significantly broader range of calculations beyond simple impedance. It excels at complex thermal analysis and current capacity calculations that are essential for high-power PCB designs.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Extensive library of IPC-2221/IPC-2152 compliant calculations\u0022,\n      \u0022Comprehensive thermal management and via current capacity analysis\u0022,\n      \u0022Includes useful reference data for AWG wire sizes and material properties\u0022,\n      \u0022Frequent updates ensuring alignment with modern manufacturing tolerances\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022User interface is functional but dated compared to modern web-based tools\u0022,\n      \u0022Lacks integrated 3D field-solver capabilities for extreme high-frequency signals\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Comprehensive power integrity and thermal reliability analysis alongside impedance matching.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is excellent for quick, targeted impedance checks, Saturn and Polar provide depth for professional manufacturing workflows.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Polar Si9000\u0022, \u0022note\u0022: \u0022Industry-grade field solver for high-speed signal integrity\u0022},\n      {\u0022tool\u0022: \u0022KiCad PCB Calculator\u0022, \u0022note\u0022: \u0022Integrated, lightweight tool for basic design constraints\u0022},\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022note\u0022: \u0022The most versatile all-in-one suite for thermal and electrical design\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Signal and Power Integrity Workflow\u0022,\n    \u0022description\u0022: \u0022A multi-stage approach to ensure electrical performance and thermal reliability.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Impedance Planning\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Perform initial stackup and trace width impedance calculations.\u0022},\n      {\u0022phase\u0022: \u0022Thermal/Current Verification\u0022, \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022action\u0022: \u0022Validate trace ampacity and temperature rise for power rails.\u0022},\n      {\u0022phase\u0022: \u0022Final Validation\u0022, \u0022tool\u0022: \u0022Polar Si9000\u0022, \u0022action\u0022: \u0022Run full field-solver verification for high-speed differential pairs.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper plating thickness in your impedance calculations.\u0022,\n    \u0022Use a 10% safety margin when calculating trace width for current capacity.\u0022,\n    \u0022Cross-reference dielectric constants (Dk) provided by your specific PCB fab house.\u0022,\n    \u0022Regularly update your lookup tables for material properties as new laminates are introduced.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, TXT, and PDF export for documentation\u0022,\n    \u0022compatibility\u0022: \u0022Windows-based standalone applications\u0022,\n    \u0022dataExchange\u0022: \u0022Copy-paste stackup parameters from spreadsheets directly into the calculators\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Saturn PCB Toolkit",
+      "Polar Si9000",
+      "KiCad PCB Calculator",
+      "Skottans Elektronik",
+      "KiCad"
+    ],
+    "HallucinatedToolNames": [
+      "Saturn PCB Toolkit",
+      "Polar Si9000",
+      "KiCad PCB Calculator",
+      "Skottans Elektronik"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 4,
+    "WorkflowStages": [
+      "Selection",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:51:57.3910632Z",
+    "PromptTokens": 410,
+    "CompletionTokens": 647,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2819.4076,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P08_R1",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 7,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Polar Instruments Si8000m\u0022,\n    \u0022verdict\u0022: \u0022The Si8000m is the industry standard for controlled impedance modeling, offering significantly higher precision than basic online calculators. It utilizes advanced Boundary Element Method (BEM) solvers to account for complex geometries and manufacturing variations.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Industry-standard BEM field solver\u0022,\n      \u0022Support for complex structures like differential pairs and coplanar waveguides\u0022,\n      \u0022Accounts for frequency-dependent dielectric loss\u0022,\n      \u0022Integrates directly with PCB manufacturing specifications\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022High licensing cost\u0022,\n      \u0022Steep learning curve for advanced features\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Professional high-speed digital and RF PCB design\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is a basic utility, Polar Si8000m provides field-solving capabilities that account for surface roughness and actual PCB manufacturing stackups.\u0022,\n    \u0022toolNotes\u0022: [\n      {\n        \u0022tool\u0022: \u0022Skottans Elektronik\u0022,\n        \u0022note\u0022: \u0022Basic closed-form approximation; lacks advanced field solving.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022Polar Si8000m\u0022,\n        \u0022note\u0022: \u0022Full field solver; gold standard for accuracy and compliance.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022,\n        \u0022note\u0022: \u0022Excellent free alternative with better math models than Skottans.\u0022\n      }\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Controlled Impedance Design Workflow\u0022,\n    \u0022description\u0022: \u0022A professional approach to high-speed signal integrity.\u0022,\n    \u0022steps\u0022: [\n      {\n        \u0022phase\u0022: \u0022Stackup Design\u0022,\n        \u0022tool\u0022: \u0022Polar Si8000m\u0022,\n        \u0022action\u0022: \u0022Define material properties and target impedance.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Layout \u0026 Routing\u0022,\n        \u0022tool\u0022: \u0022Altium Designer / Cadence Allegro\u0022,\n        \u0022action\u0022: \u0022Apply calculated trace widths and clearances to design rules.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Verification\u0022,\n        \u0022tool\u0022: \u0022TDR / VNA\u0022,\n        \u0022action\u0022: \u0022Validate impedance on physical test coupons.\u0022\n      }\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper surface roughness in high-speed designs.\u0022,\n    \u0022Request dielectric constant (Dk) values from your PCB fabricator.\u0022,\n    \u0022Use test coupons on the edge of the panel to verify manufacturing accuracy.\u0022,\n    \u0022Factor in etching tolerances, as copper width changes during fabrication.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, proprietary Polar formats, CSV export for stackup reports\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with all major ECAD suites via design rule import\u0022,\n    \u0022dataExchange\u0022: \u0022Export impedance reports directly to fabricators to ensure build compliance\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Polar Instruments Si8000m",
+      "Skottans Elektronik",
+      "Polar Si8000m",
+      "Saturn PCB Toolkit",
+      "Altium Designer / Cadence Allegro",
+      "TDR / VNA",
+      "Altium Designer",
+      "Cadence Allegro"
+    ],
+    "HallucinatedToolNames": [
+      "Polar Instruments Si8000m",
+      "Skottans Elektronik",
+      "Polar Si8000m",
+      "Saturn PCB Toolkit",
+      "Altium Designer / Cadence Allegro",
+      "TDR / VNA",
+      "Altium Designer",
+      "Cadence Allegro"
+    ],
+    "GroundedToolNames": [],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:52:05.2256626Z",
+    "PromptTokens": 410,
+    "CompletionTokens": 664,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3081.0801,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P08_R2",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 7,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Polar Instruments Si8000m\u0022,\n    \u0022verdict\u0022: \u0022The Si8000m is the industry standard for controlled impedance modeling, utilizing a high-precision field solver rather than simple approximation formulas. It offers significantly higher accuracy for complex stackups and non-standard geometries compared to basic web-based calculators.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Boundary element method field solver\u0022,\n      \u0022Extensive library of trace configurations\u0022,\n      \u0022Industry-standard accuracy for high-speed design\u0022,\n      \u0022Support for complex multi-layer stackups\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Commercial licensing cost\u0022,\n      \u0022Steeper learning curve for advanced features\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Professional high-speed PCB stackup design and impedance verification.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is suitable for quick, basic estimations, Polar Si8000m provides rigorous field-solver accuracy necessary for production-level controlled impedance.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022note\u0022: \u0022Uses simplified formulas; prone to error with thick copper or complex geometries.\u0022},\n      {\u0022tool\u0022: \u0022Polar Si8000m\u0022, \u0022note\u0022: \u0022Uses Maxwell\u0027s equations via field solver for superior precision.\u0022},\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022note\u0022: \u0022Excellent free alternative with better formula accuracy than basic calculators.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Controlled Impedance Design Workflow\u0022,\n    \u0022description\u0022: \u0022A robust process for ensuring signal integrity from design to fabrication.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Stackup Planning\u0022, \u0022tool\u0022: \u0022Polar Si8000m\u0022, \u0022action\u0022: \u0022Define dielectric constants and copper weights to calculate target trace widths.\u0022},\n      {\u0022phase\u0022: \u0022Layout Implementation\u0022, \u0022tool\u0022: \u0022Altium/Cadence Allegro\u0022, \u0022action\u0022: \u0022Apply calculated trace widths and clearances to high-speed nets.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022Polar Si8000m\u0022, \u0022action\u0022: \u0022Import final design parameters to verify impedance against fabrication tolerances.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper roughness in high-frequency designs.\u0022,\n    \u0022Request dielectric constant (Dk) values from your specific PCB fabricator.\u0022,\n    \u0022Verify impedance at both the design and pre-production phase.\u0022,\n    \u0022Use TDR (Time Domain Reflectometry) coupons on production panels to validate results.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, XML, Gerber (for stackup import)\u0022,\n    \u0022compatibility\u0022: \u0022Works with all major EDA software suites\u0022,\n    \u0022dataExchange\u0022: \u0022Export stackup data directly to fabrication houses in standard IPC-2581 format\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Polar Instruments Si8000m",
+      "Skottans Elektronik",
+      "Polar Si8000m",
+      "Saturn PCB Toolkit",
+      "Altium/Cadence Allegro",
+      "Cadence Allegro"
+    ],
+    "HallucinatedToolNames": [
+      "Polar Instruments Si8000m",
+      "Skottans Elektronik",
+      "Polar Si8000m",
+      "Saturn PCB Toolkit",
+      "Altium/Cadence Allegro",
+      "Cadence Allegro"
+    ],
+    "GroundedToolNames": [],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:52:13.3173412Z",
+    "PromptTokens": 410,
+    "CompletionTokens": 634,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2942.8367,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P08_R3",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 7,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Polar Instruments Si8000m\u0022,\n    \u0022verdict\u0022: \u0022The Si8000m is the industry standard for controlled impedance modeling, offering significantly higher accuracy than basic web-based calculators. Its boundary element method (BEM) solver accounts for complex geometry and frequency-dependent effects that simpler tools ignore.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Industry-standard BEM solver\u0022,\n      \u0022Handles complex multi-layer structures\u0022,\n      \u0022Frequency-dependent loss modeling\u0022,\n      \u0022Extensive material library support\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Significant licensing cost\u0022,\n      \u0022Steeper learning curve\u0022\n    ],\n    \u0022bestFor\u0022: \u0022High-speed digital and RF PCB design requiring precise impedance control\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is a basic approximation tool, Polar Si8000m provides professional-grade field solving capabilities.\u0022,\n    \u0022toolNotes\u0022: [\n      {\n        \u0022tool\u0022: \u0022Skottans Elektronik\u0022,\n        \u0022note\u0022: \u0022Basic 2D approximation; lacks advanced field solving.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022Polar Si8000m\u0022,\n        \u0022note\u0022: \u0022Uses high-precision BEM solvers for complex geometries.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022,\n        \u0022note\u0022: \u0022Excellent free intermediate alternative with better documentation.\u0022\n      }\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Professional Impedance Design Workflow\u0022,\n    \u0022description\u0022: \u0022A robust process for ensuring design accuracy from stackup to production.\u0022,\n    \u0022steps\u0022: [\n      {\n        \u0022phase\u0022: \u0022Stackup Definition\u0022,\n        \u0022tool\u0022: \u0022Polar Si8000m\u0022,\n        \u0022action\u0022: \u0022Input dielectric constants and copper weights to calculate target trace widths.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022PCB Layout\u0022,\n        \u0022tool\u0022: \u0022Altium/Cadence Allegro\u0022,\n        \u0022action\u0022: \u0022Apply calculated constraints to high-speed nets using the design rule checker.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Verification\u0022,\n        \u0022tool\u0022: \u0022Polar Si9000e\u0022,\n        \u0022action\u0022: \u0022Perform field-solver analysis on finished layout geometries.\u0022\n      }\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper surface roughness in your calculations.\u0022,\n    \u0022Request impedance test coupons from your PCB fabricator.\u0022,\n    \u0022Verify dielectric constants (Dk) with material datasheets rather than default tool values.\u0022,\n    \u0022Consider the effect of solder mask on impedance, especially for fine-pitch traces.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022IPC-2581, ODB\u002B\u002B, Gerber\u0022,\n    \u0022compatibility\u0022: \u0022Direct integration with major EDA suites (Altium, Cadence, Mentor)\u0022,\n    \u0022dataExchange\u0022: \u0022Export impedance reports directly to fabricator manufacturing specifications\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Polar Instruments Si8000m",
+      "Skottans Elektronik",
+      "Polar Si8000m",
+      "Saturn PCB Toolkit",
+      "Altium/Cadence Allegro",
+      "Polar Si9000e",
+      "Cadence Allegro"
+    ],
+    "HallucinatedToolNames": [
+      "Polar Instruments Si8000m",
+      "Skottans Elektronik",
+      "Polar Si8000m",
+      "Saturn PCB Toolkit",
+      "Altium/Cadence Allegro",
+      "Polar Si9000e",
+      "Cadence Allegro"
+    ],
+    "GroundedToolNames": [],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:52:21.2793541Z",
+    "PromptTokens": 410,
+    "CompletionTokens": 662,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3010.1205,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P09_R1",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 8,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Saturn PCB Toolkit\u0022,\n    \u0022verdict\u0022: \u0022Saturn PCB Toolkit remains the industry gold standard for comprehensive PCB calculations, far exceeding the scope of single-purpose impedance calculators. It seamlessly integrates thermal, impedance, and current capacity analysis into a single, reliable environment.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Extensive library of IPC-2221 and IPC-2152 standards\u0022,\n      \u0022Integrated thermal rise and current capacity calculators\u0022,\n      \u0022Support for complex differential pair geometries\u0022,\n      \u0022Built-in material property database\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Windows-only interface\u0022,\n      \u0022Dated user interface design\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Professional hardware engineers requiring high-accuracy compliance with industry standards.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is excellent for quick impedance checks, Saturn provides a holistic engineering suite including thermal and power integrity.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022note\u0022: \u0022Best for rapid, lightweight impedance estimation.\u0022},\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022note\u0022: \u0022Industry-standard suite covering thermal, current, and impedance.\u0022},\n      {\u0022tool\u0022: \u0022KiCad Calculator\u0022, \u0022note\u0022: \u0022Convenient for basic needs but lacks advanced material modeling.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated PCB Design Analysis Workflow\u0022,\n    \u0022description\u0022: \u0022A multi-stage process to ensure electrical and thermal robustness.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Stackup \u0026 Impedance\u0022, \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022action\u0022: \u0022Calculate track widths based on dielectric constant and target impedance.\u0022},\n      {\u0022phase\u0022: \u0022Current Capacity\u0022, \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022action\u0022: \u0022Verify current carrying capacity and allowable temperature rise for power rails.\u0022},\n      {\u0022phase\u0022: \u0022Refinement\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Perform secondary validation of differential pairs to confirm impedance consistency.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022PCB Layout Software\u0022, \u0022action\u0022: \u0022Apply calculated constraints to design rules and perform final DRC.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper plating thickness in impedance calculations.\u0022,\n    \u0022Use IPC-2152 for modern thermal calculations rather than older IPC-2221.\u0022,\n    \u0022Validate board manufacturer material availability before finalizing stackup.\u0022,\n    \u0022Document all calculation assumptions in your project design review.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, Text report, Image export\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with all major EDA tools (Altium, KiCad, Cadence)\u0022,\n    \u0022dataExchange\u0022: \u0022Manual entry of constraint parameters into EDA design rules\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Saturn PCB Toolkit",
+      "Skottans Elektronik",
+      "KiCad Calculator",
+      "PCB Layout Software",
+      "KiCad"
+    ],
+    "HallucinatedToolNames": [
+      "Saturn PCB Toolkit",
+      "Skottans Elektronik",
+      "KiCad Calculator",
+      "PCB Layout Software"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:52:29.3029634Z",
+    "PromptTokens": 408,
+    "CompletionTokens": 627,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2735.2325,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P09_R2",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 8,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Saturn PCB Toolkit\u0022,\n    \u0022verdict\u0022: \u0022While Skottans is excellent for quick impedance checks, Saturn PCB Toolkit is the industry standard for a comprehensive analysis suite. It integrates trace width, thermal, and impedance calculations into a single, cohesive interface that handles complex stack-up scenarios more effectively.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Comprehensive suite of calculators\u0022,\n      \u0022Industry-standard thermal modeling based on IPC-2152\u0022,\n      \u0022Advanced impedance solver for complex geometries\u0022,\n      \u0022Regular updates with material library support\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Windows-only desktop application\u0022,\n      \u0022Interface is functional but lacks modern UI design\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Professional PCB designers requiring verified thermal and signal integrity calculations.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022Skottans is ideal for lightweight, web-based impedance checks, whereas Saturn PCB Toolkit provides the depth required for end-to-end design verification.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022note\u0022: \u0022Best for rapid, browser-based impedance impedance calculations.\u0022},\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022note\u0022: \u0022Best for integrated thermal, current, and impedance analysis.\u0022},\n      {\u0022tool\u0022: \u0022KiCad Calculator\u0022, \u0022note\u0022: \u0022Best for open-source, built-in design rule integration.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated PCB Design Analysis Workflow\u0022,\n    \u0022description\u0022: \u0022A multi-stage approach to ensure electrical and thermal compliance from initial stack-up to final layout.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Stack-up Definition\u0022, \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022action\u0022: \u0022Calculate required trace widths and spacings for controlled impedance layers.\u0022},\n      {\u0022phase\u0022: \u0022Current Capacity\u0022, \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022action\u0022: \u0022Verify trace thickness and width for power rails using IPC-2152 thermal limits.\u0022},\n      {\u0022phase\u0022: \u0022Impedance Refinement\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Perform quick differential pair impedance checks during active routing.\u0022},\n      {\u0022phase\u0022: \u0022Design Rule Check\u0022, \u0022tool\u0022: \u0022KiCad / Altium\u0022, \u0022action\u0022: \u0022Apply calculated values to design constraints and run final DRC.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper plating thickness in your impedance calculations.\u0022,\n    \u0022Use the IPC-2152 standard for thermal calculations rather than the legacy IPC-2221.\u0022,\n    \u0022Verify dielectric constants (Dk) with your PCB manufacturer before finalized calculations.\u0022,\n    \u0022Include a 10% safety margin on current capacity for high-reliability designs.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, Text export, Image export\u0022,\n    \u0022compatibility\u0022: \u0022Standalone tools; compatible with all major CAD software suites\u0022,\n    \u0022dataExchange\u0022: \u0022Manually input calculated constraints from toolkit into CAD Design Rule Manager\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Saturn PCB Toolkit",
+      "Skottans Elektronik",
+      "KiCad Calculator",
+      "KiCad / Altium",
+      "KiCad"
+    ],
+    "HallucinatedToolNames": [
+      "Saturn PCB Toolkit",
+      "Skottans Elektronik",
+      "KiCad Calculator",
+      "KiCad / Altium"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:52:37.0513678Z",
+    "PromptTokens": 408,
+    "CompletionTokens": 674,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2850.7772,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P09_R3",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 8,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Saturn PCB Toolkit\u0022,\n    \u0022verdict\u0022: \u0022While Skottans is excellent for quick impedance checks, Saturn PCB Toolkit is the industry gold standard for a comprehensive analysis suite. It integrates reliable IPC-2221/IPC-2152 compliant thermal calculations alongside advanced impedance modeling in a single, unified interface.\u0022,\n    \u0022strengths\u0022: [\n      \u0022IPC-2221 and IPC-2152 thermal compliance\u0022,\n      \u0022Comprehensive via current and temperature rise analysis\u0022,\n      \u0022Advanced differential pair and coplanar impedance modeling\u0022,\n      \u0022Integrated material library with dielectric constant management\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Windows-only desktop application\u0022,\n      \u0022User interface is functional but dated compared to modern web apps\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Professional hardware engineers requiring high-accuracy thermal and signal integrity verification.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022Skottans Elektronik provides great accessibility for impedance, but lacks the deep thermal modeling required for high-current power distribution and complex stack-up validation.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022note\u0022: \u0022Best for quick, web-based impedance verification.\u0022},\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022note\u0022: \u0022Industry-standard for combined thermal, current, and impedance analysis.\u0022},\n      {\u0022tool\u0022: \u0022KiCad Calculator\u0022, \u0022note\u0022: \u0022Built-in utility useful for basic geometric calculations within the design environment.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated PCB Analysis Workflow\u0022,\n    \u0022description\u0022: \u0022A robust process for verifying electrical and thermal constraints during the design phase.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Stack-up Definition\u0022, \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022action\u0022: \u0022Define board materials and layer thicknesses to establish target impedance parameters.\u0022},\n      {\u0022phase\u0022: \u0022Thermal/Current Sizing\u0022, \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022action\u0022: \u0022Calculate trace widths based on current requirements and allowable temperature rise using IPC-2152.\u0022},\n      {\u0022phase\u0022: \u0022Impedance Verification\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Cross-verify critical high-speed signal trace widths against calculated stack-up parameters.\u0022},\n      {\u0022phase\u0022: \u0022Final Validation\u0022, \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022action\u0022: \u0022Perform via current capacity analysis to ensure power rail integrity.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper plating thickness (typically 0.5-1.0 mil) in your thermal calculations.\u0022,\n    \u0022Use IPC-2152 over IPC-2221 for modern designs as it provides more accurate thermal modeling.\u0022,\n    \u0022When calculating impedance, ensure your dielectric constant (Dk) matches the manufacturer\u0027s datasheet for the specific frequency.\u0022,\n    \u0022Maintain a clear margin of error (10-15%) between calculated current capacity and peak operating current.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022N/A (Calculators typically require manual input of geometric parameters)\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with all major EDA tools (Altium, KiCad, Cadence Allegro)\u0022,\n    \u0022dataExchange\u0022: \u0022Export calculated impedance values to your EDA tool\u0027s constraint manager to enforce trace width rules.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Saturn PCB Toolkit",
+      "Skottans Elektronik",
+      "KiCad Calculator",
+      "KiCad",
+      "Cadence Allegro"
+    ],
+    "HallucinatedToolNames": [
+      "Saturn PCB Toolkit",
+      "Skottans Elektronik",
+      "KiCad Calculator",
+      "Cadence Allegro"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:52:44.9164755Z",
+    "PromptTokens": 408,
+    "CompletionTokens": 742,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3606.6244,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P10_R1",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 9,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022KiCad (Integrated PCB Calculator)\u0022,\n    \u0022verdict\u0022: \u0022KiCad provides a robust, built-in suite of calculators that are industry-standard for open-source hardware design. It offers excellent accuracy for standard PCB geometries and integrates directly into the design workflow.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Seamless integration with PCB layout\u0022,\n      \u0022Widely vetted calculation engines\u0022,\n      \u0022Comprehensive support for various trace geometries\u0022,\n      \u0022Active community updates\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Limited support for complex 3D field solver analysis\u0022,\n      \u0022Relies on 2D analytical formulas rather than 3D FEM\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Standard PCB stackup and impedance planning within the KiCad design environment.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is a great standalone utility, KiCad offers better workflow integration, and OpenEMS provides superior analytical depth for advanced users.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022OpenEMS\u0022, \u0022note\u0022: \u0022Uses 3D FDTD field solving for high-frequency accuracy.\u0022},\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022note\u0022: \u0022The industry benchmark for manual calculation (Freeware, not open-source).\u0022},\n      {\u0022tool\u0022: \u0022KiCad PCB Calculator\u0022, \u0022note\u0022: \u0022Best for general-purpose board design and stackup validation.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Signal Integrity Workflow\u0022,\n    \u0022description\u0022: \u0022A professional approach using open-source tools to ensure impedance control.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Stackup Design\u0022, \u0022tool\u0022: \u0022KiCad PCB Calculator\u0022, \u0022action\u0022: \u0022Define board thickness, copper weight, and dielectric constant.\u0022},\n      {\u0022phase\u0022: \u0022Impedance Planning\u0022, \u0022tool\u0022: \u0022KiCad PCB Calculator\u0022, \u0022action\u0022: \u0022Calculate trace width for target impedance (e.g., 50 ohm).\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022OpenEMS\u0022, \u0022action\u0022: \u0022Perform 3D field simulation for critical high-speed differential pairs.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for manufacturing tolerances of the PCB house.\u0022,\n    \u0022Ensure your dielectric constant (Er) matches the specific prepreg/core material datasheet.\u0022,\n    \u0022Use 3D field solvers for frequencies above 5GHz.\u0022,\n    \u0022Verify trace impedance after routing to account for copper pour proximity.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022KiCad (.kicad_pcb), Gerber (RS-274X, X2), IPC-2581\u0022,\n    \u0022compatibility\u0022: \u0022Cross-platform (Windows, macOS, Linux)\u0022,\n    \u0022dataExchange\u0022: \u0022Export geometry parameters from calculator to PCB layout software via CSV or manual entry.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "KiCad (Integrated PCB Calculator)",
+      "OpenEMS",
+      "Saturn PCB Toolkit",
+      "KiCad PCB Calculator",
+      "KiCad",
+      "Integrated PCB Calculator"
+    ],
+    "HallucinatedToolNames": [
+      "KiCad (Integrated PCB Calculator)",
+      "OpenEMS",
+      "Saturn PCB Toolkit",
+      "KiCad PCB Calculator",
+      "Integrated PCB Calculator"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:52:53.5397142Z",
+    "PromptTokens": 405,
+    "CompletionTokens": 634,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3187.6424,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P10_R2",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 9,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022KiCad (Integrated PCB Calculator)\u0022,\n    \u0022verdict\u0022: \u0022KiCad includes a robust, built-in calculator tool that serves as a industry-standard open-source alternative. It provides reliable 2D field solver capabilities for trace impedance, width, and clearance calculations directly within the design environment.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Integrated directly into the PCB design workflow\u0022,\n      \u0022Includes IPC-2221 standard compliance calculations\u0022,\n      \u0022Supports differential pair and coplanar waveguide impedance\u0022,\n      \u0022Highly active community support and frequent updates\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Lacks advanced 3D full-wave electromagnetic simulation\u0022,\n      \u0022Limited material library customization compared to commercial solvers\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Standard PCB stackup design and routine impedance control\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is a lightweight web utility, KiCad offers a comprehensive suite and OpenEMS provides deep simulation capabilities.\u0022,\n    \u0022toolNotes\u0022: [\n      {\n        \u0022tool\u0022: \u0022OpenEMS\u0022,\n        \u0022note\u0022: \u0022A powerful 3D FDTD solver suitable for complex structures beyond standard traces.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022,\n        \u0022note\u0022: \u0022While not open-source, it is the industry benchmark for comparison with open-source tools.\u0022\n      }\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Impedance Design Workflow\u0022,\n    \u0022description\u0022: \u0022A streamlined approach to ensuring signal integrity from calculation to production.\u0022,\n    \u0022steps\u0022: [\n      {\n        \u0022phase\u0022: \u0022Stackup Planning\u0022,\n        \u0022tool\u0022: \u0022KiCad Calculator\u0022,\n        \u0022action\u0022: \u0022Define board stackup and calculate initial trace widths for target impedance.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Layout Design\u0022,\n        \u0022tool\u0022: \u0022KiCad PCB Editor\u0022,\n        \u0022action\u0022: \u0022Route traces using calculated constraints and design rules.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Verification\u0022,\n        \u0022tool\u0022: \u0022OpenEMS\u0022,\n        \u0022action\u0022: \u0022Perform 3D EM simulation for critical high-speed signals or complex geometry.\u0022\n      }\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for manufacturing tolerances (e.g., \u002B/- 10% trace width) in your calculations.\u0022,\n    \u0022Use the IPC-2221 standard for current capacity to prevent trace overheating.\u0022,\n    \u0022Verify manufacturer stackup data before finalizing impedance calculations.\u0022,\n    \u0022Use 3D solvers only when trace geometry is irregular or non-standard.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022KiCad (.kicad_pcb), Gerber (RS-274X, X2), IPC-2581\u0022,\n    \u0022compatibility\u0022: \u0022Cross-platform (Linux, Windows, macOS)\u0022,\n    \u0022dataExchange\u0022: \u0022Standard CSV export for stackup parameters\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "KiCad (Integrated PCB Calculator)",
+      "OpenEMS",
+      "Saturn PCB Toolkit",
+      "KiCad Calculator",
+      "KiCad PCB Editor",
+      "KiCad",
+      "Integrated PCB Calculator"
+    ],
+    "HallucinatedToolNames": [
+      "KiCad (Integrated PCB Calculator)",
+      "OpenEMS",
+      "Saturn PCB Toolkit",
+      "KiCad Calculator",
+      "KiCad PCB Editor",
+      "Integrated PCB Calculator"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:53:01.7532666Z",
+    "PromptTokens": 405,
+    "CompletionTokens": 663,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3066.4609,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P10_R3",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 9,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022KiCad (Integrated Calculator/Tools)\u0022,\n    \u0022verdict\u0022: \u0022KiCad offers the most robust, integrated, and community-supported open-source solution for impedance and trace width calculations. It bridges the gap between theoretical calculation and actual PCB layout implementation seamlessly.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Integrated PCB calculator suite\u0022,\n      \u0022Direct integration with layout editor\u0022,\n      \u0022Active community development\u0022,\n      \u0022Cross-platform support\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Limited 3D field solver capabilities\u0022,\n      \u0022Requires manual verification for complex stackups\u0022\n    ],\n    \u0022bestFor\u0022: \u0022End-to-end PCB design workflows requiring integrated trace and impedance management.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While standalone calculators provide raw math, KiCad provides design-flow integration, and OpenEMS allows for advanced electromagnetic field simulation.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022KiCad\u0022, \u0022note\u0022: \u0022Best for standard PCB design and routine impedance calculations.\u0022},\n      {\u0022tool\u0022: \u0022OpenEMS\u0022, \u0022note\u0022: \u0022Powerful FDTD solver for complex 3D structures and non-standard geometries.\u0022},\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit (Free/Closed)\u0022, \u0022note\u0022: \u0022Industry-standard reference, though not open-source, often used to validate open-source results.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Impedance Design Flow\u0022,\n    \u0022description\u0022: \u0022A professional workflow moving from calculation to validation.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Estimation\u0022, \u0022tool\u0022: \u0022KiCad Calculator\u0022, \u0022action\u0022: \u0022Calculate initial trace widths based on stackup.\u0022},\n      {\u0022phase\u0022: \u0022Layout\u0022, \u0022tool\u0022: \u0022KiCad PCB Editor\u0022, \u0022action\u0022: \u0022Implement constraints using calculated values.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022OpenEMS\u0022, \u0022action\u0022: \u0022Perform 3D EM simulation for critical high-speed signals.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for manufacturing tolerances like copper etching and dielectric constant variations.\u0022,\n    \u0022Use TDR (Time Domain Reflectometry) measurements on physical prototypes to validate calculated models.\u0022,\n    \u0022Keep trace lengths as short as possible to minimize the impact of impedance discontinuities.\u0022,\n    \u0022Document your stackup properties (Dk/Df) from the PCB manufacturer in your calculator settings.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022IPC-2581, Gerber X2, ODB\u002B\u002B\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with standard EDA workflows via industry-standard output formats.\u0022,\n    \u0022dataExchange\u0022: \u0022Export stackup parameters to CSV for tracking and version control.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "KiCad (Integrated Calculator/Tools)",
+      "KiCad",
+      "OpenEMS",
+      "Saturn PCB Toolkit (Free/Closed)",
+      "KiCad Calculator",
+      "KiCad PCB Editor",
+      "Integrated Calculator",
+      "Saturn PCB Toolkit"
+    ],
+    "HallucinatedToolNames": [
+      "KiCad (Integrated Calculator/Tools)",
+      "OpenEMS",
+      "Saturn PCB Toolkit (Free/Closed)",
+      "KiCad Calculator",
+      "KiCad PCB Editor",
+      "Integrated Calculator",
+      "Saturn PCB Toolkit"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 6,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing",
+      "Prototyping"
+    ],
+    "Timestamp": "2026-05-06T20:53:09.8392849Z",
+    "PromptTokens": 405,
+    "CompletionTokens": 600,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2800.762,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P11_R1",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 10,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Saturn PCB Toolkit\u0022,\n    \u0022verdict\u0022: \u0022Saturn PCB Toolkit is the industry standard for educational and professional PCB calculation. It provides a comprehensive suite of calculators that go far beyond simple impedance, making it the most robust tool for a student building a foundational understanding of signal integrity.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Extensive library of dielectric materials\u0022,\n      \u0022Integrated current capacity and trace heating calculators\u0022,\n      \u0022High accuracy based on established formulas\u0022,\n      \u0022Completely free and highly accessible\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Windows-only desktop application\u0022,\n      \u0022UI is dated compared to modern web-based tools\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Students and engineers requiring a reliable, all-in-one reference for PCB trace physics.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is excellent for quick impedance checks, Saturn offers a broader engineering context, and Polar Instruments SI9000 is the gold-standard for advanced, commercial-grade field solving.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022note\u0022: \u0022Great for lightweight, browser-based impedance checks.\u0022},\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022note\u0022: \u0022The comprehensive Swiss-Army knife for PCB design.\u0022},\n      {\u0022tool\u0022: \u0022Polar SI9000\u0022, \u0022note\u0022: \u0022Professional-grade boundary element method solver for complex stacks.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022PCB Impedance Design Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach from theoretical calculation to physical verification.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Stackup Planning\u0022, \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022action\u0022: \u0022Define dielectric constant and layer thickness.\u0022},\n      {\u0022phase\u0022: \u0022Impedance Modeling\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Perform rapid trace width and spacing iterations.\u0022},\n      {\u0022phase\u0022: \u0022Validation\u0022, \u0022tool\u0022: \u0022PCB Layout Software\u0022, \u0022action\u0022: \u0022Apply calculated constraints to design rules.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper thickness including plating tolerances.\u0022,\n    \u0022Understand the impact of solder mask on impedance values.\u0022,\n    \u0022Verify manufacturer capabilities before finalizing your stackup.\u0022,\n    \u0022Use multiple tools to cross-reference results for critical high-speed traces.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022N/A - Manual data entry\u0022,\n    \u0022compatibility\u0022: \u0022Standalone tools\u0022,\n    \u0022dataExchange\u0022: \u0022Export your stackup requirements to a PDF for your PCB fabricator.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Saturn PCB Toolkit",
+      "Skottans Elektronik",
+      "Polar SI9000",
+      "PCB Layout Software"
+    ],
+    "HallucinatedToolNames": [
+      "Saturn PCB Toolkit",
+      "Skottans Elektronik",
+      "Polar SI9000",
+      "PCB Layout Software"
+    ],
+    "GroundedToolNames": [],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:53:17.664394Z",
+    "PromptTokens": 411,
+    "CompletionTokens": 587,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2629.5093,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P11_R2",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 10,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Saturn PCB Toolkit\u0022,\n    \u0022verdict\u0022: \u0022Saturn PCB Toolkit is the industry standard for educational and professional PCB impedance and current capacity calculations. It offers a comprehensive suite of calculators that go far beyond simple impedance, making it an essential companion to your current tool.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Extensive library of IPC-2152 and IPC-2221 standards\u0022,\n      \u0022Calculates current capacity and temperature rise\u0022,\n      \u0022Includes via current and thermal resistance calculators\u0022,\n      \u0022Highly accurate trace impedance modeling\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Windows-only interface\u0022,\n      \u0022UI feels dated compared to modern web-based tools\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Comprehensive signal integrity and thermal design validation\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans is excellent for quick, accessible web-based impedance checks, Saturn PCB Toolkit provides the depth required for advanced engineering validation.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022note\u0022: \u0022Best for fast, lightweight impedance checks directly in the browser.\u0022},\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022note\u0022: \u0022Best for deep analysis including thermal and current-carrying capacity.\u0022},\n      {\u0022tool\u0022: \u0022KiCad Calculator\u0022, \u0022note\u0022: \u0022Integrated directly into the design suite, ideal for immediate footprint-level calculations.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Impedance Design Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to balancing speed and accuracy in PCB design.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Initial Estimation\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Perform quick trace width and spacing checks during board layout.\u0022},\n      {\u0022phase\u0022: \u0022Thermal Validation\u0022, \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022action\u0022: \u0022Verify that trace widths can handle the required current without exceeding temperature limits.\u0022},\n      {\u0022phase\u0022: \u0022Final Verification\u0022, \u0022tool\u0022: \u0022KiCad Calculator\u0022, \u0022action\u0022: \u0022Cross-reference design rules within the CAD environment before board fabrication.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for the dielectric constant (Dk) variations across different PCB manufacturers.\u0022,\n    \u0022Remember that impedance calculations are theoretical; always add a 5-10% margin for manufacturing tolerances.\u0022,\n    \u0022Use Saturn\u0027s via calculator to ensure your signal paths don\u0027t create unexpected bottlenecks.\u0022,\n    \u0022Verify your stackup with your manufacturer before finalizing your trace geometry.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022N/A (Manual data entry)\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with all PCB CAD software (Altium, KiCad, Eagle)\u0022,\n    \u0022dataExchange\u0022: \u0022Manually input calculated geometry values into your CAD software\u0027s constraint manager\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Saturn PCB Toolkit",
+      "Skottans Elektronik",
+      "KiCad Calculator",
+      "EAGLE",
+      "KiCad"
+    ],
+    "HallucinatedToolNames": [
+      "Saturn PCB Toolkit",
+      "Skottans Elektronik",
+      "KiCad Calculator"
+    ],
+    "GroundedToolNames": [
+      "EAGLE",
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:53:25.3116265Z",
+    "PromptTokens": 411,
+    "CompletionTokens": 632,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3109.3753,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P11_R3",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 10,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Saturn PCB Toolkit\u0022,\n    \u0022verdict\u0022: \u0022Saturn PCB Toolkit is the industry standard for educational and professional trace calculations. It provides a comprehensive suite of calculators that go far beyond simple impedance, covering current capacity, via thermal analysis, and differential pair routing.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Extensive library of PCB material properties\u0022,\n      \u0022Comprehensive suite of electrical and thermal calculators\u0022,\n      \u0022Highly trusted by professional engineers\u0022,\n      \u0022Intuitive interface for rapid prototyping\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Windows-only desktop application\u0022,\n      \u0022Lacks 3D field solver capabilities for complex geometries\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Students and engineers requiring quick, reliable reference calculations for standard PCB stackups.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans Elektronik is an excellent lightweight web tool for quick impedance checks, Saturn PCB Toolkit offers a broader feature set essential for learning holistic PCB design.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022note\u0022: \u0022Great for quick, accessible web-based impedance verification.\u0022},\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022note\u0022: \u0022The comprehensive \u0027Swiss Army Knife\u0027 for PCB design parameters.\u0022},\n      {\u0022tool\u0022: \u0022KiCad Calculator\u0022, \u0022note\u0022: \u0022Integrated directly into the open-source design workflow.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Educational PCB Design Workflow\u0022,\n    \u0022description\u0022: \u0022A structured approach to verifying signal integrity from calculation to implementation.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Requirement Analysis\u0022, \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022action\u0022: \u0022Define trace width and spacing based on impedance and current requirements.\u0022},\n      {\u0022phase\u0022: \u0022Layout Design\u0022, \u0022tool\u0022: \u0022KiCad\u0022, \u0022action\u0022: \u0022Implement the calculated constraints into the PCB CAD environment.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Perform a secondary quick-check of final trace geometry during routing.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for copper thickness variations after plating.\u0022,\n    \u0022Verify dielectric constant (Dk) values with your specific PCB fabricator.\u0022,\n    \u0022Use differential pair calculations when working with high-speed digital signals.\u0022,\n    \u0022Cross-reference results between two different tools to ensure consistency.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022N/A (Calculators typically output design parameters)\u0022,\n    \u0022compatibility\u0022: \u0022Standalone tools compatible with any PCB CAD software (Altium, KiCad, Cadence)\u0022,\n    \u0022dataExchange\u0022: \u0022Manual entry of parameters into PCB design rules (DRC)\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Saturn PCB Toolkit",
+      "Skottans Elektronik",
+      "KiCad Calculator",
+      "KiCad"
+    ],
+    "HallucinatedToolNames": [
+      "Saturn PCB Toolkit",
+      "Skottans Elektronik",
+      "KiCad Calculator"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Calculation",
+      "Verification",
+      "Manufacturing",
+      "Prototyping"
+    ],
+    "Timestamp": "2026-05-06T20:53:33.4398853Z",
+    "PromptTokens": 411,
+    "CompletionTokens": 604,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2931.633,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P12_R1",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 11,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Saturn PCB Toolkit\u0022,\n    \u0022verdict\u0022: \u0022Saturn PCB Toolkit is the industry-standard companion for Skottans Elektronik users, providing robust IPC-2221/IPC-2152 based thermal analysis and trace width calculations. It bridges the gap between impedance modeling and physical current-carrying capacity, ensuring your board doesn\u0027t overheat while maintaining signal integrity.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Comprehensive IPC-2221 and IPC-2152 thermal standards compliance\u0022,\n      \u0022Integrated trace width, via current, and differential pair calculators\u0022,\n      \u0022Material property database for various laminates\u0022,\n      \u0022High-frequency skin effect and dielectric loss estimation\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022User interface is functional but dated compared to modern web apps\u0022,\n      \u0022Lacks direct 3D finite element analysis (FEA) for complex thermal gradients\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Engineers needing a reliable, all-in-one calculator for physical trace design and thermal management.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans focuses on high-speed impedance, Saturn provides the physical sizing necessary to support that impedance, and Advanced Circuits\u0027 FreeDFM offers post-layout verification.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022note\u0022: \u0022Best for pre-layout physical sizing and thermal limits.\u0022},\n      {\u0022tool\u0022: \u0022Advanced Circuits FreeDFM\u0022, \u0022note\u0022: \u0022Best for automated DFM checks after trace width and impedance are set.\u0022},\n      {\u0022tool\u0022: \u0022KiCad/Altium Built-in Tools\u0022, \u0022note\u0022: \u0022Best for real-time clearance and basic width rule checking within the design environment.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Signal \u0026 Thermal Design Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to ensuring electrical performance and thermal reliability.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Impedance Modeling\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Define stackup and determine trace widths for target impedance.\u0022},\n      {\u0022phase\u0022: \u0022Thermal Validation\u0022, \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022action\u0022: \u0022Verify that the calculated trace width handles the required current/temperature rise.\u0022},\n      {\u0022phase\u0022: \u0022Layout Implementation\u0022, \u0022tool\u0022: \u0022PCB CAD Software\u0022, \u0022action\u0022: \u0022Apply width constraints based on the impedance and thermal results.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022FreeDFM\u0022, \u0022action\u0022: \u0022Perform final DFM check to ensure manufacturability of the chosen trace widths.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always prioritize IPC-2152 over IPC-2221 for modern, more accurate thermal modeling.\u0022,\n    \u0022Account for copper thickness variations after plating when calculating impedance.\u0022,\n    \u0022Factor in a 10-20% margin for current capacity to account for thermal hotspots in confined areas.\u0022,\n    \u0022Use the same dielectric constant (Dk) value consistently across both Skottans and Saturn tools.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, Text report export\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with all major PCB design suites (Altium, KiCad, Cadence Allegro)\u0022,\n    \u0022dataExchange\u0022: \u0022Manual parameter transfer is standard; ensure stackup data remains consistent across tools.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Saturn PCB Toolkit",
+      "Advanced Circuits FreeDFM",
+      "KiCad/Altium Built-in Tools",
+      "Skottans Elektronik",
+      "PCB CAD Software",
+      "FreeDFM",
+      "KiCad",
+      "Cadence Allegro"
+    ],
+    "HallucinatedToolNames": [
+      "Saturn PCB Toolkit",
+      "Advanced Circuits FreeDFM",
+      "KiCad/Altium Built-in Tools",
+      "Skottans Elektronik",
+      "PCB CAD Software",
+      "FreeDFM",
+      "Cadence Allegro"
+    ],
+    "GroundedToolNames": [
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:53:41.3964823Z",
+    "PromptTokens": 410,
+    "CompletionTokens": 751,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3482.7344,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P12_R2",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 11,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Saturn PCB Toolkit\u0022,\n    \u0022verdict\u0022: \u0022Saturn PCB Toolkit is the industry-standard companion for Skottans Elektronik users, providing robust IPC-2221/2152 compliant thermal and current-carrying capacity calculations. It fills the gap left by impedance-only tools by offering comprehensive conductor modeling and physical dimension analysis.\u0022,\n    \u0022strengths\u0022: [\n      \u0022IPC-2221 and IPC-2152 compliance\u0022,\n      \u0022Comprehensive thermal rise modeling\u0022,\n      \u0022Extensive material properties library\u0022,\n      \u0022Integrated via current capacity analysis\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Windows-only desktop application\u0022,\n      \u0022Lacks direct integration with CAD software\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Calculating trace widths for specific temperature rise requirements and current limits.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Skottans handles high-speed signal integrity, Saturn PCB Toolkit focuses on the physical and thermal limits of the copper traces.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022note\u0022: \u0022Best for IPC-standard thermal and current calculations.\u0022},\n      {\u0022tool\u0022: \u0022KiCad Calculator\u0022, \u0022note\u0022: \u0022Good for basic quick-reference conversions and simple trace width checks.\u0022},\n      {\u0022tool\u0022: \u0022ANSYS Icepak\u0022, \u0022note\u0022: \u0022High-end 3D thermal simulation for complex power distribution networks.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated PCB Design Workflow\u0022,\n    \u0022description\u0022: \u0022A multi-stage approach to ensure electrical performance and thermal reliability.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Thermal Design\u0022, \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022, \u0022action\u0022: \u0022Determine minimum trace width based on current load and allowed temperature rise.\u0022},\n      {\u0022phase\u0022: \u0022Impedance Analysis\u0022, \u0022tool\u0022: \u0022Skottans Elektronik\u0022, \u0022action\u0022: \u0022Calculate trace geometry for target impedance using the widths defined in the thermal phase.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022PCB CAD\u0022, \u0022action\u0022: \u0022Implement dimensions into layout and perform DRC checks.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for internal layer copper thickness as it impacts thermal dissipation differently than outer layers.\u0022,\n    \u0022Use conservative temperature rise limits (e.g., 10\u00B0C) for high-reliability designs.\u0022,\n    \u0022Verify that your chosen trace width for impedance does not violate the minimum current-carrying capacity for the power rail.\u0022,\n    \u0022Periodically cross-reference calculated widths with your PCB manufacturer\u0027s minimum trace/space design rules.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV/Text export for reports\u0022,\n    \u0022compatibility\u0022: \u0022Standalone tools; compatible with all major EDA suites (Altium, KiCad, OrCAD)\u0022,\n    \u0022dataExchange\u0022: \u0022Manual data entry is standard; verify units (mils vs mm) before transferring geometry parameters.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Saturn PCB Toolkit",
+      "KiCad Calculator",
+      "ANSYS Icepak",
+      "Skottans Elektronik",
+      "PCB CAD",
+      "KiCad",
+      "OrCAD"
+    ],
+    "HallucinatedToolNames": [
+      "Saturn PCB Toolkit",
+      "KiCad Calculator",
+      "ANSYS Icepak",
+      "Skottans Elektronik",
+      "PCB CAD"
+    ],
+    "GroundedToolNames": [
+      "KiCad",
+      "OrCAD"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:53:49.8823294Z",
+    "PromptTokens": 410,
+    "CompletionTokens": 657,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3514.1473,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D2_C3_P12_R3",
+    "DomainId": "D2",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 11,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Saturn PCB Toolkit\u0022,\n    \u0022verdict\u0022: \u0022Saturn PCB Toolkit is the industry-standard companion for Skottans Elektronik users, offering robust IPC-2221/IPC-2152 based thermal and current capacity analysis. It bridges the gap between impedance calculation and physical layout constraints by providing accurate trace temperature rise predictions.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Comprehensive IPC-2152 thermal calculations\u0022,\n      \u0022Integrated via current capacity analysis\u0022,\n      \u0022Wide range of material property databases\u0022,\n      \u0022Highly reliable and free industry-standard utility\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022User interface is functional but dated\u0022,\n      \u0022Lacks direct 3D finite element analysis (FEA) for complex thermal gradients\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Engineers needing reliable, standards-compliant trace sizing and thermal current limits.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022Saturn PCB Toolkit excels in rapid, standards-based calculations, whereas tools like ADS or Ansys SIwave offer more precise 3D field simulation at a higher complexity and cost.\u0022,\n    \u0022toolNotes\u0022: [\n      {\n        \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022,\n        \u0022note\u0022: \u0022Best for quick, standards-based thermal and current limits.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022KiCad Calculator\u0022,\n        \u0022note\u0022: \u0022Convenient for basic trace width checks directly within the open-source ecosystem.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022Ansys SIwave\u0022,\n        \u0022note\u0022: \u0022Advanced solver for high-end thermal-electrical coupled analysis.\u0022\n      }\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Signal and Power Integrity Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to balancing impedance requirements with thermal dissipation constraints.\u0022,\n    \u0022steps\u0022: [\n      {\n        \u0022phase\u0022: \u0022Impedance Design\u0022,\n        \u0022tool\u0022: \u0022Skottans Elektronik Impedance Calculator\u0022,\n        \u0022action\u0022: \u0022Calculate trace geometry to meet target differential/single-ended impedance.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Thermal/Current Verification\u0022,\n        \u0022tool\u0022: \u0022Saturn PCB Toolkit\u0022,\n        \u0022action\u0022: \u0022Input trace geometry to ensure current-carrying capacity and temperature rise are within safety limits.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Layout Implementation\u0022,\n        \u0022tool\u0022: \u0022PCB CAD Software (Altium/KiCad/Cadence)\u0022,\n        \u0022action\u0022: \u0022Apply calculated widths as design rules and implement traces.\u0022\n      }\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always reference IPC-2152 instead of the older IPC-2221 for more accurate thermal predictions.\u0022,\n    \u0022Account for trace copper weight (oz/sq ft) variations across different PCB layers.\u0022,\n    \u0022Factor in internal layer temperature rise, which is typically higher than external layers due to limited convection.\u0022,\n    \u0022Use a 10% safety margin on current calculations to account for manufacturing tolerances.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, TXT, and standard design rule exports\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with all major EDA suites via manual parameter entry\u0022,\n    \u0022dataExchange\u0022: \u0022Use design rule spreadsheets to pass calculated widths from calculators to PCB CAD constraints manager\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Saturn PCB Toolkit",
+      "KiCad Calculator",
+      "Ansys SIwave",
+      "Skottans Elektronik Impedance Calculator",
+      "PCB CAD Software (Altium/KiCad/Cadence)",
+      "KiCad"
+    ],
+    "HallucinatedToolNames": [
+      "Saturn PCB Toolkit",
+      "KiCad Calculator",
+      "Ansys SIwave",
+      "PCB CAD Software (Altium/KiCad/Cadence)"
+    ],
+    "GroundedToolNames": [
+      "Skottans Elektronik Impedance Calculator",
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:53:58.398669Z",
+    "PromptTokens": 410,
+    "CompletionTokens": 743,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3847.9544,
+    "Error": null
+  }
+]

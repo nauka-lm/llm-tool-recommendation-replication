@@ -1,0 +1,31 @@
+-- ============================================================
+-- Tool Inventory Seed Data
+-- ============================================================
+-- This file should contain INSERT statements for the 82 verified
+-- engineering tools used as ground truth in the evaluation.
+--
+-- To generate this file from the live CadcomOnline database, run:
+--
+--   pg_dump -U postgres -d CadcomOnline \
+--     --data-only --inserts \
+--     -t '"Panels"' -t '"Categories"' -t '"Subcategories"' \
+--     -t '"TypeOfTools"' -t '"ToolPassports"' \
+--     -t '"Criterias"' -t '"CriteriaValues"' -t '"ToolFeatures"' \
+--     > seed_tools.sql
+--
+-- The live database is accessible at the Online-CADCOM platform:
+--   https://onlinecadcom.info
+--
+-- ============================================================
+-- DOMAIN MAPPING (4 evaluation domains -> subcategory names)
+-- ============================================================
+-- D1: "PCB Design Tool"              (8 tools)
+-- D2: "PCB Design Calculator"        (15 tools)
+-- D3: "SMPS, converters, regulators" (8 tools)
+-- D4: "Transformers"                 (10 tools)
+-- Total domain tools: 41
+-- Total inventory: 82 tools (including cross-domain tools)
+-- ============================================================
+
+-- NOTE: Contact the authors for the complete seed data file.
+-- Email: lavdim.menxhiqi@ubt-uni.net

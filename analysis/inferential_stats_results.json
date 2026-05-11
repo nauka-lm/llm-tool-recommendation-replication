@@ -1,0 +1,305 @@
+{
+  "alpha": 0.05,
+  "alpha_adj": 0.016666666666666666,
+  "bonferroni_k": 3,
+  "cross_gen": [
+    {
+      "label": "Sonnet 4.5 (Gen1) vs Sonnet 4.6 (Gen2), C5 standard",
+      "a": "phase1/claude-sonnet-4-5-20250929/standard/C5",
+      "b": "phase3a/claude-sonnet-4-6/standard/C5",
+      "n_pairs": 144,
+      "n_nonzero": 129,
+      "a_summary": {
+        "n": 144,
+        "mean": 0.10565527103503278,
+        "median": 0.06666666666666667,
+        "std": 0.11957644266455127
+      },
+      "b_summary": {
+        "n": 144,
+        "mean": 0.13172741052860903,
+        "median": 0.125,
+        "std": 0.08755134908117847
+      },
+      "diff_summary": {
+        "n": 144,
+        "mean": 0.026072139493576268,
+        "median": 0.047619047619047616,
+        "std": 0.09256335371568339
+      },
+      "wilcoxon_W": 2625.0,
+      "p_value": 0.00022886677950297724,
+      "rank_biserial": 0.3738819320214669,
+      "significant_at_alpha_0_05": true
+    },
+    {
+      "label": "Flash-Lite 2.5 (Gen1) vs Flash-Lite 3.1 (Gen2), C5 standard",
+      "a": "phase1/gemini-2.5-flash-lite/standard/C5",
+      "b": "phase3a/gemini-3.1-flash-lite-preview/standard/C5",
+      "n_pairs": 144,
+      "n_nonzero": 72,
+      "a_summary": {
+        "n": 144,
+        "mean": 0.035180810701644034,
+        "median": 0.0,
+        "std": 0.05264619152431385
+      },
+      "b_summary": {
+        "n": 144,
+        "mean": 0.05397476751643419,
+        "median": 0.0,
+        "std": 0.08800451108469597
+      },
+      "diff_summary": {
+        "n": 144,
+        "mean": 0.01879395681479015,
+        "median": 0.0,
+        "std": 0.08491436953468565
+      },
+      "wilcoxon_W": 840.0,
+      "p_value": 0.007786267585988119,
+      "rank_biserial": 0.3607305936073059,
+      "significant_at_alpha_0_05": true
+    },
+    {
+      "label": "GPT-4.1 (Gen1) vs GPT-5.2 (Gen2), C5 standard",
+      "a": "phase1/gpt-4.1/standard/C5",
+      "b": "phase3a/gpt-5.2/standard/C5",
+      "n_pairs": 144,
+      "n_nonzero": 72,
+      "a_summary": {
+        "n": 144,
+        "mean": 0.051120981528457024,
+        "median": 0.0,
+        "std": 0.0784851788490756
+      },
+      "b_summary": {
+        "n": 144,
+        "mean": 0.03535902416394687,
+        "median": 0.0,
+        "std": 0.055991576006595926
+      },
+      "diff_summary": {
+        "n": 144,
+        "mean": -0.015761957364510144,
+        "median": 0.0,
+        "std": 0.07525960328925413
+      },
+      "wilcoxon_W": 872.0,
+      "p_value": 0.013113166263534428,
+      "rank_biserial": -0.3363774733637747,
+      "significant_at_alpha_0_05": true
+    }
+  ],
+  "std_vs_think": [
+    {
+      "label": "GPT-5.2 standard vs thinking, C5",
+      "a": "phase3a/gpt-5.2/standard/C5",
+      "b": "phase3b/gpt-5.2/thinking/C5",
+      "n_pairs": 144,
+      "n_nonzero": 62,
+      "a_summary": {
+        "n": 144,
+        "mean": 0.03535902416394687,
+        "median": 0.0,
+        "std": 0.055991576006595926
+      },
+      "b_summary": {
+        "n": 144,
+        "mean": 0.03380017135566692,
+        "median": 0.0,
+        "std": 0.06166332935415429
+      },
+      "diff_summary": {
+        "n": 144,
+        "mean": -0.001558852808279956,
+        "median": 0.0,
+        "std": 0.0493617354798959
+      },
+      "wilcoxon_W": 953.0,
+      "p_value": 0.8691199662284329,
+      "rank_biserial": 0.024065540194572452,
+      "significant_at_alpha_0_05": false
+    },
+    {
+      "label": "Sonnet 4.6 standard vs thinking, C5",
+      "a": "phase3a/claude-sonnet-4-6/standard/C5",
+      "b": "phase3b/claude-sonnet-4-6/thinking/C5",
+      "n_pairs": 144,
+      "n_nonzero": 132,
+      "a_summary": {
+        "n": 144,
+        "mean": 0.13172741052860903,
+        "median": 0.125,
+        "std": 0.08755134908117847
+      },
+      "b_summary": {
+        "n": 144,
+        "mean": 0.14813728476452723,
+        "median": 0.13333333333333333,
+        "std": 0.09148105010237134
+      },
+      "diff_summary": {
+        "n": 144,
+        "mean": 0.01640987423591819,
+        "median": 0.015773809523809523,
+        "std": 0.06197748910236604
+      },
+      "wilcoxon_W": 2951.0,
+      "p_value": 0.0010901984927091698,
+      "rank_biserial": 0.32763727500569606,
+      "significant_at_alpha_0_05": true
+    },
+    {
+      "label": "Flash-Lite 3.1 standard vs thinking, C5",
+      "a": "phase3a/gemini-3.1-flash-lite-preview/standard/C5",
+      "b": "phase3b/gemini-3.1-flash-lite-preview/thinking/C5",
+      "n_pairs": 144,
+      "n_nonzero": 56,
+      "a_summary": {
+        "n": 144,
+        "mean": 0.05397476751643419,
+        "median": 0.0,
+        "std": 0.08800451108469597
+      },
+      "b_summary": {
+        "n": 144,
+        "mean": 0.04468494468494469,
+        "median": 0.0,
+        "std": 0.08870102609667624
+      },
+      "diff_summary": {
+        "n": 144,
+        "mean": -0.009289822831489498,
+        "median": 0.0,
+        "std": 0.08737656826256239
+      },
+      "wilcoxon_W": 643.0,
+      "p_value": 0.20573328565914906,
+      "rank_biserial": -0.19423558897243107,
+      "significant_at_alpha_0_05": false
+    }
+  ],
+  "friedman": [
+    {
+      "model": "GPT-5.2",
+      "configs": [
+        "C2",
+        "C4",
+        "C5"
+      ],
+      "n_blocks": 144,
+      "friedman_chi2": 2.677740863787134,
+      "p_value": 0.2621416082068774,
+      "significant_at_alpha_0_05": false,
+      "planned_contrasts": [
+        {
+          "pair": "C2 vs C4",
+          "wilcoxon_W": 779.0,
+          "p_value": 0.054984639617535004,
+          "p_value_bonferroni_adjusted": 0.16495391885260502,
+          "rank_biserial": 0.27365967365967364,
+          "significant_after_bonferroni": false
+        },
+        {
+          "pair": "C2 vs C5",
+          "wilcoxon_W": 1029.0,
+          "p_value": 0.2857969343021861,
+          "p_value_bonferroni_adjusted": 0.8573908029065583,
+          "rank_biserial": 0.14782608695652175,
+          "significant_after_bonferroni": false
+        },
+        {
+          "pair": "C4 vs C5",
+          "wilcoxon_W": 1413.0,
+          "p_value": 0.525247485199496,
+          "p_value_bonferroni_adjusted": 1.0,
+          "rank_biserial": -0.0827653359298929,
+          "significant_after_bonferroni": false
+        }
+      ],
+      "alpha_adj": 0.016666666666666666,
+      "bonferroni_k": 3
+    },
+    {
+      "model": "Claude Sonnet 4.6",
+      "configs": [
+        "C2",
+        "C4",
+        "C5"
+      ],
+      "n_blocks": 144,
+      "friedman_chi2": 24.998198198198068,
+      "p_value": 3.7300120300508953e-06,
+      "significant_at_alpha_0_05": true,
+      "planned_contrasts": [
+        {
+          "pair": "C2 vs C4",
+          "wilcoxon_W": 3645.5,
+          "p_value": 0.02020216652774091,
+          "p_value_bonferroni_adjusted": 0.06060649958322273,
+          "rank_biserial": 0.22871046228710462,
+          "significant_after_bonferroni": false
+        },
+        {
+          "pair": "C2 vs C5",
+          "wilcoxon_W": 3666.0,
+          "p_value": 0.011705931063963133,
+          "p_value_bonferroni_adjusted": 0.0351177931918894,
+          "rank_biserial": -0.24645426515930113,
+          "significant_after_bonferroni": true
+        },
+        {
+          "pair": "C4 vs C5",
+          "wilcoxon_W": 2457.5,
+          "p_value": 1.753928276435959e-06,
+          "p_value_bonferroni_adjusted": 5.261784829307877e-06,
+          "rank_biserial": -0.47241305281236584,
+          "significant_after_bonferroni": true
+        }
+      ],
+      "alpha_adj": 0.016666666666666666,
+      "bonferroni_k": 3
+    },
+    {
+      "model": "Gemini 3.1 Flash-Lite",
+      "configs": [
+        "C2",
+        "C4",
+        "C5"
+      ],
+      "n_blocks": 144,
+      "friedman_chi2": 7.272084805653402,
+      "p_value": 0.026356446029099485,
+      "significant_at_alpha_0_05": true,
+      "planned_contrasts": [
+        {
+          "pair": "C2 vs C4",
+          "wilcoxon_W": 672.0,
+          "p_value": 0.003521854835106747,
+          "p_value_bonferroni_adjusted": 0.01056556450532024,
+          "rank_biserial": -0.4100087796312555,
+          "significant_after_bonferroni": true
+        },
+        {
+          "pair": "C2 vs C5",
+          "wilcoxon_W": 972.0,
+          "p_value": 0.11317386847690811,
+          "p_value_bonferroni_adjusted": 0.3395216054307243,
+          "rank_biserial": -0.21770623742454728,
+          "significant_after_bonferroni": false
+        },
+        {
+          "pair": "C4 vs C5",
+          "wilcoxon_W": 929.5,
+          "p_value": 0.34970069685098326,
+          "p_value_bonferroni_adjusted": 1.0,
+          "rank_biserial": 0.13333333333333333,
+          "significant_after_bonferroni": false
+        }
+      ],
+      "alpha_adj": 0.016666666666666666,
+      "bonferroni_k": 3
+    }
+  ]
+}

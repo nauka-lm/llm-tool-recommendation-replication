@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 2 - C0 vs C5 Comparison Across Two Generations</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; background: #fff; padding: 8px; color: #1a1a2e; }
+  .figure-container { max-width: 700px; margin: 0 auto; }
+
+  .gen-header { font-size: 13px; font-weight: 700; text-align: center; padding: 6px 0; margin-bottom: 10px; border-radius: 4px; }
+  .gen1-header { background: #e8eaf6; color: #283593; }
+  .gen2-header { background: #e0f2f1; color: #00695c; margin-top: 16px; }
+
+  .chart-area { position: relative; }
+  .model-section { margin-bottom: 14px; }
+  .model-label { font-size: 12px; font-weight: 600; margin-bottom: 5px; color: #333; }
+
+  .bar-group { display: grid; grid-template-columns: 80px 1fr 56px; gap: 6px; align-items: center; margin-bottom: 3px; }
+  .domain-label { font-size: 10px; color: #555; text-align: right; }
+  .bar-container { position: relative; height: 18px; background: #f5f5f5; border-radius: 3px; overflow: hidden; }
+  .bar-c0 { position: absolute; top: 0; left: 0; height: 100%; border-radius: 3px; }
+  .bar-c5 { position: absolute; top: 0; left: 0; height: 100%; border-radius: 3px; }
+  .reduction-badge { font-size: 10px; font-weight: 700; padding: 1px 5px; border-radius: 10px; text-align: center; }
+  .reduction-high { background: #e8f5e9; color: #1b5e20; }
+  .reduction-mid { background: #fff9c4; color: #5d4037; }
+
+  .openai-c0 { background: rgba(16, 163, 127, 0.25); border: 1px solid rgba(16, 163, 127, 0.5); }
+  .openai-c5 { background: rgba(16, 163, 127, 0.85); }
+  .anthropic-c0 { background: rgba(204, 119, 34, 0.25); border: 1px solid rgba(204, 119, 34, 0.5); }
+  .anthropic-c5 { background: rgba(204, 119, 34, 0.85); }
+  .google-c0 { background: rgba(66, 133, 244, 0.25); border: 1px solid rgba(66, 133, 244, 0.5); }
+  .google-c5 { background: rgba(66, 133, 244, 0.85); }
+
+  .legend { display: flex; gap: 16px; margin-bottom: 14px; font-size: 11px; }
+  .legend-item { display: flex; align-items: center; gap: 5px; }
+  .legend-swatch { width: 16px; height: 10px; border-radius: 2px; }
+
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .summary-gen { border: 1px solid #e0e0e0; border-radius: 8px; padding: 12px; }
+  .summary-gen-title { font-size: 11px; font-weight: 700; text-align: center; margin-bottom: 8px; color: #555; }
+  .summary-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .summary-card { text-align: center; padding: 6px 4px; }
+  .summary-card .model-name { font-size: 10px; font-weight: 600; color: #555; margin-bottom: 2px; }
+  .summary-card .big-number { font-size: 20px; font-weight: 700; }
+  .summary-card .baseline { font-size: 9px; color: #999; margin-top: 1px; }
+</style>
+</head>
+<body>
+<div class="figure-container">
+  <div class="legend">
+    <div class="legend-item"><div class="legend-swatch" style="background:rgba(16,163,127,0.25); border:1px solid rgba(16,163,127,0.5)"></div>C0 (baseline)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:rgba(16,163,127,0.85)"></div>C5 (full architecture)</div>
+    <div class="legend-item" style="margin-left: 6px; color: #888;">|</div>
+    <div class="legend-item"><span class="reduction-badge reduction-high">-XX%</span> Reduction</div>
+  </div>
+
+  <!-- ===== GENERATION 1 ===== -->
+  <div class="gen-header gen1-header">Generation 1 &mdash; Standard Models</div>
+
+  <!-- GPT-4.1 -->
+  <div class="model-section">
+    <div class="model-label" style="color: #10a37f;">GPT-4.1 (OpenAI)</div>
+    <div class="bar-group">
+      <div class="domain-label">D1 (PCB Design)</div>
+      <div class="bar-container"><div class="bar-c0 openai-c0" style="width:64.2%"></div><div class="bar-c5 openai-c5" style="width:8.7%"></div></div>
+      <div class="reduction-badge reduction-high">-86.4%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D2 (Calculator)</div>
+      <div class="bar-container"><div class="bar-c0 openai-c0" style="width:62.5%"></div><div class="bar-c5 openai-c5" style="width:9.1%"></div></div>
+      <div class="reduction-badge reduction-high">-85.4%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D3 (SMPS)</div>
+      <div class="bar-container"><div class="bar-c0 openai-c0" style="width:60.4%"></div><div class="bar-c5 openai-c5" style="width:3.6%"></div></div>
+      <div class="reduction-badge reduction-high">-94.0%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D4 (Transformers)</div>
+      <div class="bar-container"><div class="bar-c0 openai-c0" style="width:63.5%"></div><div class="bar-c5 openai-c5" style="width:0.5%"></div></div>
+      <div class="reduction-badge reduction-high">-100%</div>
+    </div>
+  </div>
+
+  <!-- Claude Sonnet 4.5 -->
+  <div class="model-section">
+    <div class="model-label" style="color: #cc7722;">Claude Sonnet 4.5 (Anthropic)</div>
+    <div class="bar-group">
+      <div class="domain-label">D1 (PCB Design)</div>
+      <div class="bar-container"><div class="bar-c0 anthropic-c0" style="width:69.4%"></div><div class="bar-c5 anthropic-c5" style="width:26.3%"></div></div>
+      <div class="reduction-badge reduction-mid">-62.1%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D2 (Calculator)</div>
+      <div class="bar-container"><div class="bar-c0 anthropic-c0" style="width:70.2%"></div><div class="bar-c5 anthropic-c5" style="width:14.9%"></div></div>
+      <div class="reduction-badge reduction-high">-78.8%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D3 (SMPS)</div>
+      <div class="bar-container"><div class="bar-c0 anthropic-c0" style="width:81.1%"></div><div class="bar-c5 anthropic-c5" style="width:2.1%"></div></div>
+      <div class="reduction-badge reduction-high">-97.4%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D4 (Transformers)</div>
+      <div class="bar-container"><div class="bar-c0 anthropic-c0" style="width:75.3%"></div><div class="bar-c5 anthropic-c5" style="width:1.9%"></div></div>
+      <div class="reduction-badge reduction-high">-97.5%</div>
+    </div>
+  </div>
+
+  <!-- Gemini Flash-Lite -->
+  <div class="model-section">
+    <div class="model-label" style="color: #4285f4;">Gemini 2.5 Flash-Lite (Google)</div>
+    <div class="bar-group">
+      <div class="domain-label">D1 (PCB Design)</div>
+      <div class="bar-container"><div class="bar-c0 google-c0" style="width:69.6%"></div><div class="bar-c5 google-c5" style="width:9.3%"></div></div>
+      <div class="reduction-badge reduction-high">-86.6%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D2 (Calculator)</div>
+      <div class="bar-container"><div class="bar-c0 google-c0" style="width:49.1%"></div><div class="bar-c5 google-c5" style="width:4.5%"></div></div>
+      <div class="reduction-badge reduction-high">-90.8%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D3 (SMPS)</div>
+      <div class="bar-container"><div class="bar-c0 google-c0" style="width:69.5%"></div><div class="bar-c5 google-c5" style="width:1.4%"></div></div>
+      <div class="reduction-badge reduction-high">-98.0%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D4 (Transformers)</div>
+      <div class="bar-container"><div class="bar-c0 google-c0" style="width:48.6%"></div><div class="bar-c5 google-c5" style="width:0.5%"></div></div>
+      <div class="reduction-badge reduction-high">-100%</div>
+    </div>
+  </div>
+
+  <!-- ===== GENERATION 2 ===== -->
+  <div class="gen-header gen2-header">Generation 2 &mdash; Standard Models</div>
+
+  <!-- GPT-5.2 -->
+  <div class="model-section">
+    <div class="model-label" style="color: #10a37f;">GPT-5.2 (OpenAI)</div>
+    <div class="bar-group">
+      <div class="domain-label">D1 (PCB Design)</div>
+      <div class="bar-container"><div class="bar-c0 openai-c0" style="width:56.9%"></div><div class="bar-c5 openai-c5" style="width:5.9%"></div></div>
+      <div class="reduction-badge reduction-high">-89.6%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D2 (Calculator)</div>
+      <div class="bar-container"><div class="bar-c0 openai-c0" style="width:52.3%"></div><div class="bar-c5 openai-c5" style="width:6.8%"></div></div>
+      <div class="reduction-badge reduction-high">-87.0%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D3 (SMPS)</div>
+      <div class="bar-container"><div class="bar-c0 openai-c0" style="width:75.6%"></div><div class="bar-c5 openai-c5" style="width:0.5%"></div></div>
+      <div class="reduction-badge reduction-high">-99.7%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D4 (Transformers)</div>
+      <div class="bar-container"><div class="bar-c0 openai-c0" style="width:56.5%"></div><div class="bar-c5 openai-c5" style="width:0.5%"></div></div>
+      <div class="reduction-badge reduction-high">-99.6%</div>
+    </div>
+  </div>
+
+  <!-- Claude Sonnet 4.6 -->
+  <div class="model-section">
+    <div class="model-label" style="color: #cc7722;">Claude Sonnet 4.6 (Anthropic)</div>
+    <div class="bar-group">
+      <div class="domain-label">D1 (PCB Design)</div>
+      <div class="bar-container"><div class="bar-c0 anthropic-c0" style="width:71.1%"></div><div class="bar-c5 anthropic-c5" style="width:21.9%"></div></div>
+      <div class="reduction-badge reduction-mid">-69.2%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D2 (Calculator)</div>
+      <div class="bar-container"><div class="bar-c0 anthropic-c0" style="width:64.7%"></div><div class="bar-c5 anthropic-c5" style="width:15.6%"></div></div>
+      <div class="reduction-badge reduction-high">-75.9%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D3 (SMPS)</div>
+      <div class="bar-container"><div class="bar-c0 anthropic-c0" style="width:80.8%"></div><div class="bar-c5 anthropic-c5" style="width:10.5%"></div></div>
+      <div class="reduction-badge reduction-high">-87.0%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D4 (Transformers)</div>
+      <div class="bar-container"><div class="bar-c0 anthropic-c0" style="width:72.9%"></div><div class="bar-c5 anthropic-c5" style="width:5.2%"></div></div>
+      <div class="reduction-badge reduction-high">-92.9%</div>
+    </div>
+  </div>
+
+  <!-- Gemini 3.1 Flash-Lite -->
+  <div class="model-section">
+    <div class="model-label" style="color: #4285f4;">Gemini 3.1 Flash-Lite (Google)</div>
+    <div class="bar-group">
+      <div class="domain-label">D1 (PCB Design)</div>
+      <div class="bar-container"><div class="bar-c0 google-c0" style="width:59.6%"></div><div class="bar-c5 google-c5" style="width:10.4%"></div></div>
+      <div class="reduction-badge reduction-high">-82.6%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D2 (Calculator)</div>
+      <div class="bar-container"><div class="bar-c0 google-c0" style="width:61.2%"></div><div class="bar-c5 google-c5" style="width:11.1%"></div></div>
+      <div class="reduction-badge reduction-high">-81.9%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D3 (SMPS)</div>
+      <div class="bar-container"><div class="bar-c0 google-c0" style="width:84.8%"></div><div class="bar-c5 google-c5" style="width:2.0%"></div></div>
+      <div class="reduction-badge reduction-high">-97.6%</div>
+    </div>
+    <div class="bar-group">
+      <div class="domain-label">D4 (Transformers)</div>
+      <div class="bar-container"><div class="bar-c0 google-c0" style="width:63.4%"></div><div class="bar-c5 google-c5" style="width:0.5%"></div></div>
+      <div class="reduction-badge reduction-high">-99.5%</div>
+    </div>
+  </div>
+
+  <!-- Summary comparison -->
+  <div class="summary-grid">
+    <div class="summary-gen" style="border-top: 3px solid #283593;">
+      <div class="summary-gen-title">Generation 1 &mdash; C5 Average</div>
+      <div class="summary-cards">
+        <div class="summary-card">
+          <div class="model-name">GPT-4.1</div>
+          <div class="big-number" style="color:#10a37f">5.3%</div>
+          <div class="baseline">from 62.7%</div>
+        </div>
+        <div class="summary-card">
+          <div class="model-name">Sonnet 4.5</div>
+          <div class="big-number" style="color:#cc7722">11.3%</div>
+          <div class="baseline">from 74.0%</div>
+        </div>
+        <div class="summary-card">
+          <div class="model-name">Flash-Lite</div>
+          <div class="big-number" style="color:#4285f4">3.8%</div>
+          <div class="baseline">from 59.2%</div>
+        </div>
+      </div>
+    </div>
+    <div class="summary-gen" style="border-top: 3px solid #00695c;">
+      <div class="summary-gen-title">Generation 2 &mdash; C5 Average</div>
+      <div class="summary-cards">
+        <div class="summary-card">
+          <div class="model-name">GPT-5.2</div>
+          <div class="big-number" style="color:#10a37f">3.3%</div>
+          <div class="baseline">from 60.3%</div>
+        </div>
+        <div class="summary-card">
+          <div class="model-name">Sonnet 4.6</div>
+          <div class="big-number" style="color:#cc7722">13.3%</div>
+          <div class="baseline">from 72.4%</div>
+        </div>
+        <div class="summary-card">
+          <div class="model-name">Flash-Lite 3.1</div>
+          <div class="big-number" style="color:#4285f4">5.9%</div>
+          <div class="baseline">from 67.3%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

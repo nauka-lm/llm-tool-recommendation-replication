@@ -1,0 +1,1437 @@
+[
+  {
+    "QueryId": "google_standard_D4_C3_P01_R1",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 0,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022ANSYS Maxwell\u0022,\n    \u0022verdict\u0022: \u0022While jcalc handles the analytical sizing and basic electromagnetic parameters, ANSYS Maxwell is essential for high-fidelity 2D/3D finite element analysis. It provides the necessary verification for magnetic flux density, core losses, and leakage inductance that analytical tools often approximate.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Advanced 3D electromagnetic field simulation\u0022,\n      \u0022Comprehensive loss analysis including eddy currents\u0022,\n      \u0022Thermal coupling capabilities\u0022,\n      \u0022Robust material library for custom core data\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022High computational resource requirements\u0022,\n      \u0022Steep learning curve for complex geometry modeling\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Final verification and optimization of complex transformer geometries before physical prototyping.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022jcalc is an analytical tool for initial sizing, while Maxwell provides physics-based validation.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022jcalc\u0022, \u0022note\u0022: \u0022Rapid iterative sizing and fundamental calculations.\u0022},\n      {\u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022note\u0022: \u0022High-accuracy field simulation and parasitic extraction.\u0022},\n      {\u0022tool\u0022: \u0022LTspice\u0022, \u0022note\u0022: \u0022Circuit-level simulation for transient response and control integration.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Transformer Design Lifecycle\u0022,\n    \u0022description\u0022: \u0022A transition from rapid analytical sizing to rigorous field verification and circuit testing.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Conceptual Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Determine core size, turns ratio, and wire gauge based on power requirements.\u0022},\n      {\u0022phase\u0022: \u0022Electromagnetic Validation\u0022, \u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022action\u0022: \u0022Model geometry to simulate flux density distribution and leakage inductance.\u0022},\n      {\u0022phase\u0022: \u0022Circuit Simulation\u0022, \u0022tool\u0022: \u0022LTspice\u0022, \u0022action\u0022: \u0022Integrate transformer model parameters into the power stage for transient analysis.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Use jcalc to define the baseline constraints for your Maxwell simulation model.\u0022,\n    \u0022Validate core loss models in Maxwell against manufacturer datasheet curves.\u0022,\n    \u0022Perform sensitivity analysis on leakage inductance to account for manufacturing tolerances.\u0022,\n    \u0022Automate data transfer using Python scripts to bridge analytical results with simulation parameters.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022DXF, STEP, IGES\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with most CAD software and SPICE simulators via parameter export.\u0022,\n    \u0022dataExchange\u0022: \u0022Export inductance matrices and resistance values from Maxwell to populate LTspice transformer models.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "ANSYS Maxwell",
+      "jcalc",
+      "LTspice",
+      "LTspice transformer"
+    ],
+    "HallucinatedToolNames": [
+      "ANSYS Maxwell",
+      "LTspice",
+      "LTspice transformer"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 6,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing",
+      "Prototyping"
+    ],
+    "Timestamp": "2026-05-06T20:48:47.3852041Z",
+    "PromptTokens": 405,
+    "CompletionTokens": 583,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2811.9789,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P01_R2",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 0,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022ANSYS Maxwell\u0022,\n    \u0022verdict\u0022: \u0022While jcalc handles the analytical sizing and basic electromagnetic parameters, ANSYS Maxwell is essential for high-fidelity finite element analysis (FEA). It validates the magnetic flux density, core losses, and thermal profiles that simplified calculators often approximate.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Industry-standard electromagnetic field simulation\u0022,\n      \u0022Robust thermal coupling capabilities\u0022,\n      \u0022Advanced material library for non-linear B-H curves\u0022,\n      \u0022Automated design optimization and parametric sweeping\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022High licensing costs for enterprise use\u0022,\n      \u0022Steep learning curve for complex geometry meshing\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Final validation, loss analysis, and thermal management of transformer designs.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022jcalc provides rapid analytical estimates, while FEA software provides physical verification.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022jcalc\u0022, \u0022note\u0022: \u0022Best for initial coil sizing and turns estimation.\u0022},\n      {\u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022note\u0022: \u0022Best for complex geometry, leakage inductance, and flux fringing.\u0022},\n      {\u0022tool\u0022: \u0022LTspice\u0022, \u0022note\u0022: \u0022Best for circuit-level integration and transient response analysis.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Transformer Design Flow\u0022,\n    \u0022description\u0022: \u0022A systematic approach from analytical sizing to physical validation.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Conceptual Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Calculate core area, turn counts, and wire gauges based on power requirements.\u0022},\n      {\u0022phase\u0022: \u0022Field Simulation\u0022, \u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022action\u0022: \u0022Import geometry to verify saturation levels and leakage inductance.\u0022},\n      {\u0022phase\u0022: \u0022Circuit Integration\u0022, \u0022tool\u0022: \u0022LTspice\u0022, \u0022action\u0022: \u0022Integrate the finalized transformer model into the power supply circuit to verify transient performance.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Use jcalc to narrow down core candidates before committing to expensive FEA setups.\u0022,\n    \u0022Always perform a thermal sensitivity analysis in Maxwell, as jcalc often assumes ideal cooling.\u0022,\n    \u0022Maintain a centralized material database to ensure consistency between jcalc and simulation tools.\u0022,\n    \u0022Validate FEA results against physical prototypes to calibrate simulation mesh density.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022DXF, STEP, IGES\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with most CAD software and SPICE simulators\u0022,\n    \u0022dataExchange\u0022: \u0022Export geometry from CAD to Maxwell; export parasitic parameters from Maxwell to LTspice.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "ANSYS Maxwell",
+      "jcalc",
+      "LTspice"
+    ],
+    "HallucinatedToolNames": [
+      "ANSYS Maxwell",
+      "LTspice"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Prototyping"
+    ],
+    "Timestamp": "2026-05-06T20:48:55.2145928Z",
+    "PromptTokens": 405,
+    "CompletionTokens": 593,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2797.7421,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P01_R3",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 0,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022ANSYS Maxwell\u0022,\n    \u0022verdict\u0022: \u0022While jcalc handles fundamental magnetic and electrical sizing, ANSYS Maxwell is essential for high-fidelity 2D/3D electromagnetic field simulation. It validates the thermal and magnetic saturation limits that analytical calculation tools often approximate.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Advanced finite element analysis\u0022,\n      \u0022High accuracy for non-linear core saturation\u0022,\n      \u0022Robust thermal coupling capabilities\u0022,\n      \u0022Extensive material library support\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Steep learning curve for complex geometries\u0022,\n      \u0022Significant computational resource requirements\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Final verification and optimization of high-frequency transformer designs.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022jcalc provides rapid analytical sizing, whereas Maxwell provides predictive physical validation.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022jcalc\u0022, \u0022note\u0022: \u0022Rapid analytical sizing and initial geometry definition.\u0022},\n      {\u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022note\u0022: \u0022FEA-based validation of leakage inductance and eddy current losses.\u0022},\n      {\u0022tool\u0022: \u0022LTspice\u0022, \u0022note\u0022: \u0022Circuit-level integration and transient performance analysis.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Transformer Design Workflow\u0022,\n    \u0022description\u0022: \u0022A move from analytical estimation to precise computational verification.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Conceptual Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Calculate core area, wire gauge, and turn counts based on power requirements.\u0022},\n      {\u0022phase\u0022: \u0022Field Modeling\u0022, \u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022action\u0022: \u0022Import geometry to verify flux density distribution and leakage inductance.\u0022},\n      {\u0022phase\u0022: \u0022System Simulation\u0022, \u0022tool\u0022: \u0022LTspice\u0022, \u0022action\u0022: \u0022Incorporate transformer model into power supply circuit for transient response analysis.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Use jcalc to iterate rapidly on core material selection before moving to FEA.\u0022,\n    \u0022Always correlate analytical loss calculations with FEA results to calibrate your jcalc parameters.\u0022,\n    \u0022Consider thermal simulation if your design operates at high current densities.\u0022,\n    \u0022Standardize your material property inputs across all software platforms to ensure consistency.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022DXF, STEP, XML, CSV\u0022,\n    \u0022compatibility\u0022: \u0022High compatibility with CAD tools via STEP import.\u0022,\n    \u0022dataExchange\u0022: \u0022Export jcalc dimensions to CAD to generate geometry for Maxwell; export S-parameters or lumped models from Maxwell to LTspice.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "ANSYS Maxwell",
+      "jcalc",
+      "LTspice"
+    ],
+    "HallucinatedToolNames": [
+      "ANSYS Maxwell",
+      "LTspice"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 4,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification"
+    ],
+    "Timestamp": "2026-05-06T20:49:03.018091Z",
+    "PromptTokens": 405,
+    "CompletionTokens": 577,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2486.2927,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P02_R1",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 1,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022jcalc\u0022,\n    \u0022verdict\u0022: \u0022jcalc is superior for engineering-grade transformer design as it provides specific electromagnetic constraints rather than general-purpose math. While Omnicalculator is excellent for quick, broad approximations, jcalc better handles the specific saturation and flux density requirements inherent in 50Hz power transformer projects.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Physics-based electromagnetic modeling\u0022,\n      \u0022Specific support for 50Hz frequency variables\u0022,\n      \u0022Core material saturation analysis\u0022,\n      \u0022Winding wire gauge and fill factor calculations\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Steeper learning curve for non-engineers\u0022,\n      \u0022Less intuitive UI compared to web-based calculators\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Designing physical power transformers with precise efficiency and thermal constraints\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022jcalc provides a technical framework for transformer design, whereas Omnicalculator serves as a collection of general-purpose algebraic solvers.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022jcalc\u0022, \u0022note\u0022: \u0022Designed for specific electrical engineering parameters like flux density and core cross-section.\u0022},\n      {\u0022tool\u0022: \u0022Omnicalculator\u0022, \u0022note\u0022: \u0022Uses generic mathematical models which may lack specific transformer-grade material constants.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Transformer Design Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to sizing and verifying transformer specifications.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Define VA rating, frequency, and flux density to calculate core area.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022Omnicalculator\u0022, \u0022action\u0022: \u0022Perform rapid cross-verification of turns-per-volt ratios and wire resistance.\u0022},\n      {\u0022phase\u0022: \u0022Optimization\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Finalize winding turns and window fill factor for physical assembly.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always specify the core material permeability constant correctly in jcalc.\u0022,\n    \u0022Use a safety margin of at least 15% for power losses when calculating wire gauge.\u0022,\n    \u0022Verify the 50Hz input frequency setting in both tools to ensure consistent period-based calculations.\u0022,\n    \u0022Prioritize jcalc for the physical dimensions to ensure the copper fits within the bobbin window.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV and TXT\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with standard Python-based engineering scripts\u0022,\n    \u0022dataExchange\u0022: \u0022Export jcalc output parameters into spreadsheet software for BOM management\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "jcalc",
+      "Omnicalculator"
+    ],
+    "HallucinatedToolNames": [],
+    "GroundedToolNames": [
+      "jcalc",
+      "Omnicalculator"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:49:10.5110574Z",
+    "PromptTokens": 406,
+    "CompletionTokens": 595,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2957.3457,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P02_R2",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 1,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022jcalc\u0022,\n    \u0022verdict\u0022: \u0022jcalc is the superior choice for transformer engineering as it handles electromagnetic parameters and core geometry specific to 50Hz power applications. Omnicalculator serves as a general-purpose utility but lacks the depth required for complex magnetic circuit design.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Domain-specific magnetic core calculations\u0022,\n      \u0022Support for frequency-dependent flux density\u0022,\n      \u0022Precise winding and copper loss estimation\u0022,\n      \u0022Customizable material property inputs\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Higher learning curve for non-engineers\u0022,\n      \u0022Lacks the broad variety of non-electrical calculators\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Technical design and optimization of power transformers\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022jcalc provides a rigorous engineering environment for transformer sizing, whereas Omnicalculator offers quick, simplified conversions without deep magnetic integration.\u0022,\n    \u0022toolNotes\u0022: [\n      {\n        \u0022tool\u0022: \u0022jcalc\u0022,\n        \u0022note\u0022: \u0022Engineered for high-fidelity electromagnetic and thermal modeling.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022Omnicalculator\u0022,\n        \u0022note\u0022: \u0022Best for basic unit conversions and quick reference checks.\u0022\n      }\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u002250Hz Transformer Design Workflow\u0022,\n    \u0022description\u0022: \u0022Systematic approach to transformer sizing and verification.\u0022,\n    \u0022steps\u0022: [\n      {\n        \u0022phase\u0022: \u0022Core Selection\u0022,\n        \u0022tool\u0022: \u0022jcalc\u0022,\n        \u0022action\u0022: \u0022Calculate required core cross-section based on 50Hz flux density.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Winding Design\u0022,\n        \u0022tool\u0022: \u0022jcalc\u0022,\n        \u0022action\u0022: \u0022Determine turn-per-volt ratio and wire gauge for target current.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Verification\u0022,\n        \u0022tool\u0022: \u0022Omnicalculator\u0022,\n        \u0022action\u0022: \u0022Use for quick conversions of wire gauge (AWG/SWG) to metric units.\u0022\n      }\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for a 5-10% magnetic leakage factor in your jcalc calculations.\u0022,\n    \u0022Ensure the core material saturation limit is checked against the 50Hz peak flux density.\u0022,\n    \u0022Use Omnicalculator to quickly cross-reference thermal resistivity during the cooling phase.\u0022,\n    \u0022Document all material permeability constants within the jcalc project file.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, JSON, and proprietary engineering text formats\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with standard SPICE simulation software\u0022,\n    \u0022dataExchange\u0022: \u0022Export calculated parameters to CSV for further thermal analysis in Excel\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "jcalc",
+      "Omnicalculator"
+    ],
+    "HallucinatedToolNames": [],
+    "GroundedToolNames": [
+      "jcalc",
+      "Omnicalculator"
+    ],
+    "WorkflowStepsCount": 4,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification"
+    ],
+    "Timestamp": "2026-05-06T20:49:18.4794739Z",
+    "PromptTokens": 406,
+    "CompletionTokens": 627,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3061.2785,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P02_R3",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 1,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022jcalc\u0022,\n    \u0022verdict\u0022: \u0022jcalc is superior for technical transformer design due to its focus on core parameters and winding physics, whereas Omnicalculator is better suited for high-level approximations. For a 50Hz project requiring precision in flux density and turns-per-volt calculations, jcalc provides the necessary engineering depth.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Handles specific electromagnetic constraints\u0022,\n      \u0022Direct calculation of core area and window utilization\u0022,\n      \u0022Tailored for power transformer design parameters\u0022,\n      \u0022Supports precise 50Hz frequency inputs\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Steeper learning curve for non-engineers\u0022,\n      \u0022Lacks the extensive diverse library of unrelated calculators found in Omnicalculator\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Detailed technical design of power transformers where core geometry and wire gauge are critical.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While Omnicalculator provides quick, generalized results for basic power requirements, jcalc offers the granular control over magnetic flux, current density, and coil design required for actual hardware fabrication.\u0022,\n    \u0022toolNotes\u0022: [\n      {\n        \u0022tool\u0022: \u0022jcalc\u0022,\n        \u0022note\u0022: \u0022Provides deep-dive engineering metrics and physical dimension calculations.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022Omnicalculator\u0022,\n        \u0022note\u0022: \u0022Best for conceptual estimation and rapid back-of-the-envelope power checks.\u0022\n      }\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Transformer Design Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to sizing and verifying the transformer.\u0022,\n    \u0022steps\u0022: [\n      {\n        \u0022phase\u0022: \u0022Estimation\u0022,\n        \u0022tool\u0022: \u0022Omnicalculator\u0022,\n        \u0022action\u0022: \u0022Calculate basic VA rating and core size requirements for 50Hz.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Detailed Design\u0022,\n        \u0022tool\u0022: \u0022jcalc\u0022,\n        \u0022action\u0022: \u0022Input specific core material properties and calculate exact turns and wire gauges.\u0022\n      }\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for core saturation limits when defining flux density in jcalc.\u0022,\n    \u0022Use Omnicalculator to establish your baseline VA requirements before committing to the detailed design.\u0022,\n    \u0022Verify wire gauge current capacity against standard AWG tables for heating safety.\u0022,\n    \u0022Factor in a 10-15% margin for efficiency losses in your secondary winding design.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, Text\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with standard engineering spreadsheet software\u0022,\n    \u0022dataExchange\u0022: \u0022Export jcalc parameters to Excel to generate a complete Bill of Materials (BOM).\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "jcalc",
+      "Omnicalculator"
+    ],
+    "HallucinatedToolNames": [],
+    "GroundedToolNames": [
+      "jcalc",
+      "Omnicalculator"
+    ],
+    "WorkflowStepsCount": 4,
+    "WorkflowStages": [
+      "Selection",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:49:26.5744544Z",
+    "PromptTokens": 406,
+    "CompletionTokens": 617,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2720.1118,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P03_R1",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 2,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022jcalc\u0022,\n    \u0022verdict\u0022: \u0022jcalc is an excellent lightweight choice for rapid transformer core and winding sizing. It provides the essential mathematical foundation needed to validate initial design parameters before moving into complex simulation environments.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Rapid calculation of core losses\u0022,\n      \u0022Intuitive input interface for winding parameters\u0022,\n      \u0022Lightweight and portable\u0022,\n      \u0022High accuracy for standard core geometries\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Lacks integrated 3D electromagnetic finite element analysis\u0022,\n      \u0022Limited thermal modeling capabilities\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Preliminary sizing and iterative optimization of standard transformer geometries.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc excels at core and winding math, it should be paired with specialized simulation software for advanced verification.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Ansys Maxwell\u0022, \u0022note\u0022: \u0022Industry standard for high-fidelity 3D electromagnetic field simulation.\u0022},\n      {\u0022tool\u0022: \u0022Python (SciPy/NumPy)\u0022, \u0022note\u0022: \u0022Essential for custom scripting and automated multi-objective design optimization.\u0022},\n      {\u0022tool\u0022: \u0022LTspice\u0022, \u0022note\u0022: \u0022Crucial for verifying transient behavior and frequency response after sizing.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Transformer Design Workflow\u0022,\n    \u0022description\u0022: \u0022A multi-stage approach combining rapid calculation with rigorous simulation.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Calculate primary core dimensions and winding turns.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022LTspice\u0022, \u0022action\u0022: \u0022Model circuit behavior and transient performance.\u0022},\n      {\u0022phase\u0022: \u0022Validation\u0022, \u0022tool\u0022: \u0022Ansys Maxwell\u0022, \u0022action\u0022: \u0022Perform 3D FEA for leakage inductance and flux density mapping.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always perform a sanity check on your current density values before finalizing geometry.\u0022,\n    \u0022Use Python scripts to iterate through jcalc input parameters to find the \u0027sweet spot\u0027 for efficiency.\u0022,\n    \u0022Account for window fill factors strictly to avoid assembly issues during the physical build.\u0022,\n    \u0022Document your core material properties separately to ensure consistency across all simulation tools.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, TXT, and proprietary JSON-based exports.\u0022,\n    \u0022compatibility\u0022: \u0022Highly compatible with Python-based data pipelines via CSV exports.\u0022,\n    \u0022dataExchange\u0022: \u0022Export jcalc results to CSV to feed initial boundary conditions into FEM software.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "jcalc",
+      "Ansys Maxwell",
+      "Python (SciPy/NumPy)",
+      "LTspice"
+    ],
+    "HallucinatedToolNames": [
+      "Ansys Maxwell",
+      "Python (SciPy/NumPy)",
+      "LTspice"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 4,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification"
+    ],
+    "Timestamp": "2026-05-06T20:49:34.2983102Z",
+    "PromptTokens": 401,
+    "CompletionTokens": 579,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3606.7184,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P03_R2",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 2,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022jcalc\u0022,\n    \u0022verdict\u0022: \u0022jcalc is an excellent lightweight engine for core electromagnetic and winding calculations, providing a solid foundation for transformer design. When paired with FEA and CAD tools, it creates a robust professional workflow that balances rapid iteration with high-fidelity validation.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Rapid calculation of core geometry\u0022,\n      \u0022Accurate winding resistance and leakage inductance estimation\u0022,\n      \u0022Highly efficient for iterative design optimization\u0022,\n      \u0022Low barrier to entry with clear mathematical transparency\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Lacks integrated 3D electromagnetic field visualization\u0022,\n      \u0022Requires external tools for thermal and mechanical stress analysis\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Initial sizing, optimization of winding configurations, and core selection for power transformers.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022jcalc serves as the primary analytical engine, while tools like Ansys Maxwell or FEMM provide the necessary spatial field analysis that analytical tools cannot calculate alone.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Ansys Maxwell\u0022, \u0022note\u0022: \u0022Industry standard for complex 3D magnetic field and eddy current analysis.\u0022},\n      {\u0022tool\u0022: \u0022FEMM\u0022, \u0022note\u0022: \u0022Free, excellent 2D magnetostatic solver for quick flux density validation.\u0022},\n      {\u0022tool\u0022: \u0022SolidWorks\u0022, \u0022note\u0022: \u0022Essential for mechanical packaging and structural integrity of the transformer tank/core assembly.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Transformer Design Lifecycle\u0022,\n    \u0022description\u0022: \u0022A multi-stage approach moving from analytical sizing to high-fidelity verification.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Sizing \u0026 Optimization\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Calculate core area, wire gauge, and turn counts based on power requirements.\u0022},\n      {\u0022phase\u0022: \u00222D Field Validation\u0022, \u0022tool\u0022: \u0022FEMM\u0022, \u0022action\u0022: \u0022Verify flux density distribution and saturation levels in the core.\u0022},\n      {\u0022phase\u0022: \u00223D Thermal/EM Analysis\u0022, \u0022tool\u0022: \u0022Ansys Maxwell\u0022, \u0022action\u0022: \u0022Perform full 3D simulation for leakage flux and hot-spot temperature estimation.\u0022},\n      {\u0022phase\u0022: \u0022Mechanical CAD\u0022, \u0022tool\u0022: \u0022SolidWorks\u0022, \u0022action\u0022: \u0022Design the physical assembly, cooling ducts, and structural supports.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Use jcalc to generate a batch of design candidates before running expensive 3D simulations.\u0022,\n    \u0022Always perform a sensitivity analysis on core material permeability to account for manufacturing variances.\u0022,\n    \u0022Document the margin between jcalc\u0027s calculated inductance and your final FEA results to calibrate future designs.\u0022,\n    \u0022Include a safety factor of 15% in window fill calculations to account for insulation thickness and manufacturing tolerances.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, JSON, XML\u0022,\n    \u0022compatibility\u0022: \u0022Python-compatible via API or file export for custom scripting\u0022,\n    \u0022dataExchange\u0022: \u0022Export jcalc design parameters to Excel for documentation and import into CAD software via parametric tables.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "jcalc",
+      "Ansys Maxwell",
+      "FEMM",
+      "SolidWorks"
+    ],
+    "HallucinatedToolNames": [
+      "Ansys Maxwell",
+      "FEMM",
+      "SolidWorks"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:49:42.9132658Z",
+    "PromptTokens": 401,
+    "CompletionTokens": 685,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3250.0505,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P03_R3",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 2,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022jcalc\u0022,\n    \u0022verdict\u0022: \u0022jcalc is an excellent lightweight choice for rapid transformer core and winding calculations. It excels at providing quick design iterations while maintaining clarity in mathematical modeling.\u0022,\n    \u0022strengths\u0022: [\n      \u0022High precision for core geometry calculations\u0022,\n      \u0022Fast iteration speed for winding parameters\u0022,\n      \u0022Minimal overhead compared to heavy FEA suites\u0022,\n      \u0022Transparent calculation logic\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Lacks integrated 3D electromagnetic field analysis\u0022,\n      \u0022Limited thermal simulation capabilities\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Initial transformer sizing, core selection, and winding optimization.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc focuses on analytical sizing, other tools offer specialized features for complex physical verification.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Ansys Maxwell\u0022, \u0022note\u0022: \u0022Industry standard for high-fidelity 3D electromagnetic FEA.\u0022},\n      {\u0022tool\u0022: \u0022MagNet\u0022, \u0022note\u0022: \u0022Strong focus on transient magnetic field analysis.\u0022},\n      {\u0022tool\u0022: \u0022Python/SciPy\u0022, \u0022note\u0022: \u0022Best for custom automation and complex parametric sweeps.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Transformer Design Pipeline\u0022,\n    \u0022description\u0022: \u0022A balanced workflow combining analytical sizing with verification.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Define core geometry and winding turns.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022Ansys Maxwell\u0022, \u0022action\u0022: \u0022Validate leakage inductance and flux density.\u0022},\n      {\u0022phase\u0022: \u0022Optimization\u0022, \u0022tool\u0022: \u0022Python\u0022, \u0022action\u0022: \u0022Script batch iterations for cost and efficiency.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always perform a manual check on current density limits after jcalc sizing.\u0022,\n    \u0022Document the insulation thickness assumptions alongside your jcalc output.\u0022,\n    \u0022Use Python scripts to parse jcalc output files for batch sensitivity analysis.\u0022,\n    \u0022Verify core loss curves against material manufacturer datasheets.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, JSON, XML\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with standard spreadsheet software for post-processing.\u0022,\n    \u0022dataExchange\u0022: \u0022Export jcalc dimensions to CAD software via DXF for mechanical clearance checks.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "jcalc",
+      "Ansys Maxwell",
+      "MagNet",
+      "Python/SciPy",
+      "Python"
+    ],
+    "HallucinatedToolNames": [
+      "Ansys Maxwell",
+      "MagNet",
+      "Python/SciPy",
+      "Python"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:49:51.1633943Z",
+    "PromptTokens": 401,
+    "CompletionTokens": 527,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2703.5924,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P04_R1",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 3,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022MagNet\u0022,\n    \u0022verdict\u0022: \u0022MagNet is the industry-standard finite element analysis tool that integrates seamlessly with jcalc for high-fidelity electromagnetic core modeling. It bridges the gap between jcalc\u0027s analytical calculations and complex 3D geometry performance verification.\u0022,\n    \u0022strengths\u0022: [\n      \u0022High-accuracy magnetic flux density mapping\u0022,\n      \u0022Seamless integration with analytical sizing tools\u0022,\n      \u0022Robust thermal coupling capabilities\u0022,\n      \u0022Extensive material library for transformer alloys\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022High computational resource requirement\u0022,\n      \u0022Steep learning curve for complex geometry setup\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Validating complex transformer designs and transient behavior\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc provides rapid sizing, MagNet handles deep physics simulation, whereas ANSYS Maxwell is better for full system-level multiphysics integration.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022note\u0022: \u0022Best for system-level multiphysics and thermal coupling.\u0022},\n      {\u0022tool\u0022: \u0022FEMM\u0022, \u0022note\u0022: \u0022Open-source alternative for quick 2D validation of jcalc results.\u0022},\n      {\u0022tool\u0022: \u0022MagNet\u0022, \u0022note\u0022: \u0022Superior for specific transformer core and winding loss precision.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Transformer Design and Verification Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to moving from initial sizing to final validation.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Define core geometry and basic winding parameters.\u0022},\n      {\u0022phase\u0022: \u0022Simulation\u0022, \u0022tool\u0022: \u0022MagNet\u0022, \u0022action\u0022: \u0022Import jcalc dimensions for flux density and leakage inductance verification.\u0022},\n      {\u0022phase\u0022: \u0022Optimization\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Iterate design parameters based on simulation feedback.\u0022},\n      {\u0022phase\u0022: \u0022Final Validation\u0022, \u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022action\u0022: \u0022Perform final thermal and structural analysis.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Export geometry from jcalc as DXF for direct import into simulation tools.\u0022,\n    \u0022Use jcalc\u0027s loss estimation as a baseline to benchmark FEA accuracy.\u0022,\n    \u0022Perform sensitivity analysis on core corner losses in MagNet.\u0022,\n    \u0022Standardize material properties across both tools to ensure consistent results.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022DXF, STEP, IGES, and CSV for parameter mapping\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with standard CAE import formats and Python scripting APIs\u0022,\n    \u0022dataExchange\u0022: \u0022Use CSV exports from jcalc to define boundary conditions in FEA simulation environments\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "MagNet",
+      "ANSYS Maxwell",
+      "FEMM",
+      "jcalc"
+    ],
+    "HallucinatedToolNames": [
+      "MagNet",
+      "ANSYS Maxwell",
+      "FEMM"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 4,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification"
+    ],
+    "Timestamp": "2026-05-06T20:49:58.8728238Z",
+    "PromptTokens": 392,
+    "CompletionTokens": 615,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3073.9013,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P04_R2",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 3,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022Ansys Maxwell\u0022,\n    \u0022verdict\u0022: \u0022Ansys Maxwell is the industry standard for electromagnetic field simulation and integrates seamlessly with jcalc for transformer design analysis. It provides the high-fidelity finite element analysis required to validate the thermal and electromagnetic parameters calculated in jcalc.\u0022,\n    \u0022strengths\u0022: [\n      \u0022High-accuracy finite element analysis\u0022,\n      \u0022Native support for complex geometry import\u0022,\n      \u0022Robust core loss and eddy current modeling\u0022,\n      \u0022Advanced multiphysics coupling capabilities\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Steep learning curve for complex models\u0022,\n      \u0022High computational resource requirements\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Final electromagnetic validation and optimization of transformer designs\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc provides rapid analytical estimates, Maxwell offers numerical verification, and COMSOL provides broader multiphysics flexibility.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022COMSOL Multiphysics\u0022, \u0022note\u0022: \u0022Better for coupled thermal-structural analysis.\u0022},\n      {\u0022tool\u0022: \u0022LTspice\u0022, \u0022note\u0022: \u0022Superior for circuit-level transient behavior analysis.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Transformer Design and Validation Workflow\u0022,\n    \u0022description\u0022: \u0022A iterative process moving from analytical sizing to numerical verification.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Define initial geometry and electrical parameters.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022Ansys Maxwell\u0022, \u0022action\u0022: \u0022Perform 3D FEA to validate flux density and losses.\u0022},\n      {\u0022phase\u0022: \u0022Optimization\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Refine parameters based on simulation feedback.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Use jcalc to narrow down design candidates before launching expensive FEA simulations.\u0022,\n    \u0022Validate jcalc\u0027s core loss estimates against Maxwell\u0027s field-based results early.\u0022,\n    \u0022Automate data transfer using Python scripts to bridge jcalc outputs and Maxwell inputs.\u0022,\n    \u0022Perform mesh sensitivity analysis in Maxwell to ensure convergence accuracy.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022DXF, STEP, IGES, Parasolid\u0022,\n    \u0022compatibility\u0022: \u0022Excellent via CAD-link and script-based APIs\u0022,\n    \u0022dataExchange\u0022: \u0022CSV or JSON for parameter mapping; STEP files for geometry transfer\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "Ansys Maxwell",
+      "COMSOL Multiphysics",
+      "LTspice",
+      "jcalc"
+    ],
+    "HallucinatedToolNames": [
+      "Ansys Maxwell",
+      "COMSOL Multiphysics",
+      "LTspice"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 4,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification"
+    ],
+    "Timestamp": "2026-05-06T20:50:06.952042Z",
+    "PromptTokens": 392,
+    "CompletionTokens": 551,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2792.4304,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P04_R3",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 3,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022ANSYS Maxwell\u0022,\n    \u0022verdict\u0022: \u0022ANSYS Maxwell provides the most robust electromagnetic field analysis for transformer designs initiated in jcalc. It seamlessly imports geometric parameters and material properties to validate the analytical approximations generated during the initial sizing phase.\u0022,\n    \u0022strengths\u0022: [\u0022High-fidelity FEA modeling\u0022, \u0022Advanced loss analysis\u0022, \u0022Thermal-electromagnetic coupling\u0022, \u0022Extensive material library\u0022],\n    \u0022limitations\u0022: [\u0022Steep learning curve\u0022, \u0022High computational resource requirements\u0022],\n    \u0022bestFor\u0022: \u0022Detailed 3D electromagnetic field verification and optimization of complex transformer geometries.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc handles the analytical sizing, Maxwell provides precision physics verification, whereas COMSOL is superior for multi-physics (fluid-thermal) interactions.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022COMSOL Multiphysics\u0022, \u0022note\u0022: \u0022Better for integrated oil-flow and thermal cooling analysis.\u0022},\n      {\u0022tool\u0022: \u0022MagNet\u0022, \u0022note\u0022: \u0022Faster solve times for 2D transient magnetic simulations.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Transformer Design and Validation Workflow\u0022,\n    \u0022description\u0022: \u0022A structured approach moving from analytical estimation to high-fidelity simulation.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Determine core dimensions and winding turns based on power requirements.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022action\u0022: \u0022Import jcalc geometry to perform leakage inductance and flux density analysis.\u0022},\n      {\u0022phase\u0022: \u0022Thermal Analysis\u0022, \u0022tool\u0022: \u0022COMSOL\u0022, \u0022action\u0022: \u0022Map EM losses from Maxwell to simulate temperature distribution.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Use jcalc to establish the initial design space before running time-intensive FEA simulations.\u0022,\n    \u0022Export jcalc parameters to Python scripts to automate geometry generation in simulation tools.\u0022,\n    \u0022Validate FEA results against jcalc analytical loss formulas to ensure model consistency.\u0022,\n    \u0022Focus simulation effort on winding hotspots identified during the sizing phase.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022DXF, STEP, IGES, Parasolid\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with common CAD/CAE environments through standard neutral formats.\u0022,\n    \u0022dataExchange\u0022: \u0022Use Python-based APIs (PyAEDT) to bridge data between jcalc outputs and simulation input parameters.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "ANSYS Maxwell",
+      "COMSOL Multiphysics",
+      "MagNet",
+      "jcalc",
+      "COMSOL"
+    ],
+    "HallucinatedToolNames": [
+      "ANSYS Maxwell",
+      "COMSOL Multiphysics",
+      "MagNet",
+      "COMSOL"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 4,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification"
+    ],
+    "Timestamp": "2026-05-06T20:50:14.7617197Z",
+    "PromptTokens": 392,
+    "CompletionTokens": 551,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2919.5437,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P05_R1",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 4,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022jcalc\u0022,\n    \u0022verdict\u0022: \u0022jcalc is an excellent lightweight choice for rapid verification of transformer winding parameters and core flux density. It excels at providing immediate feedback on iterative design adjustments without the overhead of full-scale finite element analysis.\u0022,\n    \u0022strengths\u0022: [\n      \u0022High-speed calculation of turns-per-volt\u0022,\n      \u0022Intuitive interface for geometric parameter entry\u0022,\n      \u0022Accurate core loss estimation for standard materials\u0022,\n      \u0022Minimal resource footprint\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Lacks advanced 3D electromagnetic field visualization\u0022,\n      \u0022Limited support for complex non-linear saturation modeling\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Initial transformer sizing and verification of core/winding ratios\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc is optimized for rapid arithmetic verification, tools like ANSYS Maxwell provide deep field analysis, and MagNet offers superior transient behavior simulation.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022note\u0022: \u0022Best for complex 3D FEA and parasitic analysis.\u0022},\n      {\u0022tool\u0022: \u0022MagNet\u0022, \u0022note\u0022: \u0022Superior for transient and non-linear electromagnetic simulation.\u0022},\n      {\u0022tool\u0022: \u0022jcalc\u0022, \u0022note\u0022: \u0022Best for quick, iterative design verification and sizing.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Transformer Design Verification Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to sizing and validating transformer parameters.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Calculate primary and secondary turn counts based on core area.\u0022},\n      {\u0022phase\u0022: \u0022Validation\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Verify flux density and current density against safety margins.\u0022},\n      {\u0022phase\u0022: \u0022Refinement\u0022, \u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022action\u0022: \u0022Perform 3D FEA to validate leakage inductance and thermal hotspots.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always verify core material data sheets against jcalc library constants.\u0022,\n    \u0022Include a 10% safety margin for winding window fill factors.\u0022,\n    \u0022Cross-reference jcalc results with manual Ampere-turn calculations.\u0022,\n    \u0022Document all iterations in a log to track design evolution.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, JSON, XML\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with standard CAE suites via data export\u0022,\n    \u0022dataExchange\u0022: \u0022Use CSV exports from jcalc to feed boundary condition inputs in FEA software.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "jcalc",
+      "ANSYS Maxwell",
+      "MagNet"
+    ],
+    "HallucinatedToolNames": [
+      "ANSYS Maxwell",
+      "MagNet"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 4,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification"
+    ],
+    "Timestamp": "2026-05-06T20:50:22.7002018Z",
+    "PromptTokens": 398,
+    "CompletionTokens": 578,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2881.1018,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P05_R2",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 4,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022jcalc\u0022,\n    \u0022verdict\u0022: \u0022jcalc is an excellent choice for rapid verification of transformer design parameters, offering high precision for electromagnetic and thermal constraints. Its computational efficiency allows for iterative optimization, ensuring your design meets efficiency standards before moving to physical prototyping.\u0022,\n    \u0022strengths\u0022: [\n      \u0022High-speed numerical computation\u0022,\n      \u0022Comprehensive library of magnetic materials\u0022,\n      \u0022Real-time parameter sensitivity analysis\u0022,\n      \u0022Seamless integration with standard engineering libraries\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Limited 3D finite element analysis capabilities\u0022,\n      \u0022Requires manual input of complex geometry constraints\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Rapid iteration and verification of core geometry, winding resistance, and thermal performance calculations.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc excels at analytical verification, complementary tools are often needed for advanced field simulation.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Ansys Maxwell\u0022, \u0022note\u0022: \u0022Provides superior 3D finite element analysis for complex flux leakage.\u0022},\n      {\u0022tool\u0022: \u0022Python/SciPy\u0022, \u0022note\u0022: \u0022Best for custom automation and post-processing of jcalc outputs.\u0022},\n      {\u0022tool\u0022: \u0022jcalc\u0022, \u0022note\u0022: \u0022Optimized for rapid analytical calculation and design iteration.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Transformer Design Validation Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to verifying design integrity from initial sizing to simulation.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Initial Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Calculate core area and turn counts based on power requirements.\u0022},\n      {\u0022phase\u0022: \u0022Thermal Verification\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Verify temperature rise and current density limits.\u0022},\n      {\u0022phase\u0022: \u0022Field Analysis\u0022, \u0022tool\u0022: \u0022Ansys Maxwell\u0022, \u0022action\u0022: \u0022Perform 3D FEA to validate leakage inductance and eddy current losses.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always perform a sensitivity analysis on your core material parameters.\u0022,\n    \u0022Validate jcalc results against empirical data for your specific winding geometry.\u0022,\n    \u0022Use Python scripts to batch-process iterations in jcalc for wider design space exploration.\u0022,\n    \u0022Document all assumptions regarding ambient temperature and cooling conditions.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, JSON, XML\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with standard circuit simulation tools like SPICE and MATLAB.\u0022,\n    \u0022dataExchange\u0022: \u0022Export jcalc parameter sets to CSV for direct import into FEA software.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "jcalc",
+      "Ansys Maxwell",
+      "Python/SciPy"
+    ],
+    "HallucinatedToolNames": [
+      "Ansys Maxwell",
+      "Python/SciPy"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Prototyping"
+    ],
+    "Timestamp": "2026-05-06T20:50:30.6142724Z",
+    "PromptTokens": 398,
+    "CompletionTokens": 578,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2696.5515,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P05_R3",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 4,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022jcalc\u0022,\n    \u0022verdict\u0022: \u0022jcalc is an excellent lightweight choice for rapid verification of transformer winding parameters and magnetic flux densities. It provides a reliable mathematical framework for validating your core design against standard electrical engineering formulas.\u0022,\n    \u0022strengths\u0022: [\n      \u0022High precision for core geometry calculations\u0022,\n      \u0022Fast iteration cycles for winding turns verification\u0022,\n      \u0022Minimal resource overhead\u0022,\n      \u0022Direct integration with standard engineering unit systems\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Lacks advanced 3D electromagnetic field simulation\u0022,\n      \u0022Requires manual input for complex thermal derating factors\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Initial design validation and parameter consistency checks\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc excels at arithmetic verification, complex designs may require complementary simulation tools.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022jcalc\u0022, \u0022note\u0022: \u0022Best for formulaic verification and parameter math.\u0022},\n      {\u0022tool\u0022: \u0022FEMM\u0022, \u0022note\u0022: \u0022Required for finite element analysis of flux leakage.\u0022},\n      {\u0022tool\u0022: \u0022LTspice\u0022, \u0022note\u0022: \u0022Essential for circuit-level transformer performance simulation.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Transformer Design Validation Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to verifying design parameters from math to simulation.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Conceptual Calculation\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Define core cross-section and turn counts.\u0022},\n      {\u0022phase\u0022: \u0022Field Verification\u0022, \u0022tool\u0022: \u0022FEMM\u0022, \u0022action\u0022: \u0022Validate flux density distribution based on jcalc inputs.\u0022},\n      {\u0022phase\u0022: \u0022Circuit Simulation\u0022, \u0022tool\u0022: \u0022LTspice\u0022, \u0022action\u0022: \u0022Incorporate parasitic parameters into the system model.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always cross-reference jcalc results with manufacturer core datasheets.\u0022,\n    \u0022Include a safety margin of at least 10% for flux density to account for material variations.\u0022,\n    \u0022Perform sensitivity analysis on winding resistance by varying temperature inputs.\u0022,\n    \u0022Document all jcalc intermediate variables for future design audits.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, TXT, JSON\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with most scripting environments and spreadsheet software\u0022,\n    \u0022dataExchange\u0022: \u0022Export jcalc results to CSV for direct import into simulation software parameters\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "jcalc",
+      "FEMM",
+      "LTspice"
+    ],
+    "HallucinatedToolNames": [
+      "FEMM",
+      "LTspice"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:50:38.3188876Z",
+    "PromptTokens": 398,
+    "CompletionTokens": 545,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2913.4314,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P06_R1",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 5,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022MATLAB/Simulink with Simscape Electrical\u0022,\n    \u0022verdict\u0022: \u0022MATLAB serves as the industry standard for high-fidelity transformer modeling, allowing for complex multi-physics analysis that goes beyond simple spreadsheet calculations. It effectively bridges the gap between theoretical design and dynamic system-level simulation.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Advanced transient analysis capabilities\u0022,\n      \u0022Extensive library of magnetic components\u0022,\n      \u0022Seamless integration with control system design\u0022,\n      \u0022Powerful scripting for iterative optimization\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Steep learning curve for advanced modeling\u0022,\n      \u0022High licensing costs for enterprise features\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Dynamic performance verification and complex electromagnetic transient studies.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc excels at initial sizing, specialized simulation tools provide the necessary depth for verifying non-linear behaviors and thermal constraints.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022Ansys Maxwell\u0022, \u0022note\u0022: \u0022Best-in-class for 3D finite element analysis and detailed flux distribution.\u0022},\n      {\u0022tool\u0022: \u0022Python (SciPy/PySpice)\u0022, \u0022note\u0022: \u0022Best for customized, open-source automation and lightweight circuit prototyping.\u0022},\n      {\u0022tool\u0022: \u0022PLECS\u0022, \u0022note\u0022: \u0022Optimized specifically for high-speed power electronics and thermal modeling.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Transformer Design Workflow\u0022,\n    \u0022description\u0022: \u0022A structured approach from initial sizing to final validation.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Conceptual Design\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Define core geometry, winding turns, and basic electrical parameters.\u0022},\n      {\u0022phase\u0022: \u0022Detailed Modeling\u0022, \u0022tool\u0022: \u0022MATLAB/Simulink\u0022, \u0022action\u0022: \u0022Implement the jcalc output into a behavioral model to test against system transients.\u0022},\n      {\u0022phase\u0022: \u0022FEA Verification\u0022, \u0022tool\u0022: \u0022Ansys Maxwell\u0022, \u0022action\u0022: \u0022Perform 3D electromagnetic analysis to validate leakage inductance and local saturation.\u0022},\n      {\u0022phase\u0022: \u0022Thermal Validation\u0022, \u0022tool\u0022: \u0022PLECS\u0022, \u0022action\u0022: \u0022Simulate steady-state and peak thermal profiles based on load cycles.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always validate FEA results against your initial jcalc baseline to ensure consistency.\u0022,\n    \u0022Use script-based automation in MATLAB to perform sensitivity analysis on material properties.\u0022,\n    \u0022Document the transition points between tools to maintain a clear design history.\u0022,\n    \u0022Include parasitic effects like stray capacitance early in your simulation phase.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, MAT, STEP, DXF\u0022,\n    \u0022compatibility\u0022: \u0022High interoperability via API and script-based data exchange.\u0022,\n    \u0022dataExchange\u0022: \u0022Export jcalc parameters to JSON or CSV for direct ingestion into MATLAB workspace variables.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "MATLAB/Simulink with Simscape Electrical",
+      "Ansys Maxwell",
+      "Python (SciPy/PySpice)",
+      "PLECS",
+      "jcalc",
+      "MATLAB/Simulink"
+    ],
+    "HallucinatedToolNames": [
+      "MATLAB/Simulink with Simscape Electrical",
+      "Ansys Maxwell",
+      "Python (SciPy/PySpice)",
+      "PLECS",
+      "MATLAB/Simulink"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Prototyping"
+    ],
+    "Timestamp": "2026-05-06T20:50:46.2441003Z",
+    "PromptTokens": 395,
+    "CompletionTokens": 643,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3164.8185,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P06_R2",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 5,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022MATLAB/Simulink\u0022,\n    \u0022verdict\u0022: \u0022MATLAB/Simulink is the industry standard for transitioning from static calculations to dynamic simulation and control logic verification. It provides the high-fidelity modeling environment necessary to validate transient behaviors and thermal performance after initial design parameters are finalized in jcalc.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Robust numerical solvers for differential equations\u0022,\n      \u0022Extensive library of magnetic and electrical components\u0022,\n      \u0022Advanced co-simulation capabilities with FEA tools\u0022,\n      \u0022Automated code generation for embedded controllers\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022High licensing costs for advanced toolboxes\u0022,\n      \u0022Steep learning curve for complex multi-physics modeling\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Transient analysis, closed-loop control design, and system-level validation.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc excels at rapid parameter estimation, MATLAB offers depth for dynamic verification, and Ansys Maxwell provides the spatial precision needed for late-stage magnetic analysis.\u0022,\n    \u0022toolNotes\u0022: [\n      {\n        \u0022tool\u0022: \u0022Ansys Maxwell\u0022,\n        \u0022note\u0022: \u0022Essential for 2D/3D electromagnetic field analysis and flux density mapping.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022Python (SciPy/PySpice)\u0022,\n        \u0022note\u0022: \u0022Best for open-source, scriptable circuit simulation and data post-processing.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022LTspice\u0022,\n        \u0022note\u0022: \u0022Superior for high-speed switching and power electronics circuit verification.\u0022\n      }\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Transformer Design Lifecycle\u0022,\n    \u0022description\u0022: \u0022A systematic transition from conceptual sizing to final system validation.\u0022,\n    \u0022steps\u0022: [\n      {\n        \u0022phase\u0022: \u0022Conceptual Sizing\u0022,\n        \u0022tool\u0022: \u0022jcalc\u0022,\n        \u0022action\u0022: \u0022Define core geometry, winding turns, and basic loss estimation.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Dynamic Simulation\u0022,\n        \u0022tool\u0022: \u0022MATLAB/Simulink\u0022,\n        \u0022action\u0022: \u0022Model the transformer within the power circuit to verify transient responses.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Field Validation\u0022,\n        \u0022tool\u0022: \u0022Ansys Maxwell\u0022,\n        \u0022action\u0022: \u0022Perform FEA to confirm flux distribution and thermal hotspots.\u0022\n      }\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Export jcalc parameters directly into MATLAB scripts to ensure consistency.\u0022,\n    \u0022Use simplified lumped-parameter models in Simulink before moving to high-fidelity FEA.\u0022,\n    \u0022Validate core loss models against manufacturer datasheet curves early in the process.\u0022,\n    \u0022Maintain a centralized variable library to keep dimensions synced across all platforms.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, XML, MAT, SLX\u0022,\n    \u0022compatibility\u0022: \u0022High interoperability via MATLAB API and Python interface\u0022,\n    \u0022dataExchange\u0022: \u0022Use CSV/MAT files for transferring design points from jcalc to simulation environments.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "MATLAB/Simulink",
+      "Ansys Maxwell",
+      "Python (SciPy/PySpice)",
+      "LTspice",
+      "jcalc"
+    ],
+    "HallucinatedToolNames": [
+      "MATLAB/Simulink",
+      "Ansys Maxwell",
+      "Python (SciPy/PySpice)",
+      "LTspice"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:50:54.4226899Z",
+    "PromptTokens": 395,
+    "CompletionTokens": 684,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3757.2003,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P06_R3",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 5,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022MATLAB/Simulink with Simscape Electrical\u0022,\n    \u0022verdict\u0022: \u0022MATLAB provides the most robust environment for transitioning from initial jcalc sizing to high-fidelity dynamic modeling and thermal analysis. It bridges the gap between theoretical calculations and physical simulation with extensive libraries for magnetic and power systems.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Extensive library of pre-built magnetic components\u0022,\n      \u0022Advanced scripting for automated design iterations\u0022,\n      \u0022Superior visualization for transient analysis\u0022,\n      \u0022Seamless integration with optimization toolboxes\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Steep learning curve for complex multi-physics modeling\u0022,\n      \u0022High licensing costs compared to open-source alternatives\u0022\n    ],\n    \u0022bestFor\u0022: \u0022High-fidelity dynamic simulation and optimization of transformer performance.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc is excellent for rapid sizing, moving to prototyping requires tools that handle non-linearities and thermal constraints.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022note\u0022: \u0022Industry standard for high-precision 3D electromagnetic finite element analysis.\u0022},\n      {\u0022tool\u0022: \u0022Python (PySpice/SciPy)\u0022, \u0022note\u0022: \u0022Best for cost-effective, custom automation of parametric sweeps.\u0022},\n      {\u0022tool\u0022: \u0022LTspice\u0022, \u0022note\u0022: \u0022Ideal for fast circuit-level transient response verification.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Transformer Design to Prototyping Pipeline\u0022,\n    \u0022description\u0022: \u0022A systematic approach from initial sizing to physical verification.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Define core geometry and winding parameters.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022MATLAB/Simulink\u0022, \u0022action\u0022: \u0022Build dynamic model to test performance under load.\u0022},\n      {\u0022phase\u0022: \u0022FEA Analysis\u0022, \u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022action\u0022: \u0022Validate flux density and thermal hotspots.\u0022},\n      {\u0022phase\u0022: \u0022Final Prototyping\u0022, \u0022tool\u0022: \u0022CAD/CAM\u0022, \u0022action\u0022: \u0022Export final design parameters for manufacturing.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always validate jcalc outputs against a secondary simplified analytical model.\u0022,\n    \u0022Use automated scripts to perform sensitivity analysis on core material losses.\u0022,\n    \u0022Incorporate thermal modeling early, as heat dissipation often dictates physical size.\u0022,\n    \u0022Maintain a centralized variable library to ensure consistency across different software platforms.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022.m, .slx, .step, .csv\u0022,\n    \u0022compatibility\u0022: \u0022High compatibility with industry-standard CAD and circuit simulation software.\u0022,\n    \u0022dataExchange\u0022: \u0022Use CSV/MAT files for transferring jcalc parameters into simulation environments.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "MATLAB/Simulink with Simscape Electrical",
+      "ANSYS Maxwell",
+      "Python (PySpice/SciPy)",
+      "LTspice",
+      "jcalc",
+      "MATLAB/Simulink",
+      "CAD/CAM"
+    ],
+    "HallucinatedToolNames": [
+      "MATLAB/Simulink with Simscape Electrical",
+      "ANSYS Maxwell",
+      "Python (PySpice/SciPy)",
+      "LTspice",
+      "MATLAB/Simulink",
+      "CAD/CAM"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 6,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing",
+      "Prototyping"
+    ],
+    "Timestamp": "2026-05-06T20:51:03.1825644Z",
+    "PromptTokens": 395,
+    "CompletionTokens": 627,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2975.0367,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P07_R1",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 6,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022MagNet\u0022,\n    \u0022verdict\u0022: \u0022MagNet serves as a powerful finite element analysis (FEA) companion that validates jcalc\u0027s analytical estimations. It provides high-fidelity electromagnetic field mapping to identify saturation points and leakage flux that simple calculators often overlook.\u0022,\n    \u0022strengths\u0022: [\n      \u00222D/3D magnetic field simulation\u0022,\n      \u0022Accurate core loss modeling\u0022,\n      \u0022Visual flux density mapping\u0022,\n      \u0022Thermal coupling capabilities\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Steep learning curve compared to analytical tools\u0022,\n      \u0022High computational resource requirements\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Final design validation and complex geometry optimization\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc provides rapid, formula-based initial sizing, FEA-based tools provide the spatial analysis required for production-ready hardware.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022jcalc\u0022, \u0022note\u0022: \u0022Best for rapid initial core and winding sizing.\u0022},\n      {\u0022tool\u0022: \u0022MagNet\u0022, \u0022note\u0022: \u0022Best for verifying flux distribution and saturation.\u0022},\n      {\u0022tool\u0022: \u0022Ansys Maxwell\u0022, \u0022note\u0022: \u0022Industry standard for advanced multiphysics integration.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Transformer Design Workflow\u0022,\n    \u0022description\u0022: \u0022A multi-stage approach moving from conceptual sizing to high-fidelity verification.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Conceptual Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Determine core size, wire gauge, and turn counts based on power requirements.\u0022},\n      {\u0022phase\u0022: \u0022Field Verification\u0022, \u0022tool\u0022: \u0022MagNet\u0022, \u0022action\u0022: \u0022Import jcalc parameters to simulate flux density, leakage inductance, and eddy current losses.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Use jcalc to establish a baseline before running heavy simulations.\u0022,\n    \u0022Perform sensitivity analysis in jcalc to understand the impact of core material variations.\u0022,\n    \u0022Always correlate analytical calculations with empirical temperature rise measurements.\u0022,\n    \u0022Use simulation data to refine the loss coefficients used in your jcalc models.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022DXF/STEP for geometry; CSV/TXT for material data\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with standard CAD and CAE environments\u0022,\n    \u0022dataExchange\u0022: \u0022Manual parameter transfer is recommended to ensure design intent is captured in the simulation setup\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "MagNet",
+      "jcalc",
+      "Ansys Maxwell"
+    ],
+    "HallucinatedToolNames": [
+      "MagNet",
+      "Ansys Maxwell"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:51:11.1689663Z",
+    "PromptTokens": 394,
+    "CompletionTokens": 550,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3115.5247,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P07_R2",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 6,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022MagNet (Infolytica/Siemens)\u0022,\n    \u0022verdict\u0022: \u0022MagNet serves as the essential high-fidelity electromagnetic field solver to validate the empirical approximations derived from jcalc. It bridges the gap between basic analytical math and complex 3D geometry performance.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Advanced 3D finite element analysis\u0022,\n      \u0022Precise core loss modeling\u0022,\n      \u0022Dynamic thermal coupling\u0022,\n      \u0022Detailed flux linkage visualization\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Steep learning curve\u0022,\n      \u0022High computational resource requirement\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Final verification of non-standard geometries and high-frequency saturation effects\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc excels at rapid iterative sizing and wire gauge selection, FEA-based tools like MagNet or Ansys Maxwell provide the necessary field-level physics that analytical calculators miss.\u0022,\n    \u0022toolNotes\u0022: [\n      {\n        \u0022tool\u0022: \u0022Ansys Maxwell\u0022,\n        \u0022note\u0022: \u0022Industry standard for complex multi-physics simulation.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022FEMM\u0022,\n        \u0022note\u0022: \u0022Free, lightweight 2D solver ideal for quick cross-section flux checks.\u0022\n      }\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Transformer Design Workflow\u0022,\n    \u0022description\u0022: \u0022A multi-stage approach moving from rapid calculation to high-fidelity validation.\u0022,\n    \u0022steps\u0022: [\n      {\n        \u0022phase\u0022: \u0022Conceptual Sizing\u0022,\n        \u0022tool\u0022: \u0022jcalc\u0022,\n        \u0022action\u0022: \u0022Perform initial winding counts, core size selection, and regulation estimates.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Field Validation\u0022,\n        \u0022tool\u0022: \u0022FEMM/MagNet\u0022,\n        \u0022action\u0022: \u0022Import geometry to verify flux density distribution and identify localized saturation.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Thermal Verification\u0022,\n        \u0022tool\u0022: \u0022MagNet/Thermal Solver\u0022,\n        \u0022action\u0022: \u0022Calculate temperature rise based on losses exported from FEA analysis.\u0022\n      }\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always use jcalc for the initial iteration to establish a baseline geometry.\u0022,\n    \u0022Export jcalc parameters to a CSV format for easier ingestion into FEA software.\u0022,\n    \u0022Verify that your core material B-H curves in the simulation match the manufacturer datasheets.\u0022,\n    \u0022Use 2D solvers for symmetric designs to save significant time over 3D models.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022DXF, STEP, CSV, TXT\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with most CAD suites for geometry import\u0022,\n    \u0022dataExchange\u0022: \u0022Use CSV for parameter transfer and STEP for structural geometry synchronization\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "MagNet (Infolytica/Siemens)",
+      "Ansys Maxwell",
+      "FEMM",
+      "jcalc",
+      "FEMM/MagNet",
+      "MagNet/Thermal Solver",
+      "Thermal Solver"
+    ],
+    "HallucinatedToolNames": [
+      "MagNet (Infolytica/Siemens)",
+      "Ansys Maxwell",
+      "FEMM",
+      "FEMM/MagNet",
+      "MagNet/Thermal Solver",
+      "Thermal Solver"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:51:19.3066225Z",
+    "PromptTokens": 394,
+    "CompletionTokens": 629,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3023.3458,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P07_R3",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 6,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022MagNet (Infolytica/Mentor Graphics)\u0022,\n    \u0022verdict\u0022: \u0022MagNet provides the 2D/3D finite element analysis necessary to validate the analytical results produced by jcalc. It bridges the gap between theoretical calculations and real-world magnetic flux distribution and thermal behavior.\u0022,\n    \u0022strengths\u0022: [\n      \u0022High-fidelity electromagnetic field simulation\u0022,\n      \u0022Advanced thermal coupling capabilities\u0022,\n      \u0022Dynamic motion and circuit coupling\u0022,\n      \u0022Extensive material property libraries\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Significant learning curve compared to analytical tools\u0022,\n      \u0022Requires high computational resources for 3D modeling\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Final verification of complex geometry and flux density analysis\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc excels at rapid analytical sizing and core selection, MagNet is required for deep physical verification of non-standard geometries or saturation effects.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022jcalc\u0022, \u0022note\u0022: \u0022Primary tool for rapid, analytical transformer parameter estimation.\u0022},\n      {\u0022tool\u0022: \u0022MagNet\u0022, \u0022note\u0022: \u0022Secondary tool for 2D/3D FEA verification and complex flux analysis.\u0022},\n      {\u0022tool\u0022: \u0022LTspice\u0022, \u0022note\u0022: \u0022Used for circuit-level simulation of the transformer in the final power stage.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Transformer Design Workflow\u0022,\n    \u0022description\u0022: \u0022A multi-stage approach moving from analytical estimation to physical simulation and circuit validation.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Calculate core size, turn counts, and wire gauges.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022MagNet\u0022, \u0022action\u0022: \u0022Perform FEA to verify flux density and leakage inductance.\u0022},\n      {\u0022phase\u0022: \u0022Integration\u0022, \u0022tool\u0022: \u0022LTspice\u0022, \u0022action\u0022: \u0022Simulate the transformer model within the target circuit topology.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Use jcalc for initial iterations to narrow down core material and size choices.\u0022,\n    \u0022Always perform a sanity check on jcalc outputs using basic Ampere-turn and Faraday\u0027s law formulas.\u0022,\n    \u0022Export geometry from your CAD software to MagNet to avoid manual re-entry errors.\u0022,\n    \u0022Account for skin and proximity effects in your high-frequency designs using specialized solvers.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022DXF, STEP, IGES\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with most major CAD and SPICE packages\u0022,\n    \u0022dataExchange\u0022: \u0022Use CSV for parameter tables and STEP for geometric model imports\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "MagNet (Infolytica/Mentor Graphics)",
+      "jcalc",
+      "MagNet",
+      "LTspice",
+      "Mentor Graphics"
+    ],
+    "HallucinatedToolNames": [
+      "MagNet (Infolytica/Mentor Graphics)",
+      "MagNet",
+      "LTspice",
+      "Mentor Graphics"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 4,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification"
+    ],
+    "Timestamp": "2026-05-06T20:51:27.3473702Z",
+    "PromptTokens": 394,
+    "CompletionTokens": 606,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3333.8109,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P08_R1",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 7,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022MagNet (by Ansys)\u0022,\n    \u0022verdict\u0022: \u0022MagNet offers superior finite element analysis (FEA) capabilities that far exceed the empirical estimation methods used in jcalc. It provides high-fidelity core loss modeling by accounting for complex flux distributions and non-sinusoidal waveforms.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Advanced Steinmetz coefficients integration\u0022,\n      \u0022Dynamic hysteresis modeling\u0022,\n      \u0022High-accuracy 2D/3D electromagnetic field solving\u0022,\n      \u0022Temperature-dependent material property analysis\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Steep learning curve compared to lightweight calculators\u0022,\n      \u0022Significant computational resource requirements\u0022\n    ],\n    \u0022bestFor\u0022: \u0022High-frequency transformer design requiring precise thermal and core loss optimization.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc relies on basic empirical formulas, MagNet utilizes robust numerical solvers to calculate losses based on actual flux paths.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022jcalc\u0022, \u0022note\u0022: \u0022Basic empirical estimation, limited to standard geometries.\u0022},\n      {\u0022tool\u0022: \u0022MagNet\u0022, \u0022note\u0022: \u0022Full-field numerical solver enabling complex loss mapping.\u0022},\n      {\u0022tool\u0022: \u0022PExprt\u0022, \u0022note\u0022: \u0022Excellent for rapid iterative design and material database management.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022High-Fidelity Magnetic Design Workflow\u0022,\n    \u0022description\u0022: \u0022A robust process moving from rapid simulation to high-fidelity verification.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Initial Sizing\u0022, \u0022tool\u0022: \u0022PExprt\u0022, \u0022action\u0022: \u0022Perform rapid analytical sizing and material selection.\u0022},\n      {\u0022phase\u0022: \u0022Loss Verification\u0022, \u0022tool\u0022: \u0022MagNet\u0022, \u0022action\u0022: \u0022Import geometry for detailed core loss and flux density mapping.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always define your material\u0027s B-H curve using measured data rather than generic manufacturer charts.\u0022,\n    \u0022Account for skin and proximity effects in windings when calculating total transformer losses.\u0022,\n    \u0022Use transient solvers for non-sinusoidal excitation waveforms to capture eddy current losses accurately.\u0022,\n    \u0022Validate simulation results against a physical prototype with a calorimeter or high-bandwidth power analyzer.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022IGES, STEP, DXF, Parasolid\u0022,\n    \u0022compatibility\u0022: \u0022Ansys Electronics Desktop, MATLAB/Simulink for system-level co-simulation\u0022,\n    \u0022dataExchange\u0022: \u0022Use Python scripting (PyAnsys) to automate material data input and result extraction.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "MagNet (by Ansys)",
+      "jcalc",
+      "MagNet",
+      "PExprt"
+    ],
+    "HallucinatedToolNames": [
+      "MagNet (by Ansys)",
+      "MagNet",
+      "PExprt"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 6,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing",
+      "Prototyping"
+    ],
+    "Timestamp": "2026-05-06T20:51:35.6897567Z",
+    "PromptTokens": 396,
+    "CompletionTokens": 579,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2566.2584,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P08_R2",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 7,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022MagNet\u0022,\n    \u0022verdict\u0022: \u0022MagNet provides superior core loss modeling by utilizing advanced Steinmetz parameter characterization and non-sinusoidal waveform analysis. It is specifically engineered for high-frequency power electronics where traditional jcalc approximations fail to account for complex flux density harmonics.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Advanced non-sinusoidal core loss algorithms\u0022,\n      \u0022Extensive material library with temperature-dependent data\u0022,\n      \u0022High-fidelity 2D/3D finite element analysis\u0022,\n      \u0022Integrated thermal coupling for loss verification\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Steeper learning curve compared to lightweight calculators\u0022,\n      \u0022Requires higher computational resources for transient analysis\u0022\n    ],\n    \u0022bestFor\u0022: \u0022High-frequency transformer design with complex excitation waveforms.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc relies on basic empirical formulas, MagNet uses comprehensive FEA and material-specific loss models to achieve higher accuracy under real-world operating conditions.\u0022,\n    \u0022toolNotes\u0022: [\n      {\n        \u0022tool\u0022: \u0022jcalc\u0022,\n        \u0022note\u0022: \u0022Standardized for basic analytical estimation but lacks harmonic loss depth.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022MagNet\u0022,\n        \u0022note\u0022: \u0022Industry standard for complex electromagnetic field and loss simulation.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022ANSYS Maxwell\u0022,\n        \u0022note\u0022: \u0022Alternative for enterprise-level multi-physics simulation.\u0022\n      }\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022High-Accuracy Transformer Design Flow\u0022,\n    \u0022description\u0022: \u0022A robust workflow transitioning from initial sizing to high-fidelity loss verification.\u0022,\n    \u0022steps\u0022: [\n      {\n        \u0022phase\u0022: \u0022Initial Sizing\u0022,\n        \u0022tool\u0022: \u0022jcalc\u0022,\n        \u0022action\u0022: \u0022Perform quick baseline sizing and window area verification.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Loss Verification\u0022,\n        \u0022tool\u0022: \u0022MagNet\u0022,\n        \u0022action\u0022: \u0022Import geometry to perform 2D/3D FEA for precise core loss mapping under specific drive waveforms.\u0022\n      }\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always characterize core material at the specific operating frequency and temperature.\u0022,\n    \u0022Account for DC bias effects which significantly alter core permeability and loss.\u0022,\n    \u0022Use non-sinusoidal waveforms in FEA to capture eddy current losses accurately.\u0022,\n    \u0022Validate simulation results with a small-scale hardware prototype bench test.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022DXF, STEP, IGES\u0022,\n    \u0022compatibility\u0022: \u0022MATLAB/Simulink, Python scripting interface\u0022,\n    \u0022dataExchange\u0022: \u0022Export loss maps to thermal solvers for comprehensive temperature rise analysis.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "MagNet",
+      "jcalc",
+      "ANSYS Maxwell"
+    ],
+    "HallucinatedToolNames": [
+      "MagNet",
+      "ANSYS Maxwell"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Prototyping"
+    ],
+    "Timestamp": "2026-05-06T20:51:43.2832268Z",
+    "PromptTokens": 396,
+    "CompletionTokens": 623,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2960.244,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P08_R3",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 7,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022MagNet\u0022,\n    \u0022verdict\u0022: \u0022MagNet provides superior core loss modeling by utilizing advanced Steinmetz variations and empirical data fitting that outperform the basic approximations in jcalc. It is specifically engineered to handle complex excitation waveforms, making it the industry standard for high-frequency transformer design.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Advanced iGSE (improved Generalized Steinmetz Equation) implementation\u0022,\n      \u0022Extensive library of manufacturer-specific core material data\u0022,\n      \u0022Accurate non-sinusoidal waveform analysis\u0022,\n      \u0022Integrated thermal-magnetic coupling capabilities\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Steeper learning curve compared to simple calculators\u0022,\n      \u0022Requires paid license for full feature set\u0022\n    ],\n    \u0022bestFor\u0022: \u0022High-frequency power electronics and high-efficiency transformer design\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc is suitable for quick, basic estimations, MagNet and similar FEA-based tools provide the granular physics-based modeling required for precision loss calculations.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022jcalc\u0022, \u0022note\u0022: \u0022Basic analytical formulas; lacks complex waveform support.\u0022},\n      {\u0022tool\u0022: \u0022MagNet\u0022, \u0022note\u0022: \u0022High-fidelity electromagnetic simulation with superior loss databases.\u0022},\n      {\u0022tool\u0022: \u0022Ansys Maxwell\u0022, \u0022note\u0022: \u0022Comprehensive FEA suite for complex geometry and deep thermal integration.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Precision Magnetic Design Workflow\u0022,\n    \u0022description\u0022: \u0022A robust workflow transitioning from estimation to high-fidelity verification.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Conceptual Design\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Perform initial sizing and core selection iterations.\u0022},\n      {\u0022phase\u0022: \u0022Loss Verification\u0022, \u0022tool\u0022: \u0022MagNet\u0022, \u0022action\u0022: \u0022Import geometry and simulate core losses under actual switching waveforms.\u0022},\n      {\u0022phase\u0022: \u0022Thermal Validation\u0022, \u0022tool\u0022: \u0022MagNet\u0022, \u0022action\u0022: \u0022Apply loss maps to verify temperature rise within the core structure.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always use manufacturer-provided B-H curves rather than generic approximations.\u0022,\n    \u0022Account for DC bias effects which significantly alter core permeability.\u0022,\n    \u0022Verify core loss calculations against experimental bench testing at 50% and 100% load.\u0022,\n    \u0022Consider the impact of air gaps on fringing flux and local core heating.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022IGES, STEP, DXF, CSV (for material data)\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with MATLAB/Simulink and most SPICE-based circuit simulators\u0022,\n    \u0022dataExchange\u0022: \u0022Export loss maps to thermal analysis tools via CSV or native simulation formats\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "MagNet",
+      "jcalc",
+      "Ansys Maxwell"
+    ],
+    "HallucinatedToolNames": [
+      "MagNet",
+      "Ansys Maxwell"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:51:51.2619387Z",
+    "PromptTokens": 396,
+    "CompletionTokens": 619,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2945.4504,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P09_R1",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 8,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022jcalc\u0022,\n    \u0022verdict\u0022: \u0022jcalc is an excellent lightweight choice for rapid transformer core and winding sizing, offering high speed for initial parametric sweeps. It excels in the early design phase where quick iterations on flux density and window fill factors are necessary.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Rapid calculation of core geometry\u0022,\n      \u0022Efficient winding parameter estimation\u0022,\n      \u0022Lightweight and accessible\u0022,\n      \u0022Ideal for iterative design loops\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Lacks advanced finite element analysis (FEA) capabilities\u0022,\n      \u0022Limited thermal modeling depth\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Initial transformer sizing and feasibility studies\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc focuses on analytical sizing, other tools offer higher fidelity for complex physics.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022jcalc\u0022, \u0022note\u0022: \u0022Best for fast analytical sizing and initial feasibility.\u0022},\n      {\u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022note\u0022: \u0022Industry standard for detailed EM field simulation.\u0022},\n      {\u0022tool\u0022: \u0022MagNet\u0022, \u0022note\u0022: \u0022Superior for complex 3D magnetic flux visualization.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Transformer Design Workflow\u0022,\n    \u0022description\u0022: \u0022A structured approach from specification to final validation.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Requirements Definition\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Input power, voltage ratios, and frequency to determine initial core size.\u0022},\n      {\u0022phase\u0022: \u0022Winding Design\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Calculate wire gauge (AWG) and turns count based on current density and window area.\u0022},\n      {\u0022phase\u0022: \u0022Simulation Validation\u0022, \u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022action\u0022: \u0022Import jcalc geometry to verify flux density distribution and leakage inductance.\u0022},\n      {\u0022phase\u0022: \u0022Thermal Analysis\u0022, \u0022tool\u0022: \u0022COMSOL\u0022, \u0022action\u0022: \u0022Perform steady-state thermal modeling to ensure insulation temperature limits are met.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Use jcalc to define a range of core sizes before committing to expensive simulation software.\u0022,\n    \u0022Always apply a safety factor (typically 1.2x) to window area calculations to account for insulation thickness.\u0022,\n    \u0022Verify jcalc output against manufacturer datasheet core loss curves.\u0022,\n    \u0022Perform sensitivity analysis on frequency changes to observe core loss trade-offs.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, TXT, Excel compatible\u0022,\n    \u0022compatibility\u0022: \u0022Works with standard engineering software suites via data export\u0022,\n    \u0022dataExchange\u0022: \u0022Export jcalc design parameters to Excel for documentation and import into FEA tools for validation\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "jcalc",
+      "ANSYS Maxwell",
+      "MagNet",
+      "COMSOL"
+    ],
+    "HallucinatedToolNames": [
+      "ANSYS Maxwell",
+      "MagNet",
+      "COMSOL"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:51:59.2095118Z",
+    "PromptTokens": 396,
+    "CompletionTokens": 611,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2730.7442,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P09_R2",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 8,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022jcalc\u0022,\n    \u0022verdict\u0022: \u0022jcalc is an excellent, specialized utility for rapid electromagnetic and thermal calculations required in transformer sizing. It excels at bridging the gap between theoretical requirements and practical core/winding geometry configurations.\u0022,\n    \u0022strengths\u0022: [\n      \u0022High-speed iterative solving for core losses\u0022,\n      \u0022Accurate copper loss and temperature rise estimation\u0022,\n      \u0022Lightweight footprint for rapid design cycles\u0022,\n      \u0022Seamless integration with standard spreadsheet-based material libraries\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Lacks built-in 3D finite element analysis (FEA) capabilities\u0022,\n      \u0022Limited support for complex non-linear magnetic saturation modeling\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Initial design synthesis, sizing verification, and optimization of standard power transformers.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc focuses on analytical sizing, other tools offer specialized deep-dives.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022jcalc\u0022, \u0022note\u0022: \u0022Primary analytical sizing and optimization.\u0022},\n      {\u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022note\u0022: \u0022Used for advanced 3D FEA and complex flux distribution analysis.\u0022},\n      {\u0022tool\u0022: \u0022MATLAB/Simulink\u0022, \u0022note\u0022: \u0022Used for system-level transient and grid interaction modeling.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Transformer Design Synthesis Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach to transformer design using jcalc as the primary engine.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Requirements Definition\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Input power rating, voltage ratios, frequency, and regulatory efficiency targets.\u0022},\n      {\u0022phase\u0022: \u0022Core Selection\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Iterate through core materials and geometries to find the optimal flux density and cross-section.\u0022},\n      {\u0022phase\u0022: \u0022Winding Design\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Calculate wire gauge, number of turns, and insulation thickness based on current density constraints.\u0022},\n      {\u0022phase\u0022: \u0022Thermal Validation\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Perform temperature rise calculations to ensure compliance with thermal class limits.\u0022},\n      {\u0022phase\u0022: \u0022Verification\u0022, \u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022action\u0022: \u0022Export design parameters for final 3D magnetic field validation.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always define your thermal constraints early to avoid over-sizing the core.\u0022,\n    \u0022Maintain a local library of standard core data sheets to speed up jcalc input.\u0022,\n    \u0022Use sensitivity analysis to understand how small changes in turns ratio affect efficiency.\u0022,\n    \u0022Validate calculated leakage inductance against target impedance requirements.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, JSON, XML\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with standard circuit simulation tools like LTspice and MATLAB\u0022,\n    \u0022dataExchange\u0022: \u0022Export design parameters to CSV to bridge gaps between jcalc and CAD/FEA software.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "jcalc",
+      "ANSYS Maxwell",
+      "MATLAB/Simulink",
+      "LTspice and"
+    ],
+    "HallucinatedToolNames": [
+      "ANSYS Maxwell",
+      "MATLAB/Simulink",
+      "LTspice and"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 4,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification"
+    ],
+    "Timestamp": "2026-05-06T20:52:06.9512669Z",
+    "PromptTokens": 396,
+    "CompletionTokens": 669,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3185.4434,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P09_R3",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 8,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022jcalc\u0022,\n    \u0022verdict\u0022: \u0022jcalc is an excellent, specialized utility for rapid electromagnetic and thermal calculations required in transformer sizing. It streamlines the iterative process of core-winding optimization by providing immediate analytical feedback.\u0022,\n    \u0022strengths\u0022: [\n      \u0022High-speed analytical calculation engine\u0022,\n      \u0022Optimized for magnetic core geometry\u0022,\n      \u0022Lightweight and portable execution\u0022,\n      \u0022Low barrier to entry for iterative design\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Lacks integrated 3D finite element analysis (FEA)\u0022,\n      \u0022Limited capability for complex transient simulation\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Initial sizing, turn count calculation, and core loss estimation for power transformers.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc excels at analytical sizing, it should be paired with more robust software for final verification.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022jcalc\u0022, \u0022note\u0022: \u0022Primary analytical sizing and optimization.\u0022},\n      {\u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022note\u0022: \u0022Secondary validation through 3D FEA simulations.\u0022},\n      {\u0022tool\u0022: \u0022MATLAB\u0022, \u0022note\u0022: \u0022System-level modeling and control loop integration.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Transformer Design Lifecycle\u0022,\n    \u0022description\u0022: \u0022A structured approach moving from electrical specifications to physical component selection.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Requirements Definition\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Define power rating, frequency, and voltage ratios to establish core area and window requirements.\u0022},\n      {\u0022phase\u0022: \u0022Core \u0026 Material Selection\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Calculate flux density (Bmax) and select core material based on loss curves and saturation limits.\u0022},\n      {\u0022phase\u0022: \u0022Winding Optimization\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Determine wire gauge (AWG/mm2) based on current density and calculate turn counts for primary/secondary.\u0022},\n      {\u0022phase\u0022: \u0022Validation \u0026 Verification\u0022, \u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022action\u0022: \u0022Perform 3D FEA to verify leakage inductance, proximity effects, and thermal hotspots.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always apply a derating factor to core loss calculations to account for non-sinusoidal waveforms.\u0022,\n    \u0022Use jcalc to generate a range of candidate core sizes before committing to a specific manufacturer part.\u0022,\n    \u0022Cross-reference jcalc outputs with manufacturer datasheets for thermal resistance values.\u0022,\n    \u0022Automate the iteration of winding geometry in jcalc to minimize copper loss.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, TXT, JSON\u0022,\n    \u0022compatibility\u0022: \u0022Python-friendly via CLI wrappers\u0022,\n    \u0022dataExchange\u0022: \u0022Export calculation results to CSV to feed into thermal simulation spreadsheets or CAD software.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "jcalc",
+      "ANSYS Maxwell",
+      "MATLAB"
+    ],
+    "HallucinatedToolNames": [
+      "ANSYS Maxwell",
+      "MATLAB"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:52:15.1592838Z",
+    "PromptTokens": 396,
+    "CompletionTokens": 641,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3047.5306,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P10_R1",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 9,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022FEMM (Finite Element Method Magnetics)\u0022,\n    \u0022verdict\u0022: \u0022FEMM is the industry-standard open-source suite for 2D magnetostatic and transient analysis of electromagnetic devices. It offers significantly higher physical accuracy than basic spreadsheet calculators by solving Maxwell\u0027s equations via the finite element method.\u0022,\n    \u0022strengths\u0022: [\n      \u0022High-fidelity field visualization\u0022,\n      \u0022Robust material library management\u0022,\n      \u0022Lua scripting support for automation\u0022,\n      \u0022Extensive user community and documentation\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Limited to 2D or axisymmetric geometries\u0022,\n      \u0022No native 3D simulation capabilities\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Detailed magnetic flux analysis and core loss estimation for transformer designs.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc focuses on analytical sizing, FEMM provides numerical field verification, and Python-based tools like SciPy/NumPy are best for custom optimization loops.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022FEMM\u0022, \u0022note\u0022: \u0022Best for visual field analysis and saturation checking.\u0022},\n      {\u0022tool\u0022: \u0022Python/SciPy\u0022, \u0022note\u0022: \u0022Best for iterative design optimization and parameter sweeps.\u0022},\n      {\u0022tool\u0022: \u0022OpenEMS\u0022, \u0022note\u0022: \u0022Best if 3D electromagnetic field simulation is strictly required.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Transformer Design Flow\u0022,\n    \u0022description\u0022: \u0022Combine analytical sizing with numerical field verification.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Determine preliminary core geometry and wire gauge based on power requirements.\u0022},\n      {\u0022phase\u0022: \u0022Validation\u0022, \u0022tool\u0022: \u0022FEMM\u0022, \u0022action\u0022: \u0022Import geometry to verify flux density distribution and identify saturation regions.\u0022},\n      {\u0022phase\u0022: \u0022Optimization\u0022, \u0022tool\u0022: \u0022Python\u0022, \u0022action\u0022: \u0022Automate iterations between jcalc formulas and FEMM simulations to minimize losses.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always perform a mesh refinement study in FEMM to ensure result convergence.\u0022,\n    \u0022Use Lua scripts in FEMM to automate repetitive design variations.\u0022,\n    \u0022Cross-reference FEMM results with analytical calculations to validate core material properties.\u0022,\n    \u0022Keep a centralized material property database for consistent simulation results.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022.fem, .dxf, .lua\u0022,\n    \u0022compatibility\u0022: \u0022Windows-based, compatible with Python via pyfemm library\u0022,\n    \u0022dataExchange\u0022: \u0022Export field data as CSV for post-processing in Excel or Python\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "FEMM (Finite Element Method Magnetics)",
+      "FEMM",
+      "Python/SciPy",
+      "OpenEMS",
+      "jcalc",
+      "Python"
+    ],
+    "HallucinatedToolNames": [
+      "FEMM (Finite Element Method Magnetics)",
+      "FEMM",
+      "Python/SciPy",
+      "OpenEMS",
+      "Python"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 4,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification"
+    ],
+    "Timestamp": "2026-05-06T20:52:23.2170028Z",
+    "PromptTokens": 395,
+    "CompletionTokens": 588,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2663.9174,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P10_R2",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 9,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022KiCad (with Transformer Designer plugins)\u0022,\n    \u0022verdict\u0022: \u0022KiCad is the industry standard for open-source EDA, providing a robust ecosystem for integrating custom transformer designs into full PCB workflows. While it lacks a native electromagnetic field solver, its extensibility allows for seamless integration with specialized calculation scripts.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Extensive component library support\u0022,\n      \u0022Excellent 3D visualization for clearance checks\u0022,\n      \u0022Strong community support and plugin ecosystem\u0022,\n      \u0022Industry-standard Gerber generation\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022No native complex magnetic FEM analysis\u0022,\n      \u0022Steeper learning curve for custom footprint creation\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Full-cycle PCB design and electromechanical integration\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc focuses on core math, other tools bridge the gap between theoretical calculations and physical layout.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022FEMM\u0022, \u0022note\u0022: \u0022Best for 2D finite element magnetic analysis and flux density verification.\u0022},\n      {\u0022tool\u0022: \u0022Python/SciPy\u0022, \u0022note\u0022: \u0022Essential for custom iterative design optimization scripts.\u0022},\n      {\u0022tool\u0022: \u0022LTspice\u0022, \u0022note\u0022: \u0022Industry standard for simulating transformer parasitic effects in circuits.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Transformer Design Workflow\u0022,\n    \u0022description\u0022: \u0022A multi-stage approach combining analytical calculation with simulation and layout.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Analytical Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Determine core geometry and turn counts based on power requirements.\u0022},\n      {\u0022phase\u0022: \u0022Magnetic Simulation\u0022, \u0022tool\u0022: \u0022FEMM\u0022, \u0022action\u0022: \u0022Validate flux density and saturation levels in the chosen core geometry.\u0022},\n      {\u0022phase\u0022: \u0022Circuit Simulation\u0022, \u0022tool\u0022: \u0022LTspice\u0022, \u0022action\u0022: \u0022Model leakage inductance and parasitic capacitance in the target circuit.\u0022},\n      {\u0022phase\u0022: \u0022PCB Integration\u0022, \u0022tool\u0022: \u0022KiCad\u0022, \u0022action\u0022: \u0022Design the physical layout and footprint for the transformer assembly.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always account for thermal derating in your initial jcalc parameters.\u0022,\n    \u0022Use FEMM to verify that your core window area is not over-utilized.\u0022,\n    \u0022Create a standardized template in KiCad for frequently used transformer footprints.\u0022,\n    \u0022Validate your jcalc results against manufacturer datasheets for standard cores.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022DXF, STEP, Gerber, Netlist\u0022,\n    \u0022compatibility\u0022: \u0022Cross-platform (Linux, Windows, macOS)\u0022,\n    \u0022dataExchange\u0022: \u0022Export STEP models from KiCad for mechanical clearance verification\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "KiCad (with Transformer Designer plugins)",
+      "FEMM",
+      "Python/SciPy",
+      "LTspice",
+      "jcalc",
+      "KiCad",
+      "Transformer Designer"
+    ],
+    "HallucinatedToolNames": [
+      "KiCad (with Transformer Designer plugins)",
+      "FEMM",
+      "Python/SciPy",
+      "LTspice",
+      "Transformer Designer"
+    ],
+    "GroundedToolNames": [
+      "jcalc",
+      "KiCad"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:52:30.8988463Z",
+    "PromptTokens": 395,
+    "CompletionTokens": 611,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3073.5796,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P10_R3",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 9,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022FEMM (Finite Element Method Magnetics)\u0022,\n    \u0022verdict\u0022: \u0022FEMM is the industry-standard open-source suite for 2D magnetostatic and transient analysis of electromagnetic devices. It provides high-fidelity physical simulation that complements the analytical calculations performed in jcalc.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Robust finite element solver\u0022,\n      \u0022Excellent material property library\u0022,\n      \u0022Scriptable via Lua and Python\u0022,\n      \u0022Highly accurate for flux density and eddy current estimation\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Limited to 2D planar or axisymmetric geometries\u0022,\n      \u0022Manual meshing refinement required for high-frequency transients\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Detailed magnetic field verification and loss estimation after initial analytical sizing.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc focuses on rapid analytical sizing and geometric optimization, FEMM provides the numerical verification necessary for production-grade transformer design.\u0022,\n    \u0022toolNotes\u0022: [\n      {\n        \u0022tool\u0022: \u0022FEMM\u0022,\n        \u0022note\u0022: \u0022Numerical analysis for field distribution and saturation.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022OpenEMS\u0022,\n        \u0022note\u0022: \u0022Best for high-frequency transformer and RF component modeling.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022Python (SciPy/NumPy)\u0022,\n        \u0022note\u0022: \u0022Custom scripting for iterative optimization loops.\u0022\n      }\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Transformer Design Lifecycle\u0022,\n    \u0022description\u0022: \u0022A hybrid analytical-numerical approach combining speed with physical accuracy.\u0022,\n    \u0022steps\u0022: [\n      {\n        \u0022phase\u0022: \u0022Sizing\u0022,\n        \u0022tool\u0022: \u0022jcalc\u0022,\n        \u0022action\u0022: \u0022Perform initial electrical parameter sizing and core selection.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Verification\u0022,\n        \u0022tool\u0022: \u0022FEMM\u0022,\n        \u0022action\u0022: \u0022Import geometry to validate flux density, leakage inductance, and saturation.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Optimization\u0022,\n        \u0022tool\u0022: \u0022Python\u0022,\n        \u0022action\u0022: \u0022Automate iterative design sweeps to minimize copper and core losses.\u0022\n      }\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always perform a mesh density sensitivity analysis in FEMM before finalizing results.\u0022,\n    \u0022Use Python\u2019s pyfemm library to bridge jcalc output parameters directly into simulation models.\u0022,\n    \u0022Account for temperature-dependent resistivity in your copper loss calculations.\u0022,\n    \u0022Verify core saturation limits against manufacturer B-H curves rather than generic material defaults.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022DXF, FEM, CSV, Lua\u0022,\n    \u0022compatibility\u0022: \u0022Windows (native), Linux (via Wine/Virtualization)\u0022,\n    \u0022dataExchange\u0022: \u0022Use CSV files for exporting parameter sweeps from jcalc to Python-based post-processors.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "FEMM (Finite Element Method Magnetics)",
+      "FEMM",
+      "OpenEMS",
+      "Python (SciPy/NumPy)",
+      "jcalc",
+      "Python"
+    ],
+    "HallucinatedToolNames": [
+      "FEMM (Finite Element Method Magnetics)",
+      "FEMM",
+      "OpenEMS",
+      "Python (SciPy/NumPy)",
+      "Python"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:52:38.9873481Z",
+    "PromptTokens": 395,
+    "CompletionTokens": 645,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3816.6422,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P11_R1",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 10,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022jcalc\u0022,\n    \u0022verdict\u0022: \u0022jcalc is an excellent starting point for students because it simplifies the complex mathematical relationships involved in transformer magnetic design. It provides immediate feedback on core sizing and winding requirements, helping you build intuition before moving to more advanced finite element analysis software.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Intuitive user interface for beginners\u0022,\n      \u0022Real-time calculation of core saturation\u0022,\n      \u0022Standardized material property libraries\u0022,\n      \u0022Fast iteration cycles for design adjustments\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Lacks advanced thermal modeling capabilities\u0022,\n      \u0022Limited support for non-standard high-frequency geometries\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Educational purposes and preliminary sizing of low-to-medium frequency transformers.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc excels at fundamental sizing, professional engineers often transition to specialized tools for complex simulations.\u0022,\n    \u0022toolNotes\u0022: [\n      {\n        \u0022tool\u0022: \u0022jcalc\u0022,\n        \u0022note\u0022: \u0022Best for rapid sizing and core selection based on fundamental physics.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022Ansys Maxwell\u0022,\n        \u0022note\u0022: \u0022Industry standard for complex 3D electromagnetic field simulation.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022FEMM\u0022,\n        \u0022note\u0022: \u0022Open-source 2D magnetics solver for detailed leakage flux analysis.\u0022\n      }\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Transformer Design Sequence\u0022,\n    \u0022description\u0022: \u0022A structured approach from initial calculation to final verification.\u0022,\n    \u0022steps\u0022: [\n      {\n        \u0022phase\u0022: \u0022Preliminary Sizing\u0022,\n        \u0022tool\u0022: \u0022jcalc\u0022,\n        \u0022action\u0022: \u0022Define power requirements, flux density, and core geometry.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Detailed Analysis\u0022,\n        \u0022tool\u0022: \u0022FEMM\u0022,\n        \u0022action\u0022: \u0022Verify leakage inductance and flux distribution in the core.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Thermal Validation\u0022,\n        \u0022tool\u0022: \u0022Excel/Custom Scripts\u0022,\n        \u0022action\u0022: \u0022Calculate winding losses and temperature rise based on jcalc dimensions.\u0022\n      }\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always verify jcalc results against datasheet saturation curves.\u0022,\n    \u0022Focus on understanding the relationship between current density and copper loss.\u0022,\n    \u0022Keep a log of your design iterations to see how core changes affect efficiency.\u0022,\n    \u0022Cross-reference your calculations with standard textbooks like \u0027Transformer and Inductor Design Handbook\u0027.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, TXT, and proprietary project files\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with most Windows-based engineering environments\u0022,\n    \u0022dataExchange\u0022: \u0022Export core data as CSV to import into Excel for thermal and cost analysis.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "jcalc",
+      "Ansys Maxwell",
+      "FEMM",
+      "Excel/Custom Scripts"
+    ],
+    "HallucinatedToolNames": [
+      "Ansys Maxwell",
+      "FEMM",
+      "Excel/Custom Scripts"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 4,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification"
+    ],
+    "Timestamp": "2026-05-06T20:52:47.8207302Z",
+    "PromptTokens": 401,
+    "CompletionTokens": 637,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2429.3644,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P11_R2",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 10,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022jcalc\u0022,\n    \u0022verdict\u0022: \u0022jcalc is an excellent lightweight starting point for students because it simplifies complex electromagnetic equations into an accessible interface. It allows you to visualize core saturation and winding turns without the steep learning curve of high-end finite element analysis software.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Intuitive interface for beginners\u0022,\n      \u0022Fast calculation of core parameters\u0022,\n      \u0022Reduces manual mathematical errors\u0022,\n      \u0022Lightweight and portable execution\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Lacks advanced thermal modeling\u0022,\n      \u0022Limited material library compared to professional suites\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Initial sizing and rapid prototyping of small signal or power transformers.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc is perfect for foundational learning, professional design often moves toward integrated simulation suites.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022jcalc\u0022, \u0022note\u0022: \u0022Best for rapid analytical calculations and educational entry.\u0022},\n      {\u0022tool\u0022: \u0022Ansys Maxwell\u0022, \u0022note\u0022: \u0022Industry standard for complex 3D finite element electromagnetic simulation.\u0022},\n      {\u0022tool\u0022: \u0022LTspice\u0022, \u0022note\u0022: \u0022Essential for circuit-level simulation and transient analysis of transformer performance.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Transformer Design and Validation Workflow\u0022,\n    \u0022description\u0022: \u0022A systematic approach from analytical sizing to electrical verification.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Analytical Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Calculate core area, turn counts, and wire gauges based on power requirements.\u0022},\n      {\u0022phase\u0022: \u0022Circuit Simulation\u0022, \u0022tool\u0022: \u0022LTspice\u0022, \u0022action\u0022: \u0022Verify transformer behavior within the broader circuit and analyze frequency response.\u0022},\n      {\u0022phase\u0022: \u0022Advanced Verification\u0022, \u0022tool\u0022: \u0022Ansys Maxwell\u0022, \u0022action\u0022: \u0022Model flux leakage and thermal hotspots for final production readiness.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always verify your calculated core flux density against material datasheets.\u0022,\n    \u0022Keep a design notebook to track how variations in turn count impact winding resistance.\u0022,\n    \u0022Prioritize understanding the relationship between frequency and core size early on.\u0022,\n    \u0022Use LTspice to simulate the transformer\u0027s effect on circuit impedance.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022Standard text/CSV export for parameter logging.\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with most Windows-based engineering environments.\u0022,\n    \u0022dataExchange\u0022: \u0022Export calculated parameters to Excel to create your own custom design comparison tables.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "jcalc",
+      "Ansys Maxwell",
+      "LTspice",
+      "LTspice to"
+    ],
+    "HallucinatedToolNames": [
+      "Ansys Maxwell",
+      "LTspice",
+      "LTspice to"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 6,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing",
+      "Prototyping"
+    ],
+    "Timestamp": "2026-05-06T20:52:55.2466943Z",
+    "PromptTokens": 401,
+    "CompletionTokens": 571,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2767.5269,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P11_R3",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 10,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022jcalc\u0022,\n    \u0022verdict\u0022: \u0022jcalc is an excellent starting point for students because it simplifies complex electromagnetic equations into an accessible interface. It allows you to visualize the relationship between core material, winding turns, and power density without getting bogged down in manual computation.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Intuitive user interface for beginners\u0022,\n      \u0022Fast iteration of core sizing calculations\u0022,\n      \u0022Built-in material property databases\u0022,\n      \u0022Low barrier to entry for academic projects\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Limited support for high-frequency skin effect analysis\u0022,\n      \u0022Lacks advanced thermal modeling capabilities\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Educational foundation and rapid prototyping of standard transformer designs\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc is ideal for learning, professional workflows eventually require more robust simulation environments.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022jcalc\u0022, \u0022note\u0022: \u0022Best for conceptual design and academic learning.\u0022},\n      {\u0022tool\u0022: \u0022FEMM\u0022, \u0022note\u0022: \u0022Provides 2D finite element analysis for visualizing flux density.\u0022},\n      {\u0022tool\u0022: \u0022Ansys Maxwell\u0022, \u0022note\u0022: \u0022Industry standard for complex 3D electromagnetic simulation.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Transformer Design Learning Path\u0022,\n    \u0022description\u0022: \u0022A systematic approach to moving from basic calculations to validated designs.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Conceptual Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Determine core size and turn counts based on power requirements.\u0022},\n      {\u0022phase\u0022: \u0022Flux Validation\u0022, \u0022tool\u0022: \u0022FEMM\u0022, \u0022action\u0022: \u0022Verify flux density distribution and ensure no saturation occurs.\u0022},\n      {\u0022phase\u0022: \u0022Thermal Checking\u0022, \u0022tool\u0022: \u0022Manual Calculation/Excel\u0022, \u0022action\u0022: \u0022Estimate temperature rise based on calculated losses.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always cross-reference jcalc outputs with manual Ampere-turn calculations to ensure understanding of the physics.\u0022,\n    \u0022Focus on understanding how core saturation limits influence your turn count.\u0022,\n    \u0022Keep a design notebook to track how changing wire gauges affects your fill factor.\u0022,\n    \u0022Use standard core datasheets to validate the material properties used in your calculations.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022CSV, TXT, and standard image exports\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with most Windows-based engineering environments\u0022,\n    \u0022dataExchange\u0022: \u0022Export calculation parameters to Excel to perform custom loss analysis\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "jcalc",
+      "FEMM",
+      "Ansys Maxwell",
+      "Manual Calculation/Excel"
+    ],
+    "HallucinatedToolNames": [
+      "FEMM",
+      "Ansys Maxwell",
+      "Manual Calculation/Excel"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Prototyping"
+    ],
+    "Timestamp": "2026-05-06T20:53:03.0303599Z",
+    "PromptTokens": 401,
+    "CompletionTokens": 572,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3072.7365,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P12_R1",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 11,
+    "Repetition": 1,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022ANSYS Maxwell\u0022,\n    \u0022verdict\u0022: \u0022ANSYS Maxwell is the industry standard for high-fidelity electromagnetic field simulation, offering unparalleled accuracy for core loss and winding analysis. It seamlessly bridges the gap between theoretical calculations and physical performance by accounting for complex geometry and non-linear material properties.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Advanced 2D/3D electromagnetic field solver\u0022,\n      \u0022Robust core loss modeling including hysteresis and eddy currents\u0022,\n      \u0022Detailed winding proximity and skin effect analysis\u0022,\n      \u0022Seamless integration with thermal and mechanical solvers\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Significant learning curve for advanced setups\u0022,\n      \u0022High computational requirements for 3D transient analysis\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Final design validation and optimization of complex high-frequency transformers.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc provides excellent analytical baseline values, Maxwell offers finite element analysis (FEA) to validate those approximations under real-world conditions.\u0022,\n    \u0022toolNotes\u0022: [\n      {\n        \u0022tool\u0022: \u0022ANSYS Maxwell\u0022,\n        \u0022note\u0022: \u0022Gold standard for FEA; handles complex geometries and non-linearities.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022FEMM\u0022,\n        \u0022note\u0022: \u0022Free, open-source alternative for 2D static analysis; excellent for budget-constrained projects.\u0022\n      },\n      {\n        \u0022tool\u0022: \u0022jcalc\u0022,\n        \u0022note\u0022: \u0022Best for rapid sizing and preliminary analytical calculations.\u0022\n      }\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Transformer Design Flow\u0022,\n    \u0022description\u0022: \u0022Moving from analytical sizing to high-fidelity validation.\u0022,\n    \u0022steps\u0022: [\n      {\n        \u0022phase\u0022: \u0022Sizing\u0022,\n        \u0022tool\u0022: \u0022jcalc\u0022,\n        \u0022action\u0022: \u0022Determine preliminary core dimensions, winding turns, and wire gauge.\u0022\n      },\n      {\n        \u0022phase\u0022: \u0022Validation\u0022,\n        \u0022tool\u0022: \u0022ANSYS Maxwell\u0022,\n        \u0022action\u0022: \u0022Import geometry for core loss estimation and winding AC resistance analysis.\u0022\n      }\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always perform a mesh sensitivity analysis in FEA to ensure core loss results are grid-independent.\u0022,\n    \u0022Use Steinmetz parameters derived from actual material datasheets for higher precision in core loss models.\u0022,\n    \u0022Include window utilization factors in jcalc to avoid physical assembly constraints later.\u0022,\n    \u0022Account for temperature-dependent resistivity in winding analysis to reflect steady-state operating conditions.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022STEP, IGES, DXF, CSV\u0022,\n    \u0022compatibility\u0022: \u0022ANSYS Workbench, MATLAB/Simulink, Python\u0022,\n    \u0022dataExchange\u0022: \u0022Export jcalc design parameters as CSV or Python dictionaries for direct import into FEA scripts.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "ANSYS Maxwell",
+      "FEMM",
+      "jcalc"
+    ],
+    "HallucinatedToolNames": [
+      "ANSYS Maxwell",
+      "FEMM"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 3,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation"
+    ],
+    "Timestamp": "2026-05-06T20:53:11.1074636Z",
+    "PromptTokens": 400,
+    "CompletionTokens": 639,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2894.5018,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P12_R2",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 11,
+    "Repetition": 2,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022ANSYS Maxwell\u0022,\n    \u0022verdict\u0022: \u0022ANSYS Maxwell is the industry standard for high-fidelity electromagnetic analysis, providing unmatched accuracy for core loss estimation and complex winding eddy current calculations. It seamlessly bridges the gap between initial sizing calculations and final performance validation.\u0022,\n    \u0022strengths\u0022: [\n      \u0022Advanced 2D/3D transient electromagnetic solvers\u0022,\n      \u0022Robust Steinmetz and Bertotti core loss modeling\u0022,\n      \u0022Automated winding loss calculation including skin and proximity effects\u0022,\n      \u0022Tight integration with thermal analysis tools\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Steep learning curve for advanced meshing\u0022,\n      \u0022High computational resource requirements for complex models\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Final design validation and optimization of high-frequency or high-power density transformers.\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc handles initial sizing, Maxwell provides the physics-based validation required for production-grade designs.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022note\u0022: \u0022Gold standard for FEA-based loss analysis.\u0022},\n      {\u0022tool\u0022: \u0022FEMM\u0022, \u0022note\u0022: \u0022Free, lightweight 2D alternative for quick magnetic field visualization.\u0022},\n      {\u0022tool\u0022: \u0022PSIM\u0022, \u0022note\u0022: \u0022Best for system-level simulation including converter interaction.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Transformer Design Workflow\u0022,\n    \u0022description\u0022: \u0022A multi-stage approach leveraging quick calculations for sizing and FEA for detailed loss verification.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Sizing \u0026 Topology\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Determine core size, turn counts, and wire gauge based on power requirements.\u0022},\n      {\u0022phase\u0022: \u0022Field Analysis\u0022, \u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022action\u0022: \u0022Import geometry to simulate flux density distribution and calculate core losses.\u0022},\n      {\u0022phase\u0022: \u0022Winding Analysis\u0022, \u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022action\u0022: \u0022Perform eddy current analysis to determine AC resistance and winding losses.\u0022},\n      {\u0022phase\u0022: \u0022Thermal Verification\u0022, \u0022tool\u0022: \u0022ANSYS Icepak\u0022, \u0022action\u0022: \u0022Map loss data to thermal models to ensure temperature rise is within limits.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always validate FEA models against simple analytical calculations to ensure mesh convergence.\u0022,\n    \u0022Use manufacturer-provided B-H curves rather than generic material data for core loss accuracy.\u0022,\n    \u0022Account for high-frequency harmonics in your winding analysis if using non-sinusoidal waveforms.\u0022,\n    \u0022Use symmetry in 2D models to drastically reduce simulation time during the iterative design phase.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022DXF, STEP, IGES, Parasolid\u0022,\n    \u0022compatibility\u0022: \u0022Compatible with ANSYS Workbench, MATLAB/Simulink, and most CAD software.\u0022,\n    \u0022dataExchange\u0022: \u0022Export loss maps from Maxwell directly into thermal solvers for accurate hotspot prediction.\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "ANSYS Maxwell",
+      "FEMM",
+      "PSIM",
+      "jcalc",
+      "ANSYS Icepak"
+    ],
+    "HallucinatedToolNames": [
+      "ANSYS Maxwell",
+      "FEMM",
+      "PSIM",
+      "ANSYS Icepak"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:53:19.0059081Z",
+    "PromptTokens": 400,
+    "CompletionTokens": 667,
+    "ThinkingTokens": 0,
+    "LatencyMs": 3973.1641,
+    "Error": null
+  },
+  {
+    "QueryId": "google_standard_D4_C3_P12_R3",
+    "DomainId": "D4",
+    "ConfigId": "C3",
+    "ProviderId": "google",
+    "ModelId": "gemini-3.1-flash-lite-preview",
+    "ModelCategory": "standard",
+    "PromptIndex": 11,
+    "Repetition": 3,
+    "RawResponse": "{\n  \u0022recommendation\u0022: {\n    \u0022toolName\u0022: \u0022ANSYS Maxwell\u0022,\n    \u0022verdict\u0022: \u0022ANSYS Maxwell is the industry standard for high-fidelity electromagnetic field simulation, providing unparalleled accuracy for core loss and winding analysis. It bridges the gap between theoretical calculations and real-world physical performance through robust finite element analysis (FEA).\u0022,\n    \u0022strengths\u0022: [\n      \u0022Advanced material modeling for non-linear B-H curves\u0022,\n      \u0022Precise eddy current and proximity effect calculation\u0022,\n      \u0022Seamless integration with thermal solvers for coupled analysis\u0022,\n      \u0022Automated mesh refinement for complex winding geometries\u0022\n    ],\n    \u0022limitations\u0022: [\n      \u0022Steep learning curve for complex geometry setup\u0022,\n      \u0022Requires significant computational resources for transient simulations\u0022\n    ],\n    \u0022bestFor\u0022: \u0022Detailed verification of high-frequency transformer designs and loss optimization\u0022\n  },\n  \u0022comparison\u0022: {\n    \u0022summary\u0022: \u0022While jcalc provides rapid analytical estimates, Maxwell offers FEA-based validation.\u0022,\n    \u0022toolNotes\u0022: [\n      {\u0022tool\u0022: \u0022jcalc\u0022, \u0022note\u0022: \u0022Excellent for initial sizing and quick analytical iterations.\u0022},\n      {\u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022note\u0022: \u0022Superior for complex geometry and detailed loss breakdown.\u0022},\n      {\u0022tool\u0022: \u0022FEMM\u0022, \u0022note\u0022: \u0022A lightweight, free alternative for 2D magnetics.\u0022}\n    ]\n  },\n  \u0022workflow\u0022: {\n    \u0022title\u0022: \u0022Integrated Transformer Design Workflow\u0022,\n    \u0022description\u0022: \u0022A multi-stage approach moving from analytical estimation to high-fidelity validation.\u0022,\n    \u0022steps\u0022: [\n      {\u0022phase\u0022: \u0022Conceptual Sizing\u0022, \u0022tool\u0022: \u0022jcalc\u0022, \u0022action\u0022: \u0022Calculate core dimensions, turns, and wire gauge based on power requirements.\u0022},\n      {\u0022phase\u0022: \u0022Loss Validation\u0022, \u0022tool\u0022: \u0022ANSYS Maxwell\u0022, \u0022action\u0022: \u0022Import geometry to simulate core flux density and winding AC losses.\u0022},\n      {\u0022phase\u0022: \u0022Thermal Coupling\u0022, \u0022tool\u0022: \u0022ANSYS Icepak\u0022, \u0022action\u0022: \u0022Use loss data from Maxwell to determine temperature rise in windings and core.\u0022}\n    ]\n  },\n  \u0022tips\u0022: [\n    \u0022Always correlate jcalc analytical loss results with Maxwell simulation data early in the design phase.\u0022,\n    \u0022Use Steinmetz parameters derived from actual core material datasheets for higher accuracy in core loss calculations.\u0022,\n    \u0022Account for skin and proximity effects in winding analysis by using fine meshing in conductors.\u0022,\n    \u0022Perform sensitivity analysis on core material permeability to account for manufacturing tolerances.\u0022\n  ],\n  \u0022integration\u0022: {\n    \u0022fileFormats\u0022: \u0022DXF, STEP, IGES, Parasolid\u0022,\n    \u0022compatibility\u0022: \u0022ANSYS Electronics Desktop, MATLAB/Simulink, Python scripting API\u0022,\n    \u0022dataExchange\u0022: \u0022Export loss maps from Maxwell to thermal solvers to automate multi-physics workflows\u0022\n  }\n}",
+    "IsValidJson": true,
+    "MentionedToolNames": [
+      "ANSYS Maxwell",
+      "jcalc",
+      "FEMM",
+      "ANSYS Icepak"
+    ],
+    "HallucinatedToolNames": [
+      "ANSYS Maxwell",
+      "FEMM",
+      "ANSYS Icepak"
+    ],
+    "GroundedToolNames": [
+      "jcalc"
+    ],
+    "WorkflowStepsCount": 5,
+    "WorkflowStages": [
+      "Selection",
+      "Simulation",
+      "Calculation",
+      "Verification",
+      "Manufacturing"
+    ],
+    "Timestamp": "2026-05-06T20:53:27.9920111Z",
+    "PromptTokens": 400,
+    "CompletionTokens": 618,
+    "ThinkingTokens": 0,
+    "LatencyMs": 2812.3582,
+    "Error": null
+  }
+]

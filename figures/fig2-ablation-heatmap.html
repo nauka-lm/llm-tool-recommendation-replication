@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 1 - Ablation Study Heatmap</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; background: #fff; padding: 8px; color: #1a1a2e; }
+  .figure-container { max-width: 700px; margin: 0 auto; }
+  .figure-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; color: #1a1a2e; }
+  .figure-subtitle { font-size: 12px; color: #666; margin-bottom: 20px; }
+  .heatmap-grid { display: grid; grid-template-columns: 160px repeat(6, 1fr); gap: 2px; margin-bottom: 24px; }
+  .heatmap-grid.with-avg { grid-template-columns: 160px repeat(6, 1fr) 1fr; }
+  .cell { display: flex; align-items: center; justify-content: center; padding: 10px 6px; font-size: 13px; font-weight: 500; min-height: 42px; }
+  .header-cell { background: #f0f0f5; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #555; }
+  .model-cell { background: #f8f8fc; font-weight: 600; font-size: 12px; justify-content: flex-start; padding-left: 12px; border-right: 2px solid #e0e0e8; }
+  .section-label { grid-column: 1 / -1; font-weight: 700; font-size: 13px; padding: 8px 0 4px 0; color: #333; border-bottom: 1px solid #ddd; margin-top: 8px; }
+  .avg-cell { font-weight: 700; border-left: 2px solid #e0e0e8; }
+
+  /* Color scale: single-hue blue (light=low HR to dark=high HR), accessible for colorblindness */
+  .hr-0  { background: #e3f2fd; color: #0d47a1; }
+  .hr-5  { background: #bbdefb; color: #0d47a1; }
+  .hr-10 { background: #90caf9; color: #0d47a1; }
+  .hr-15 { background: #64b5f6; color: #0d47a1; }
+  .hr-20 { background: #42a5f5; color: #fff; }
+  .hr-25 { background: #2196f3; color: #fff; }
+  .hr-30 { background: #1e88e5; color: #fff; }
+  .hr-40 { background: #1565c0; color: #fff; }
+  .hr-50 { background: #0d47a1; color: #fff; }
+  .hr-60 { background: #0a3d8f; color: #fff; }
+  .hr-70 { background: #08306b; color: #fff; }
+  .hr-80 { background: #062350; color: #fff; }
+
+  .config-desc { display: grid; grid-template-columns: 50px 1fr 80px 80px 80px; gap: 0; font-size: 11px; margin-bottom: 2px; padding: 3px 8px; }
+  .config-desc.header { font-weight: 600; color: #555; border-bottom: 1px solid #ddd; margin-bottom: 4px; }
+  .legend { margin-top: 16px; }
+  .legend-title { font-size: 11px; font-weight: 600; color: #555; margin-bottom: 6px; }
+  .legend-bar { display: flex; height: 14px; border-radius: 3px; overflow: hidden; max-width: 400px; }
+  .legend-bar > div { flex: 1; }
+  .legend-labels { display: flex; justify-content: space-between; max-width: 400px; font-size: 10px; color: #888; margin-top: 2px; }
+
+  .arrow-down { color: #0d47a1; font-weight: 700; }
+  .arrow-up { color: #e65100; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="figure-container">
+  <!-- Config descriptions -->
+  <div style="margin-bottom: 16px; background: #f8f8fc; padding: 10px 12px; border-radius: 6px;">
+    <div class="config-desc header">
+      <div>Config</div><div>Mechanisms Active</div><div style="text-align:center">Context</div><div style="text-align:center">Vocab</div><div style="text-align:center">JSON</div>
+    </div>
+    <div class="config-desc"><div>C0</div><div>No constraints (baseline)</div><div style="text-align:center">&mdash;</div><div style="text-align:center">&mdash;</div><div style="text-align:center">&mdash;</div></div>
+    <div class="config-desc"><div>C1</div><div>Context injection only</div><div style="text-align:center">&check;</div><div style="text-align:center">&mdash;</div><div style="text-align:center">&mdash;</div></div>
+    <div class="config-desc"><div>C2</div><div>Closed vocabulary only</div><div style="text-align:center">&mdash;</div><div style="text-align:center">&check;</div><div style="text-align:center">&mdash;</div></div>
+    <div class="config-desc"><div>C3</div><div>JSON enforcement only</div><div style="text-align:center">&mdash;</div><div style="text-align:center">&mdash;</div><div style="text-align:center">&check;</div></div>
+    <div class="config-desc"><div>C4</div><div>Context + Vocabulary</div><div style="text-align:center">&check;</div><div style="text-align:center">&check;</div><div style="text-align:center">&mdash;</div></div>
+    <div class="config-desc"><div>C5</div><div>Full architecture (all three)</div><div style="text-align:center">&check;</div><div style="text-align:center">&check;</div><div style="text-align:center">&check;</div></div>
+  </div>
+
+  <!-- Heatmap -->
+  <div class="heatmap-grid with-avg">
+    <!-- Header row -->
+    <div class="cell header-cell" style="justify-content:flex-start; padding-left:12px;">Model</div>
+    <div class="cell header-cell">C0</div>
+    <div class="cell header-cell">C1</div>
+    <div class="cell header-cell">C2</div>
+    <div class="cell header-cell">C3</div>
+    <div class="cell header-cell">C4</div>
+    <div class="cell header-cell">C5</div>
+    <div class="cell header-cell avg-cell">Avg</div>
+
+    <!-- GPT-4.1 -->
+    <div class="cell model-cell">GPT-4.1</div>
+    <div class="cell hr-60">62.7</div>
+    <div class="cell hr-15">17.6</div>
+    <div class="cell hr-10">9.7</div>
+    <div class="cell hr-70" style="border: 3px solid #e65100;">74.0 <span class="arrow-up">&uarr;</span></div>
+    <div class="cell hr-5">7.5</div>
+    <div class="cell hr-5">5.3</div>
+    <div class="cell hr-25 avg-cell">29.5</div>
+
+    <!-- Claude Sonnet 4.5 -->
+    <div class="cell model-cell">Claude Sonnet 4.5</div>
+    <div class="cell hr-70">74.0</div>
+    <div class="cell hr-30">35.5</div>
+    <div class="cell hr-20">22.2</div>
+    <div class="cell hr-80" style="border: 3px solid #e65100;">80.0 <span class="arrow-up">&uarr;</span></div>
+    <div class="cell hr-20">22.6</div>
+    <div class="cell hr-10">11.3</div>
+    <div class="cell hr-40 avg-cell">40.9</div>
+
+    <!-- Gemini Flash-Lite -->
+    <div class="cell model-cell">Gemini 2.5 Flash-Lite</div>
+    <div class="cell hr-50">59.2</div>
+    <div class="cell hr-10">13.2</div>
+    <div class="cell hr-5">4.8</div>
+    <div class="cell hr-70" style="border: 3px solid #e65100;">72.1 <span class="arrow-up">&uarr;</span></div>
+    <div class="cell hr-0">2.9</div>
+    <div class="cell hr-0">3.8</div>
+    <div class="cell hr-25 avg-cell">26.0</div>
+
+    <!-- Avg row -->
+    <div class="cell model-cell" style="background: #e8eaf6; font-style: italic;">Cross-provider Avg</div>
+    <div class="cell" style="background:#e8eaf6; font-weight:600;">65.3</div>
+    <div class="cell" style="background:#e8eaf6; font-weight:600;">22.1</div>
+    <div class="cell" style="background:#e8eaf6; font-weight:600;">12.2</div>
+    <div class="cell" style="background:#e8eaf6; font-weight:600; border: 2px dashed #e65100;">75.4</div>
+    <div class="cell" style="background:#e8eaf6; font-weight:600;">11.0</div>
+    <div class="cell" style="background:#e8eaf6; font-weight:600;">6.8</div>
+    <div class="cell" style="background:#dde0f0; font-weight:700;">32.1</div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <div class="legend-title">Hallucination Rate Scale</div>
+    <div class="legend-bar">
+      <div style="background:#e3f2fd"></div>
+      <div style="background:#bbdefb"></div>
+      <div style="background:#90caf9"></div>
+      <div style="background:#64b5f6"></div>
+      <div style="background:#42a5f5"></div>
+      <div style="background:#1e88e5"></div>
+      <div style="background:#1565c0"></div>
+      <div style="background:#0a3d8f"></div>
+      <div style="background:#062350"></div>
+    </div>
+    <div class="legend-labels"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div>
+  </div>
+  <div style="margin-top: 10px; font-size: 11px; color: #888;">
+    <span style="border: 2px solid #e65100; padding: 1px 6px; font-size: 10px; margin-right: 4px;">C3</span> = JSON enforcement alone <em>increases</em> hallucination rate above ungrounded baseline (C0). Pattern consistent across all three providers.
+  </div>
+</div>
+</body>
+</html>

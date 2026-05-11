@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this dataset or code, please cite the accompanying paper."
+title: "Replication Package: Hallucination Mitigation in LLM-Based Tool Recommendation"
+type: dataset
+authors:
+  - family-names: Menxhiqi
+    given-names: Lavdim
+    email: lavdim.menxhiqi@ubt-uni.net
+    affiliation: "UBT -- Higher Education Institution, Pristina, Kosovo"
+    orcid: "https://orcid.org/0000-0002-5314-8741"
+  - family-names: Marinova
+    given-names: Galia
+    email: gim@tu-sofia.bg
+    affiliation: "Technical University of Sofia, Bulgaria"
+    orcid: "https://orcid.org/0000-0002-8804-5662"
+date-released: "2026-05-07"
+license: CC-BY-4.0
+repository-code: "https://github.com/nauka-lm/llm-tool-recommendation-replication"
+keywords:
+  - hallucination mitigation
+  - large language models
+  - tool recommendation
+  - ablation study
+  - cross-provider evaluation
+  - anti-hallucination architecture
+  - engineering tool selection
+preferred-citation:
+  type: article
+  title: "Hallucination Mitigation in LLM-Based Tool Recommendation: A Cross-Provider Architectural Ablation Study Across Two Model Generations"
+  authors:
+    - family-names: Menxhiqi
+      given-names: Lavdim
+    - family-names: Marinova
+      given-names: Galia
+  journal: "AI"
+  year: 2026

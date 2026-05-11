@@ -1,0 +1,23 @@
+# Configuration with secrets
+appsettings.json
+!appsettings.example.json
+
+# .NET build artifacts
+bin/
+obj/
+*.user
+*.suo
+
+# Python
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vs/
+.vscode/
+.idea/
+.claude/

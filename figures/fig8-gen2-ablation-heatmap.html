@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 8 - Gen2 Ablation Heatmap</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; background: #fff; padding: 8px; color: #1a1a2e; }
+  .figure-container { max-width: 700px; margin: 0 auto; }
+  .heatmap { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+  .heatmap th { font-size: 12px; font-weight: 600; padding: 10px 8px; text-align: center; background: #f8f9fa; border: 1px solid #e0e0e0; }
+  .heatmap td { font-size: 13px; font-weight: 700; padding: 14px 8px; text-align: center; border: 1px solid #e0e0e0; transition: background 0.3s; }
+  .heatmap .config-label { font-weight: 600; background: #f8f9fa; text-align: left; padding-left: 12px; font-size: 12px; }
+  .heatmap .mechanism-desc { font-weight: 400; color: #666; font-size: 10px; }
+  .heatmap .row-header { text-align: left; padding-left: 12px; }
+
+  /* Color scale: single-hue blue (light=low HR to dark=high HR), accessible for colorblindness */
+  .hr-0-5   { background: #e3f2fd; color: #0d47a1; }
+  .hr-5-10  { background: #bbdefb; color: #0d47a1; }
+  .hr-10-20 { background: #90caf9; color: #0d47a1; }
+  .hr-20-40 { background: #42a5f5; color: #fff; }
+  .hr-40-60 { background: #1565c0; color: #fff; }
+  .hr-60-80 { background: #0a3d8f; color: #fff; }
+  .hr-80-100 { background: #062350; color: #fff; }
+  .anomaly { background: #e65100 !important; color: #fff !important; font-size: 14px; }
+
+  .comparison-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+  .compare-card { background: #f8f9fa; border-radius: 8px; padding: 14px; text-align: center; border: 1px solid #e0e0e0; }
+  .compare-card .label { font-size: 10px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+  .compare-card .gen-row { display: flex; justify-content: center; gap: 12px; margin-top: 6px; }
+  .compare-card .gen-val { font-size: 13px; font-weight: 600; }
+  .compare-card .gen-label { font-size: 10px; color: #888; }
+
+</style>
+</head>
+<body>
+<div class="figure-container">
+  <table class="heatmap">
+    <thead>
+      <tr>
+        <th style="width:140px">Config</th>
+        <th style="width:120px">Mechanisms</th>
+        <th style="width:130px">GPT-5.2</th>
+        <th style="width:130px">Claude Sonnet 4.6</th>
+        <th style="width:130px">Gemini 3.1 Flash-Lite</th>
+        <th style="width:130px">Cross-provider Avg</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="config-label">C0</td>
+        <td class="config-label"><span class="mechanism-desc">None (baseline)</span></td>
+        <td class="hr-60-80">60.3</td>
+        <td class="hr-60-80">72.4</td>
+        <td class="hr-60-80">67.3</td>
+        <td class="hr-60-80">66.7</td>
+      </tr>
+      <tr>
+        <td class="config-label">C1</td>
+        <td class="config-label"><span class="mechanism-desc">M1 (Context)</span></td>
+        <td class="hr-10-20">13.7</td>
+        <td class="hr-20-40">26.2</td>
+        <td class="hr-10-20">17.4</td>
+        <td class="hr-10-20">19.1</td>
+      </tr>
+      <tr>
+        <td class="config-label">C2</td>
+        <td class="config-label"><span class="mechanism-desc">M2 (Vocabulary)</span></td>
+        <td class="hr-0-5">2.9</td>
+        <td class="hr-10-20">15.2</td>
+        <td class="hr-5-10">6.5</td>
+        <td class="hr-5-10">8.2</td>
+      </tr>
+      <tr>
+        <td class="config-label">C3 *</td>
+        <td class="config-label"><span class="mechanism-desc">M3 (JSON only)</span></td>
+        <td class="anomaly">85.4 *</td>
+        <td class="anomaly">82.6 *</td>
+        <td class="anomaly">77.3 *</td>
+        <td class="anomaly">81.8 *</td>
+      </tr>
+      <tr>
+        <td class="config-label">C4</td>
+        <td class="config-label"><span class="mechanism-desc">M1+M2</span></td>
+        <td class="hr-0-5">3.6</td>
+        <td class="hr-10-20">16.3</td>
+        <td class="hr-0-5">4.5</td>
+        <td class="hr-5-10">8.1</td>
+      </tr>
+      <tr>
+        <td class="config-label">C5</td>
+        <td class="config-label"><span class="mechanism-desc">M1+M2+M3 (Full)</span></td>
+        <td class="hr-0-5">3.3</td>
+        <td class="hr-10-20">13.3</td>
+        <td class="hr-5-10">5.9</td>
+        <td class="hr-5-10">7.5</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Gen1 vs Gen2 comparison cards -->
+  <div class="comparison-row">
+    <div class="compare-card">
+      <div class="label">Ablation Rank Order</div>
+      <div class="gen-row">
+        <div><div class="gen-label">Gen1</div><div class="gen-val">C5 &le; C4 &lt; C2 &lt; C1 &lt; C0 &lt; C3</div></div>
+      </div>
+      <div class="gen-row">
+        <div><div class="gen-label">Gen2</div><div class="gen-val">C5 &lt; C4 &asymp; C2 &lt; C1 &lt; C0 &lt; C3</div></div>
+      </div>
+    </div>
+    <div class="compare-card">
+      <div class="label">C3 Anomaly Magnitude</div>
+      <div class="gen-row">
+        <div><div class="gen-label">Gen1</div><div class="gen-val" style="color:#e65100">+10.1pp above C0</div></div>
+      </div>
+      <div class="gen-row">
+        <div><div class="gen-label">Gen2</div><div class="gen-val" style="color:#e65100">+15.1pp above C0</div></div>
+      </div>
+    </div>
+    <div class="compare-card">
+      <div class="label">M1+M2 Capture of C5</div>
+      <div class="gen-row">
+        <div><div class="gen-label">Gen1</div><div class="gen-val" style="color:#0d47a1">83.2%</div></div>
+      </div>
+      <div class="gen-row">
+        <div><div class="gen-label">Gen2</div><div class="gen-val" style="color:#0d47a1">98.8%</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

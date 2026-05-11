@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 11 - Per-Tool-Mention Hallucination Rate</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; background: #fff; padding: 8px; color: #1a1a2e; }
+  .figure-container { max-width: 700px; margin: 0 auto; }
+  .main-layout { display: grid; grid-template-columns: 1fr 260px; gap: 24px; margin-bottom: 24px; }
+
+  .chart-area { }
+  .generation-section { margin-bottom: 20px; }
+  .gen-label { font-size: 12px; font-weight: 700; color: #555; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; padding-bottom: 4px; border-bottom: 1px solid #e0e0e8; }
+
+  .bar-row { display: grid; grid-template-columns: 150px 1fr 44px 70px; gap: 8px; align-items: center; margin-bottom: 5px; }
+  .model-label { font-size: 11px; font-weight: 500; color: #444; text-align: right; white-space: nowrap; }
+  .bar-track { position: relative; height: 20px; background: #f0f0f5; border-radius: 3px; overflow: visible; }
+  .bar-fill { position: absolute; top: 0; left: 0; height: 100%; border-radius: 3px; transition: width 0.4s; display: flex; align-items: center; justify-content: flex-end; padding-right: 4px; }
+  .bar-fill span { font-size: 10px; font-weight: 700; color: #fff; text-shadow: 0 0 2px rgba(0,0,0,0.3); white-space: nowrap; }
+  /* For narrow bars (< ~30%), in-bar text overflows. Render the value OUTSIDE the bar (right side), in dark text on the track background, so it stays readable. */
+  .bar-fill.narrow-bar { padding-right: 0; }
+  .bar-fill.narrow-bar span { color: #333; text-shadow: none; position: absolute; top: 50%; left: calc(100% + 4px); transform: translateY(-50%); white-space: nowrap; }
+  .hr-value { font-size: 11px; font-weight: 700; text-align: left; }
+  .tools-info { font-size: 10px; color: #888; text-align: left; white-space: nowrap; }
+
+  .openai-std { background: rgba(16, 163, 127, 0.8); }
+  .openai-think { background: rgba(16, 163, 127, 0.5); }
+  .anthropic-std { background: rgba(204, 119, 34, 0.8); }
+  .anthropic-think { background: rgba(204, 119, 34, 0.5); }
+  .google-std { background: rgba(66, 133, 244, 0.8); }
+  .google-think { background: rgba(66, 133, 244, 0.5); }
+
+  .annotation-panel { display: flex; flex-direction: column; gap: 12px; }
+  .annotation-box { padding: 12px 14px; border-radius: 6px; font-size: 11px; line-height: 1.6; }
+  .annotation-regression { background: #fff3f0; border: 1px solid #ffcdd2; }
+  .annotation-improvement { background: #e8f5e9; border: 1px solid #c8e6c9; }
+  .annotation-title { font-weight: 700; font-size: 11px; margin-bottom: 4px; }
+  .annotation-title.regression { color: #c62828; }
+  .annotation-title.improvement { color: #1b5e20; }
+  .annotation-value { font-weight: 600; color: #333; }
+  .annotation-delta { font-weight: 700; }
+  .delta-bad { color: #c62828; }
+  .delta-good { color: #1b5e20; }
+
+  .legend { display: flex; gap: 16px; margin-bottom: 20px; font-size: 11px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 5px; }
+  .legend-swatch { width: 18px; height: 10px; border-radius: 2px; }
+
+</style>
+</head>
+<body>
+<div class="figure-container">
+  <div class="legend">
+    <div class="legend-item"><div class="legend-swatch" style="background:rgba(16,163,127,0.8)"></div>OpenAI (std)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:rgba(16,163,127,0.5)"></div>OpenAI (think)</div>
+    <div class="legend-item" style="color:#ccc">|</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:rgba(204,119,34,0.8)"></div>Anthropic (std)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:rgba(204,119,34,0.5)"></div>Anthropic (think)</div>
+    <div class="legend-item" style="color:#ccc">|</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:rgba(66,133,244,0.8)"></div>Google (std)</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:rgba(66,133,244,0.5)"></div>Google (think)</div>
+  </div>
+
+  <div class="main-layout">
+    <div class="chart-area">
+
+      <!-- Generation 1 -->
+      <div class="generation-section">
+        <div class="gen-label">Generation 1</div>
+
+        <div class="bar-row">
+          <div class="model-label">GPT-4.1</div>
+          <div class="bar-track">
+            <div class="bar-fill openai-std" style="width:36.3%"><span>5.58%</span></div>
+          </div>
+          <div class="hr-value" style="color:#10a37f">5.58%</div>
+          <div class="tools-info">8.8 tools/q</div>
+        </div>
+        <div class="bar-row">
+          <div class="model-label">Claude Sonnet 4.5</div>
+          <div class="bar-track">
+            <div class="bar-fill anthropic-std" style="width:70.4%"><span>10.83%</span></div>
+          </div>
+          <div class="hr-value" style="color:#cc7722">10.83%</div>
+          <div class="tools-info">15.6 tools/q</div>
+        </div>
+        <div class="bar-row">
+          <div class="model-label">Gemini Flash-Lite 2.5</div>
+          <div class="bar-track">
+            <div class="bar-fill google-std narrow-bar" style="width:23.5%"><span>3.62%</span></div>
+          </div>
+          <div class="hr-value" style="color:#4285f4">3.62%</div>
+          <div class="tools-info">12.7 tools/q</div>
+        </div>
+
+        <div style="height: 6px;"></div>
+        <div class="bar-row">
+          <div class="model-label" style="font-style:italic">o4-mini</div>
+          <div class="bar-track">
+            <div class="bar-fill openai-think" style="width:45.0%"><span>6.92%</span></div>
+          </div>
+          <div class="hr-value" style="color:#10a37f">6.92%</div>
+          <div class="tools-info">9.9 tools/q</div>
+        </div>
+        <div class="bar-row">
+          <div class="model-label" style="font-style:italic">Claude S. 4.5 (think)</div>
+          <div class="bar-track">
+            <div class="bar-fill anthropic-think" style="width:71.2%"><span>10.95%</span></div>
+          </div>
+          <div class="hr-value" style="color:#cc7722">10.95%</div>
+          <div class="tools-info">12.7 tools/q</div>
+        </div>
+        <div class="bar-row">
+          <div class="model-label" style="font-style:italic">Gemini Flash 2.5</div>
+          <div class="bar-track">
+            <div class="bar-fill google-think" style="width:34.2%"><span>5.26%</span></div>
+          </div>
+          <div class="hr-value" style="color:#4285f4">5.26%</div>
+          <div class="tools-info">14.0 tools/q</div>
+        </div>
+      </div>
+
+      <!-- Generation 2 -->
+      <div class="generation-section">
+        <div class="gen-label">Generation 2</div>
+
+        <div class="bar-row">
+          <div class="model-label">GPT-5.2</div>
+          <div class="bar-track">
+            <div class="bar-fill openai-std narrow-bar" style="width:22.6%"><span>3.48%</span></div>
+          </div>
+          <div class="hr-value" style="color:#10a37f">3.48%</div>
+          <div class="tools-info">14.2 tools/q</div>
+        </div>
+        <div class="bar-row">
+          <div class="model-label">Claude Sonnet 4.6</div>
+          <div class="bar-track">
+            <div class="bar-fill anthropic-std" style="width:88.4%"><span>13.60%</span></div>
+          </div>
+          <div class="hr-value" style="color:#cc7722">13.60%</div>
+          <div class="tools-info">19.0 tools/q</div>
+        </div>
+        <div class="bar-row">
+          <div class="model-label">Gemini 3.1 Flash-Lite</div>
+          <div class="bar-track">
+            <div class="bar-fill google-std" style="width:35.8%"><span>5.50%</span></div>
+          </div>
+          <div class="hr-value" style="color:#4285f4">5.50%</div>
+          <div class="tools-info">8.0 tools/q</div>
+        </div>
+
+        <div style="height: 6px;"></div>
+        <div class="bar-row">
+          <div class="model-label" style="font-style:italic">GPT-5.2 (think)</div>
+          <div class="bar-track">
+            <div class="bar-fill openai-think narrow-bar" style="width:23.3%"><span>3.59%</span></div>
+          </div>
+          <div class="hr-value" style="color:#10a37f">3.59%</div>
+          <div class="tools-info">14.3 tools/q</div>
+        </div>
+        <div class="bar-row">
+          <div class="model-label" style="font-style:italic">Claude S. 4.6 (think)</div>
+          <div class="bar-track">
+            <div class="bar-fill anthropic-think" style="width:98.8%"><span>15.20%</span></div>
+          </div>
+          <div class="hr-value" style="color:#cc7722">15.20%</div>
+          <div class="tools-info">19.0 tools/q</div>
+        </div>
+        <div class="bar-row">
+          <div class="model-label" style="font-style:italic">Gemini 3.1 Fl.-Lite (think)</div>
+          <div class="bar-track">
+            <div class="bar-fill google-think" style="width:30.6%"><span>4.70%</span></div>
+          </div>
+          <div class="hr-value" style="color:#4285f4">4.70%</div>
+          <div class="tools-info">7.2 tools/q</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right annotation panel -->
+    <div class="annotation-panel">
+      <div class="annotation-box annotation-regression">
+        <div class="annotation-title regression">Anthropic Regression</div>
+        <div style="margin-bottom: 6px;">
+          <span class="annotation-value">Sonnet 4.5:</span> 10.83%<br>
+          <span class="annotation-value">Sonnet 4.6:</span> 13.60%
+        </div>
+        <div class="annotation-delta delta-bad">+2.8pp regression</div>
+        <div style="margin-top: 6px; font-size: 10px; color: #888;">
+          More tools mentioned (15.6 &rarr; 19.0/q) but worse vocabulary adherence under tier-aligned comparison
+        </div>
+      </div>
+
+      <div class="annotation-box annotation-improvement">
+        <div class="annotation-title improvement">OpenAI Improvement</div>
+        <div style="margin-bottom: 6px;">
+          <span class="annotation-value">GPT-4.1:</span> 5.58% per mention<br>
+          <span class="annotation-value">GPT-5.2:</span> 3.48% per mention
+        </div>
+        <div class="annotation-delta delta-good">1.6x improvement</div>
+        <div style="margin-top: 6px; font-size: 10px; color: #888;">
+          Flagship-to-flagship: more tools (8.8 &rarr; 14.2/q) with better vocabulary adherence
+        </div>
+      </div>
+
+      <div class="annotation-box" style="background: #fff8e1; border: 1px solid #ffe082;">
+        <div class="annotation-title" style="color: #5d4037;">Google Stability</div>
+        <div style="margin-bottom: 6px;">
+          <span class="annotation-value">Flash-Lite 2.5:</span> 3.62%<br>
+          <span class="annotation-value">Flash-Lite 3.1:</span> 5.50%
+        </div>
+        <div class="annotation-delta" style="color: #5d4037;">+1.9pp (within band)</div>
+        <div style="margin-top: 6px; font-size: 10px; color: #888;">
+          Entry-tier vocabulary adherence stable across generations (within &plusmn;2 pp)
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

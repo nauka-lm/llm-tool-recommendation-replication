@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 10 - C5 Hallucination Rates with 95% Confidence Intervals</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; background: #fff; padding: 8px; color: #1a1a2e; }
+  .figure-container { max-width: 700px; margin: 0 auto; }
+  .legend { display: flex; gap: 20px; margin-bottom: 20px; font-size: 11px; justify-content: center; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 5px; }
+  .legend-swatch { width: 16px; height: 10px; border-radius: 2px; }
+
+  .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+  .chart-panel { background: #fafbfc; border: 1px solid #e8e8e8; border-radius: 8px; padding: 20px 20px 16px; }
+  .panel-title { font-size: 13px; font-weight: 700; margin-bottom: 16px; text-align: center; color: #333; }
+
+  .chart-wrapper { position: relative; }
+</style>
+</head>
+<body>
+<div class="figure-container">
+  <div class="legend">
+    <div class="legend-item"><div class="legend-swatch" style="background:#10a37f"></div>OpenAI</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#cc7722"></div>Anthropic</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#4285f4"></div>Google</div>
+    <div class="legend-item" style="color:#ccc">|</div>
+    <div class="legend-item">
+      <svg width="18" height="14" viewBox="0 0 18 14" style="vertical-align: middle;">
+        <line x1="4" y1="2" x2="14" y2="2" stroke="#333" stroke-width="1.5"/>
+        <line x1="9" y1="2" x2="9" y2="12" stroke="#333" stroke-width="1.5"/>
+        <line x1="4" y1="12" x2="14" y2="12" stroke="#333" stroke-width="1.5"/>
+      </svg>
+      95% CI
+    </div>
+  </div>
+
+  <div class="chart-grid" id="chartGrid"></div>
+
+</div>
+
+<script>
+const panels = [
+  {
+    title: 'Gen1 Standard',
+    bars: [
+      { label: 'GPT-4.1', mean: 5.3, lo: 3.8, hi: 6.4, color: '#10a37f' },
+      { label: 'Claude S. 4.5', mean: 11.3, lo: 8.6, hi: 12.5, color: '#cc7722' },
+      { label: 'Gemini\nFlash-Lite 2.5', mean: 3.8, lo: 2.7, hi: 4.4, color: '#4285f4' }
+    ]
+  },
+  {
+    title: 'Gen1 Thinking',
+    bars: [
+      { label: 'o4-mini', mean: 6.6, lo: 4.9, hi: 7.8, color: '#10a37f' },
+      { label: 'Claude S. 4.5\n(think)', mean: 11.3, lo: 8.5, hi: 12.5, color: '#cc7722' },
+      { label: 'Gemini\nFlash 2.5', mean: 5.5, lo: 4.4, hi: 6.5, color: '#4285f4' }
+    ]
+  },
+  {
+    title: 'Gen2 Standard',
+    bars: [
+      { label: 'GPT-5.2', mean: 3.3, lo: 2.6, hi: 4.5, color: '#10a37f' },
+      { label: 'Claude\nSonnet 4.6', mean: 13.3, lo: 12.0, hi: 14.7, color: '#cc7722' },
+      { label: 'Gemini 3.1\nFlash-Lite', mean: 5.9, lo: 4.7, hi: 7.4, color: '#4285f4' }
+    ]
+  },
+  {
+    title: 'Gen2 Thinking',
+    bars: [
+      { label: 'GPT-5.2\n(think)', mean: 3.3, lo: 2.4, hi: 4.4, color: '#10a37f' },
+      { label: 'Claude S. 4.6\n(think)', mean: 14.9, lo: 13.6, hi: 16.4, color: '#cc7722' },
+      { label: 'Gemini 3.1 Fl.\n(think)', mean: 5.2, lo: 4.0, hi: 6.7, color: '#4285f4' }
+    ]
+  }
+];
+
+const scaleMax = 18;
+const chartHeight = 200;
+const barWidth = 44;
+const capHalf = 7;
+const grid = document.getElementById('chartGrid');
+
+function pct(val) {
+  return (val / scaleMax) * chartHeight;
+}
+
+panels.forEach(panel => {
+  const panelEl = document.createElement('div');
+  panelEl.className = 'chart-panel';
+
+  const titleEl = document.createElement('div');
+  titleEl.className = 'panel-title';
+  titleEl.textContent = panel.title;
+  panelEl.appendChild(titleEl);
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'chart-wrapper';
+
+  const nBars = panel.bars.length;
+  const barSpacing = 80;
+  const svgWidth = nBars * barSpacing + 20;
+  const margin = { top: 38, bottom: 30 };
+  const svgHeight = chartHeight + margin.top + margin.bottom;
+
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('width', '100%');
+  svg.setAttribute('viewBox', `0 0 ${svgWidth} ${svgHeight}`);
+  svg.style.display = 'block';
+
+  const yTicks = [0, 4, 8, 12, 16];
+  yTicks.forEach(tick => {
+    const y = margin.top + chartHeight - pct(tick);
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('x1', 30);
+    line.setAttribute('y1', y);
+    line.setAttribute('x2', svgWidth);
+    line.setAttribute('y2', y);
+    line.setAttribute('stroke', tick === 0 ? '#ccc' : '#e8e8e8');
+    line.setAttribute('stroke-width', tick === 0 ? '1' : '0.5');
+    if (tick > 0) line.setAttribute('stroke-dasharray', '4,3');
+    svg.appendChild(line);
+
+    const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    label.setAttribute('x', 27);
+    label.setAttribute('y', y + 3.5);
+    label.setAttribute('text-anchor', 'end');
+    label.setAttribute('font-size', '10');
+    label.setAttribute('fill', '#888');
+    label.setAttribute('font-family', "'Segoe UI', 'Helvetica Neue', Arial, sans-serif");
+    label.textContent = tick + '%';
+    svg.appendChild(label);
+  });
+
+  const yAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+  yAxis.setAttribute('x1', 30);
+  yAxis.setAttribute('y1', margin.top);
+  yAxis.setAttribute('x2', 30);
+  yAxis.setAttribute('y2', margin.top + chartHeight);
+  yAxis.setAttribute('stroke', '#ccc');
+  yAxis.setAttribute('stroke-width', '1');
+  svg.appendChild(yAxis);
+
+  panel.bars.forEach((d, i) => {
+    const cx = 30 + (i + 0.5) * ((svgWidth - 30) / nBars);
+    const barH = pct(d.mean);
+    const barTop = margin.top + chartHeight - barH;
+
+    const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    rect.setAttribute('x', cx - barWidth / 2);
+    rect.setAttribute('y', barTop);
+    rect.setAttribute('width', barWidth);
+    rect.setAttribute('height', barH);
+    rect.setAttribute('fill', d.color);
+    rect.setAttribute('rx', '3');
+    rect.setAttribute('ry', '3');
+    svg.appendChild(rect);
+
+    const yHi = margin.top + chartHeight - pct(d.hi);
+    const yLo = margin.top + chartHeight - pct(d.lo);
+
+    const errLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    errLine.setAttribute('x1', cx);
+    errLine.setAttribute('y1', yHi);
+    errLine.setAttribute('x2', cx);
+    errLine.setAttribute('y2', yLo);
+    errLine.setAttribute('stroke', '#333');
+    errLine.setAttribute('stroke-width', '1.5');
+    svg.appendChild(errLine);
+
+    const capTop = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    capTop.setAttribute('x1', cx - capHalf);
+    capTop.setAttribute('y1', yHi);
+    capTop.setAttribute('x2', cx + capHalf);
+    capTop.setAttribute('y2', yHi);
+    capTop.setAttribute('stroke', '#333');
+    capTop.setAttribute('stroke-width', '1.5');
+    svg.appendChild(capTop);
+
+    const capBot = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    capBot.setAttribute('x1', cx - capHalf);
+    capBot.setAttribute('y1', yLo);
+    capBot.setAttribute('x2', cx + capHalf);
+    capBot.setAttribute('y2', yLo);
+    capBot.setAttribute('stroke', '#333');
+    capBot.setAttribute('stroke-width', '1.5');
+    svg.appendChild(capBot);
+
+    const valLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    valLabel.setAttribute('x', cx);
+    valLabel.setAttribute('y', yHi - 14);
+    valLabel.setAttribute('text-anchor', 'middle');
+    valLabel.setAttribute('font-size', '11');
+    valLabel.setAttribute('font-weight', '700');
+    valLabel.setAttribute('fill', d.color);
+    valLabel.setAttribute('font-family', "'Segoe UI', 'Helvetica Neue', Arial, sans-serif");
+    valLabel.textContent = d.mean.toFixed(1) + '%';
+    svg.appendChild(valLabel);
+
+    const ciLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    ciLabel.setAttribute('x', cx);
+    ciLabel.setAttribute('y', yHi - 4);
+    ciLabel.setAttribute('text-anchor', 'middle');
+    ciLabel.setAttribute('font-size', '8.5');
+    ciLabel.setAttribute('fill', '#666');
+    ciLabel.setAttribute('font-family', "'Segoe UI', 'Helvetica Neue', Arial, sans-serif");
+    ciLabel.textContent = '[' + d.lo.toFixed(1) + ', ' + d.hi.toFixed(1) + ']';
+    svg.appendChild(ciLabel);
+
+    const labelLines = d.label.split('\n');
+    labelLines.forEach((line, li) => {
+      const xLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      xLabel.setAttribute('x', cx);
+      xLabel.setAttribute('y', margin.top + chartHeight + 13 + li * 12);
+      xLabel.setAttribute('text-anchor', 'middle');
+      xLabel.setAttribute('font-size', '9.5');
+      xLabel.setAttribute('fill', '#555');
+      xLabel.setAttribute('font-family', "'Segoe UI', 'Helvetica Neue', Arial, sans-serif");
+      xLabel.textContent = line;
+      svg.appendChild(xLabel);
+    });
+  });
+
+  wrapper.appendChild(svg);
+  panelEl.appendChild(wrapper);
+  grid.appendChild(panelEl);
+});
+</script>
+</body>
+</html>

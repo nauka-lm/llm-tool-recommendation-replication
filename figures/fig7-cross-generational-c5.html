@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 7 - Cross-Generational C5 Comparison</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; background: #fff; padding: 8px; color: #1a1a2e; }
+  .figure-container { max-width: 700px; margin: 0 auto; }
+  .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 24px; }
+  .chart-panel { background: #fafbfc; border: 1px solid #e8e8e8; border-radius: 8px; padding: 20px; }
+  .panel-title { font-size: 13px; font-weight: 700; margin-bottom: 16px; text-align: center; }
+
+  .bar-row { display: grid; grid-template-columns: 140px 1fr 50px; gap: 8px; align-items: center; margin-bottom: 10px; }
+  .model-label { font-size: 11px; font-weight: 500; color: #444; text-align: right; }
+  .bar-wrapper { position: relative; height: 26px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+  .bar-gen1 { position: absolute; top: 0; left: 0; height: 50%; border-radius: 4px 4px 0 0; opacity: 0.5; }
+  .bar-gen2 { position: absolute; top: 50%; left: 0; height: 50%; border-radius: 0 0 4px 4px; }
+  .bar-value { font-size: 11px; font-weight: 700; text-align: left; }
+
+  /* Double-bar side by side */
+  .dual-bar { display: flex; flex-direction: column; gap: 2px; height: 30px; }
+  .bar-track { position: relative; height: 13px; background: #f0f0f0; border-radius: 3px; overflow: hidden; }
+  .bar-fill { position: absolute; top: 0; left: 0; height: 100%; border-radius: 3px; transition: width 0.4s; }
+
+  .openai { background: #10a37f; }
+  .anthropic { background: #cc7722; }
+  .google { background: #4285f4; }
+  .gen1-bar { opacity: 0.4; }
+  .gen2-bar { opacity: 0.9; }
+
+  .delta { font-weight: 700; font-size: 11px; }
+  .improved { color: #1b5e20; }
+  .regressed { color: #c62828; }
+  .stable { color: #5d4037; }
+
+  .legend { display: flex; gap: 24px; margin-bottom: 20px; font-size: 11px; justify-content: center; }
+  .legend-item { display: flex; align-items: center; gap: 5px; }
+  .legend-swatch { width: 20px; height: 8px; border-radius: 2px; }
+
+  .summary-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
+  .summary-card { background: #f8f9fa; border-radius: 8px; padding: 14px; text-align: center; border: 1px solid #e0e0e0; }
+  .summary-card .provider { font-size: 11px; font-weight: 600; color: #666; margin-bottom: 2px; }
+  .summary-card .arrow { font-size: 20px; margin: 4px 0; }
+  .summary-card .values { font-size: 13px; font-weight: 600; }
+  .summary-card .delta-label { font-size: 11px; margin-top: 4px; }
+  .openai-accent { border-top: 3px solid #10a37f; }
+  .anthropic-accent { border-top: 3px solid #cc7722; }
+  .google-accent { border-top: 3px solid #4285f4; }
+
+</style>
+</head>
+<body>
+<div class="figure-container">
+  <div class="legend">
+    <div class="legend-item"><div class="legend-swatch" style="background:#10a37f;opacity:0.4"></div>Gen1</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#10a37f;opacity:0.9"></div>Gen2</div>
+    <div class="legend-item" style="color:#888">|</div>
+    <div class="legend-item"><div class="legend-swatch openai" style="opacity:0.7"></div>OpenAI</div>
+    <div class="legend-item"><div class="legend-swatch anthropic" style="opacity:0.7"></div>Anthropic</div>
+    <div class="legend-item"><div class="legend-swatch google" style="opacity:0.7"></div>Google</div>
+  </div>
+
+  <div class="chart-grid">
+    <!-- Standard Models -->
+    <div class="chart-panel">
+      <div class="panel-title">Standard Models</div>
+
+      <div class="bar-row">
+        <div class="model-label">GPT-4.1 / GPT-5.2</div>
+        <div class="dual-bar">
+          <div class="bar-track"><div class="bar-fill openai gen1-bar" style="width:35.3%"></div></div>
+          <div class="bar-track"><div class="bar-fill openai gen2-bar" style="width:22.0%"></div></div>
+        </div>
+        <div class="delta improved">5.3% &rarr; 3.3%<br>-2.0pp</div>
+      </div>
+
+      <div class="bar-row">
+        <div class="model-label">Sonnet 4.5 / Sonnet 4.6</div>
+        <div class="dual-bar">
+          <div class="bar-track"><div class="bar-fill anthropic gen1-bar" style="width:75.3%"></div></div>
+          <div class="bar-track"><div class="bar-fill anthropic gen2-bar" style="width:88.7%"></div></div>
+        </div>
+        <div class="delta regressed">11.3% &rarr; 13.3%<br>+2.0pp</div>
+      </div>
+
+      <div class="bar-row">
+        <div class="model-label">Flash-Lite 2.5 / Flash-Lite 3.1</div>
+        <div class="dual-bar">
+          <div class="bar-track"><div class="bar-fill google gen1-bar" style="width:25.3%"></div></div>
+          <div class="bar-track"><div class="bar-fill google gen2-bar" style="width:39.3%"></div></div>
+        </div>
+        <div class="delta regressed">3.8% &rarr; 5.9%<br>+2.1pp</div>
+      </div>
+
+      <div class="bar-row" style="border-top: 1px dashed #ccc; padding-top: 8px;">
+        <div class="model-label" style="font-weight:700">Cross-provider avg</div>
+        <div class="dual-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:45.3%;background:#888;opacity:0.4"></div></div>
+          <div class="bar-track"><div class="bar-fill" style="width:50.0%;background:#888;opacity:0.7"></div></div>
+        </div>
+        <div class="delta stable">6.8% &rarr; 7.5%<br>+0.7pp</div>
+      </div>
+    </div>
+
+    <!-- Thinking Models -->
+    <div class="chart-panel">
+      <div class="panel-title">Reasoning Models</div>
+
+      <div class="bar-row">
+        <div class="model-label">o4-mini / GPT-5.2(t)</div>
+        <div class="dual-bar">
+          <div class="bar-track"><div class="bar-fill openai gen1-bar" style="width:44.0%"></div></div>
+          <div class="bar-track"><div class="bar-fill openai gen2-bar" style="width:22.0%"></div></div>
+        </div>
+        <div class="delta improved">6.6% &rarr; 3.3%<br>-3.3pp</div>
+      </div>
+
+      <div class="bar-row">
+        <div class="model-label">Sonnet 4.5(t) / Sonnet 4.6(t)</div>
+        <div class="dual-bar">
+          <div class="bar-track"><div class="bar-fill anthropic gen1-bar" style="width:75.3%"></div></div>
+          <div class="bar-track"><div class="bar-fill anthropic gen2-bar" style="width:99.3%"></div></div>
+        </div>
+        <div class="delta regressed">11.3% &rarr; 14.9%<br>+3.6pp</div>
+      </div>
+
+      <div class="bar-row">
+        <div class="model-label">Flash 2.5 / Flash-Lite 3.1(t)</div>
+        <div class="dual-bar">
+          <div class="bar-track"><div class="bar-fill google gen1-bar" style="width:36.7%"></div></div>
+          <div class="bar-track"><div class="bar-fill google gen2-bar" style="width:34.7%"></div></div>
+        </div>
+        <div class="delta improved">5.5% &rarr; 5.2%<br>-0.3pp</div>
+      </div>
+
+      <div class="bar-row" style="border-top: 1px dashed #ccc; padding-top: 8px;">
+        <div class="model-label" style="font-weight:700">Cross-provider avg</div>
+        <div class="dual-bar">
+          <div class="bar-track"><div class="bar-fill" style="width:52.0%;background:#888;opacity:0.4"></div></div>
+          <div class="bar-track"><div class="bar-fill" style="width:52.0%;background:#888;opacity:0.7"></div></div>
+        </div>
+        <div class="delta stable">7.8% &rarr; 7.8%<br>&plusmn;0.0pp</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary cards -->
+  <div class="summary-row">
+    <div class="summary-card openai-accent">
+      <div class="provider">OpenAI</div>
+      <div class="values" style="color:#10a37f">5.3% &rarr; 3.3%</div>
+      <div class="delta-label improved">&darr; Improved (-2.0pp)</div>
+    </div>
+    <div class="summary-card anthropic-accent">
+      <div class="provider">Anthropic</div>
+      <div class="values" style="color:#cc7722">11.3% &rarr; 13.3%</div>
+      <div class="delta-label regressed">&uarr; Regressed (+2.0pp)</div>
+    </div>
+    <div class="summary-card google-accent">
+      <div class="provider">Google</div>
+      <div class="values" style="color:#4285f4">3.8% &rarr; 5.9%</div>
+      <div class="delta-label regressed">&uarr; Regressed (+2.1pp)</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

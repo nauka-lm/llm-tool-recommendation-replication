@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fig. 11 - Three-Mechanism Anti-Hallucination Architecture Pipeline</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #ffffff;
+            padding: 8px;
+            color: #1a1a2e;
+        }
+        .figure-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 8px;
+        }
+        .figure-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+        .pipeline {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            position: relative;
+        }
+        .stage {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .stage-box {
+            width: 100%;
+            border-radius: 8px;
+            padding: 10px 6px;
+            text-align: center;
+            position: relative;
+            min-height: 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .stage-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 4px;
+        }
+        .stage-desc {
+            font-size: 10px;
+            line-height: 1.3;
+            opacity: 0.9;
+        }
+        /* User Query */
+        .query-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid #6c757d;
+        }
+        .query-box .stage-label { color: #495057; }
+        .query-box .stage-desc { color: #6c757d; }
+
+        /* M1 */
+        .m1-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid #1976d2;
+        }
+        .m1-box .stage-label { color: #0d47a1; }
+        .m1-box .stage-desc { color: #1565c0; }
+
+        /* M2 */
+        .m2-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #388e3c;
+        }
+        .m2-box .stage-label { color: #1b5e20; }
+        .m2-box .stage-desc { color: #2e7d32; }
+
+        /* M3 */
+        .m3-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border: 2px solid #f57c00;
+        }
+        .m3-box .stage-label { color: #e65100; }
+        .m3-box .stage-desc { color: #ef6c00; }
+
+        /* LLM */
+        .llm-box {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border: 2px solid #7b1fa2;
+        }
+        .llm-box .stage-label { color: #4a148c; }
+        .llm-box .stage-desc { color: #6a1b9a; }
+
+        /* Validator */
+        .validator-box {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            border: 2px solid #c62828;
+        }
+        .validator-box .stage-label { color: #b71c1c; }
+        .validator-box .stage-desc { color: #c62828; }
+
+        /* Arrows */
+        .arrow-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            flex-shrink: 0;
+        }
+        .arrow {
+            font-size: 18px;
+            color: #9e9e9e;
+            font-weight: bold;
+        }
+
+        /* Config indicators */
+        .config-row {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px dashed #ccc;
+        }
+        .config-header {
+            width: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: #555;
+        }
+        .config-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 6px;
+        }
+        .config-cell {
+            text-align: center;
+            padding: 8px 4px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            border: 1px solid #ddd;
+        }
+        .config-cell.active { background: #e8f5e9; border-color: #4caf50; color: #2e7d32; }
+        .config-cell.inactive { background: #fafafa; border-color: #eee; color: #bbb; }
+        .config-cell.anomaly { background: #fff3e0; border-color: #ff9800; color: #e65100; }
+        .config-name {
+            font-size: 12px;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 2px;
+        }
+        .config-hr {
+            font-size: 10px;
+            font-weight: 400;
+        }
+
+        /* Database box */
+        .db-section {
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .db-box {
+            background: linear-gradient(135deg, #efebe9 0%, #d7ccc8 100%);
+            border: 2px solid #795548;
+            border-radius: 8px;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .db-box .stage-label { color: #4e342e; font-size: 11px; }
+        .db-box .stage-desc { color: #6d4c41; font-size: 10px; }
+        .db-connector {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .db-connector-line {
+            width: 2px;
+            height: 16px;
+            background: #795548;
+        }
+        .db-connector-arrow {
+            font-size: 14px;
+            color: #795548;
+        }
+
+        /* Provider boxes */
+        .provider-section {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px dashed #ccc;
+        }
+        .provider-title {
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .provider-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .provider-card {
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+        }
+        .provider-card.openai { background: #e6f7f2; border: 1.5px solid #10a37f; }
+        .provider-card.anthropic { background: #fef3e2; border: 1.5px solid #cc7722; }
+        .provider-card.google { background: #eef4fe; border: 1.5px solid #4285f4; }
+        .provider-name {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .provider-models {
+            font-size: 10px;
+            line-height: 1.4;
+            color: #555;
+        }
+        .provider-result {
+            font-size: 11px;
+            font-weight: 600;
+            margin-top: 4px;
+            padding-top: 4px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* Legend */
+        .legend {
+            margin-top: 18px;
+            padding-top: 12px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 10px;
+            color: #666;
+        }
+        .legend-color {
+            width: 14px;
+            height: 14px;
+            border-radius: 3px;
+            border: 1px solid rgba(0,0,0,0.2);
+        }
+
+        /* Toggle indicators */
+        .toggle-label {
+            font-size: 9px;
+            text-align: center;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+        .toggle-on { color: #2e7d32; }
+        .toggle-off { color: #bbb; }
+    </style>
+</head>
+<body>
+    <div class="figure-container">
+        <!-- Main Pipeline -->
+        <div class="pipeline">
+            <!-- User Query -->
+            <div class="stage" style="flex: 0.8;">
+                <div class="stage-box query-box">
+                    <div class="stage-label">User Query</div>
+                    <div class="stage-desc">Natural language tool recommendation request</div>
+                </div>
+            </div>
+
+            <div class="arrow-container"><span class="arrow">&rarr;</span></div>
+
+            <!-- M1 -->
+            <div class="stage">
+                <div class="stage-box m1-box">
+                    <div class="stage-label">M1: Context Injection</div>
+                    <div class="stage-desc">6-stage hierarchical<br>database context builder<br>(2,000-7,000 tokens)</div>
+                </div>
+                <div class="toggle-label toggle-on">Configurable</div>
+            </div>
+
+            <div class="arrow-container"><span class="arrow">&rarr;</span></div>
+
+            <!-- M2 -->
+            <div class="stage">
+                <div class="stage-box m2-box">
+                    <div class="stage-label">M2: Vocabulary Constraint</div>
+                    <div class="stage-desc">Closed vocabulary<br>with enumerated tool<br>names and IDs</div>
+                </div>
+                <div class="toggle-label toggle-on">Configurable</div>
+            </div>
+
+            <div class="arrow-container"><span class="arrow">&rarr;</span></div>
+
+            <!-- M3 -->
+            <div class="stage">
+                <div class="stage-box m3-box">
+                    <div class="stage-label">M3: JSON Enforcement</div>
+                    <div class="stage-desc">Structured schema:<br>toolName, toolId,<br>features, strengths</div>
+                </div>
+                <div class="toggle-label toggle-on">Configurable</div>
+            </div>
+
+            <div class="arrow-container"><span class="arrow">&rarr;</span></div>
+
+            <!-- LLM -->
+            <div class="stage">
+                <div class="stage-box llm-box">
+                    <div class="stage-label">LLM Provider</div>
+                    <div class="stage-desc">OpenAI / Anthropic /<br>Google (standard or<br>reasoning mode)</div>
+                </div>
+            </div>
+
+            <div class="arrow-container"><span class="arrow">&rarr;</span></div>
+
+            <!-- Validator -->
+            <div class="stage" style="flex: 0.9;">
+                <div class="stage-box validator-box">
+                    <div class="stage-label">Hallucination Detector</div>
+                    <div class="stage-desc">Database cross-reference<br>validation of all<br>mentioned tool names</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Database -->
+        <div class="db-section">
+            <div class="db-connector">
+                <div class="db-connector-arrow">&uarr;</div>
+                <div class="db-connector-line"></div>
+            </div>
+            <div class="db-box">
+                <div class="stage-label">PostgreSQL Database</div>
+                <div class="stage-desc">82 verified engineering tools | 4 domains | Hierarchical categories | Features &amp; specifications</div>
+            </div>
+            <div class="db-connector">
+                <div class="db-connector-line"></div>
+                <div class="db-connector-arrow">&darr;</div>
+            </div>
+        </div>
+
+        <!-- Ablation Configurations -->
+        <div class="config-row">
+            <div class="config-header">Ablation<br>Configs</div>
+            <div class="config-grid">
+                <div class="config-cell inactive">
+                    <span class="config-name">C0</span>
+                    <span class="config-hr">No mechanisms<br>HR: 65.3%</span>
+                </div>
+                <div class="config-cell active">
+                    <span class="config-name">C1</span>
+                    <span class="config-hr">M1 only<br>HR: 22.1%</span>
+                </div>
+                <div class="config-cell active">
+                    <span class="config-name">C2</span>
+                    <span class="config-hr">M2 only<br>HR: 12.2%</span>
+                </div>
+                <div class="config-cell anomaly">
+                    <span class="config-name">C3 *</span>
+                    <span class="config-hr">M3 only<br>HR: 75.4%</span>
+                </div>
+                <div class="config-cell active">
+                    <span class="config-name">C4</span>
+                    <span class="config-hr">M1+M2<br>HR: 11.0%</span>
+                </div>
+                <div class="config-cell active" style="border-width: 2px;">
+                    <span class="config-name">C5</span>
+                    <span class="config-hr">Full (M1+M2+M3)<br>HR: 6.8%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Provider Cards -->
+        <div class="provider-section">
+            <div class="provider-title">Twelve LLM Configurations (3 Providers &times; 2 Modes &times; 2 Generations) &mdash; 6,912 API Calls</div>
+            <div class="provider-grid">
+                <div class="provider-card openai">
+                    <div class="provider-name" style="color: #10a37f;">OpenAI</div>
+                    <div class="provider-models">
+                        <strong>Gen1:</strong> GPT-4.1 / o4-mini<br>
+                        <strong>Gen2:</strong> GPT-5.2 (std &amp; thinking)
+                    </div>
+                    <div class="provider-result" style="color: #10a37f;">C5: 5.3% &rarr; 3.3%</div>
+                </div>
+                <div class="provider-card anthropic">
+                    <div class="provider-name" style="color: #cc7722;">Anthropic</div>
+                    <div class="provider-models">
+                        <strong>Gen1:</strong> Claude Sonnet 4.5 (std &amp; think)<br>
+                        <strong>Gen2:</strong> Claude Sonnet 4.6 (std &amp; think)
+                    </div>
+                    <div class="provider-result" style="color: #cc7722;">C5: 11.3% &rarr; 13.3%</div>
+                </div>
+                <div class="provider-card google">
+                    <div class="provider-name" style="color: #4285f4;">Google</div>
+                    <div class="provider-models">
+                        <strong>Gen1:</strong> Gemini 2.5 Flash-Lite / Flash<br>
+                        <strong>Gen2:</strong> Gemini 3.1 Flash-Lite (std &amp; thinking)
+                    </div>
+                    <div class="provider-result" style="color: #4285f4;">C5: 3.8% &rarr; 5.9%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #bbdefb;"></div>
+                M1: Database Context
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #c8e6c9;"></div>
+                M2: Vocabulary Constraint
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ffe0b2;"></div>
+                M3: JSON Enforcement
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #fff3e0; border-color: #ff9800;"></div>
+                * C3 Anomaly (HR &gt; baseline)
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,198 @@
+Rank,ConsolidatedName,Category,TotalMentions,C0_Mentions,C5_Mentions,Evidence,EvidenceURL,Ambiguous
+1,LTspice,H2,3859,1896,426,Analog Devices (formerly Linear Technology) SPICE simulator,https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html,0
+2,Saturn,Near-miss,1111,521,34,DB: Saturn PCB Design Toolkit,,0
+3,Altium,H2,903,424,11,Altium Designer - commercial PCB design suite,https://www.altium.com/altium-designer,0
+4,Temperature Rise Calculator,Near-miss,745,1,324,"DB: Sierra Circuits Trace Width, Current Capacity, and Temperature Rise Calculator",,0
+5,PSpice,H2,630,322,102,Cadence Design Systems SPICE simulator,https://www.pspice.com/,0
+6,Fusion,H2,615,385,25,Autodesk Fusion 360 - CAD/electronics platform,https://www.autodesk.com/products/fusion-360,1
+7,Micron,Near-miss,319,0,92,DB: Micron 20 PCB Production Calculator,,0
+8,SolidWorks,H2,250,151,1,Dassault Systemes - 3D CAD with simulation,https://www.solidworks.com/,0
+9,JLCPCB,H2,225,61,0,PCB manufacturer with online design tools/calculators,https://jlcpcb.com/,0
+10,FEMM,H2,215,20,0,Finite Element Method Magnetics - open-source FEA,https://www.femm.info/,0
+11,Skottans,Near-miss,212,59,7,DB: Skottans Elektronik Impedance Calculator,,0
+12,LTSpice,H2,169,51,84,LTspice variant capitalization,https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html,0
+13,Sierra Circuits,Near-miss,152,16,9,DB: Sierra Circuits Trace Width... Calculator,,0
+14,Practical,Non-specific,132,25,0,JSON response fragment (Practical Tips),,0
+15,Layer,Non-specific,126,63,6,Feature/term (Layer Stack Manager),,0
+16,ANSYS Maxwell,H2,120,0,0,Ansys electromagnetic simulation software,https://www.ansys.com/products/electronics/ansys-maxwell,0
+17,Gerber,Non-specific,115,76,0,File format name (Gerber format),,0
+18,Recommended,Non-specific,103,51,3,Response structure word,,0
+19,Use Saturn PCB Toolkit,Near-miss,100,39,4,Sentence fragment referencing DB: Saturn PCB Design Toolkit,,0
+20,Complementary Tools,Non-specific,98,55,0,Response structure phrase,,0
+21,KiCad Calculator,Near-miss,97,33,0,DB: KiCad (extended with Calculator),,0
+22,Design,Non-specific,93,44,1,Generic word from responses,,0
+23,TI WEBENCH,Near-miss,93,31,0,DB: WEBENCH (TI),,0
+24,PLECS,H2,91,3,0,Plexim - power electronics circuit simulation,https://www.plexim.com/plecs,0
+25,PSIM,H2,91,1,0,Powersim Inc. - power electronics simulation,https://powersimtech.com/,0
+26,Cadence Allegro,H2,89,52,0,Cadence PCB design and layout tool,https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/pcb-layout/allegro-pcb-designer.html,0
+27,Comprehensive,Non-specific,87,13,60,Adjective from responses,,0
+28,KiCad PCB Calculator,Near-miss,86,49,0,DB: KiCad (extended with PCB Calculator),,0
+29,Autodesk Fusion,H2,84,46,6,Autodesk Fusion 360 variant name,https://www.autodesk.com/products/fusion-360,0
+30,SPICE,Non-specific,79,26,0,Simulation methodology name (not specific tool),,1
+31,Field Solver,Non-specific,78,67,0,Generic tool class name,,0
+32,Stage,Non-specific,76,42,0,Generic word / JSON workflow phase,,0
+33,Your,Non-specific,74,27,0,Pronoun from response text,,0
+34,COMSOL,H2,70,0,0,COMSOL Multiphysics - FEA simulation platform,https://www.comsol.com/,0
+35,Circuit Digest Calculator,Near-miss,68,3,5,DB: Circuit Digest PCB Trace Width Calculator,,0
+36,Cadence Sigrity,H2,68,47,0,Cadence signal/power integrity analysis,https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/si-pi-analysis.html,0
+37,WEBENCH Power Designer,H2,67,30,0,TI WEBENCH Power Designer variant name,https://www.ti.com/design-resources/design-tools-simulation/webench-power-designer.html,0
+38,Magnetics Designer,H2,66,36,0,Intusoft - transformer/inductor design software,http://www.intusoft.com/mag.htm,0
+39,Weeks,Non-specific,62,25,0,Time word from response,,0
+40,Thermal,Non-specific,58,13,0,Generic technical term,,0
+41,Polar Si9000,H2,58,1,0,Polar Instruments - PCB impedance calculator,https://www.polarinstruments.com/products/si/Si9000.html,0
+42,CST Studio,H2,56,43,0,Dassault Systemes (formerly CST) - EM simulation suite,https://www.3ds.com/products/simulia/cst-studio-suite,0
+43,Score,Non-specific,52,0,52,JSON field name,,0
+44,MATLAB/Simulink,H2,52,0,0,MathWorks - numerical computing and simulation,https://www.mathworks.com/products/simulink.html,0
+45,EasyEDA PCB Editor,H2,51,14,0,JLCPCB/EasyEDA PCB editor variant name,https://easyeda.com/,0
+46,Keysight ADS,H2,51,1,0,Keysight Advanced Design System - RF/microwave EDA,https://www.keysight.com/us/en/products/software/pathwave-design-software/pathwave-advanced-design-system.html,0
+47,Mentor Graphics,H2,50,38,0,Siemens EDA (formerly Mentor) - EDA tools,https://eda.sw.siemens.com/,0
+48,WEBDESIGNER,H2,50,3,0,ON Semiconductor Power Supply WebDesigner,https://www.onsemi.com/design/webdesigner+,0
+49,Why Saturn PCB Toolkit,Near-miss,49,48,0,Sentence fragment referencing DB: Saturn PCB Design Toolkit,,0
+50,Technick,Near-miss,49,0,5,DB: Technick PCB Impedance Calculator,,0
+51,Quite Universal Circuit Simulator,H2,48,24,0,QUCS - open-source circuit simulator,https://qucs.sourceforge.net/,0
+52,KiCad PCB Editor,Near-miss,47,16,0,DB: KiCad (extended with PCB Editor),,0
+53,AutoCAD,H2,47,30,0,Autodesk - general-purpose CAD,https://www.autodesk.com/products/autocad,0
+54,HyperLynx,H2,46,1,0,Siemens/Mentor - signal integrity analysis,https://eda.sw.siemens.com/en-US/pcb/hyperlynx/,0
+55,Extensive,Non-specific,46,0,45,Adjective from response,,0
+56,QUCS,H2,43,6,0,Quite Universal Circuit Simulator - open-source,https://qucs.sourceforge.net/,0
+57,Logic Analyzer,Non-specific,42,35,0,Instrument category name,,1
+58,PCB Calculator,Near-miss,40,27,0,Generic reference to PCB calculators in DB,,0
+59,EasyEDA Schematic,H2,39,14,0,EasyEDA schematic editor variant name,https://easyeda.com/,0
+60,Schematic Editor,Non-specific,38,12,4,Generic feature name,,0
+61,Ansys Maxwell,H2,38,0,0,Ansys electromagnetic simulation (variant name),https://www.ansys.com/products/electronics/ansys-maxwell,0
+62,Direct,Non-specific,37,0,34,Adjective from response,,0
+63,Spreadsheet,Non-specific,37,2,0,Generic software category,,1
+64,Ansys Icepak,H2,37,0,0,Ansys thermal management simulation,https://www.ansys.com/products/electronics/ansys-icepak,0
+65,KiCad Schematic Editor,Near-miss,36,12,0,DB: KiCad (extended with Schematic Editor),,0
+66,Stackup,Non-specific,36,30,0,Technical PCB term,,1
+67,Avoid,Non-specific,35,11,0,Verb from response text,,0
+68,PSPICE,H2,35,13,2,PSpice variant capitalization,https://www.pspice.com/,0
+69,PCB Editor,Non-specific,34,16,0,Generic feature name,,0
+70,Full,Non-specific,34,11,1,Adjective from response,,0
+71,Generate,Non-specific,34,13,0,Verb from response text,,0
+72,EMCLAB,Near-miss,34,0,1,DB: EMCLAB PCB Trace Impedance Calculator,,0
+73,KiCad Gerber Viewer,Near-miss,34,28,0,DB: KiCad (extended with Gerber Viewer),,0
+74,Analog Devices,H2,33,3,0,Analog Devices company tools (general reference),https://www.analog.com/en/design-center.html,1
+75,PCBWay,H2,33,7,0,PCB manufacturer with online tools,https://www.pcbway.com/,0
+76,Polar Si9000e,H2,33,0,0,Polar Instruments impedance tool variant,https://www.polarinstruments.com/products/si/Si9000.html,0
+77,Strata Developer Studio,H2,33,27,0,ON Semiconductor - cloud-connected dev platform,https://www.onsemi.com/design/tools-software/strata-developer-studio,0
+78,Advanced,Non-specific,32,7,2,Adjective from response,,0
+79,Simbeor,H2,32,1,0,Simberian - EM signal integrity software,https://www.simberian.com/,0
+80,PCB CAD,Non-specific,32,2,0,Generic category name,,0
+81,Power Stage Designer,H2,32,21,0,Texas Instruments - power supply design tool,https://www.ti.com/tool/POWERSTAGE-DESIGNER,0
+82,Getting Started,Non-specific,31,18,0,Response/documentation phrase,,0
+83,Phases,Non-specific,31,4,14,JSON workflow structure,,0
+84,Power Analyzer,Non-specific,31,17,0,Instrument/feature category,,0
+85,Integrated,Non-specific,30,8,0,Adjective from response,,0
+86,TI Power Stage Designer,H2,30,24,0,Texas Instruments Power Stage Designer,https://www.ti.com/tool/POWERSTAGE-DESIGNER,0
+87,Download,Non-specific,29,21,0,Verb from response text,,0
+88,Bode,Non-specific,29,27,0,Analysis technique name (Bode plot),,1
+89,Tier,Non-specific,28,14,0,Generic word from response,,0
+90,Budget,Non-specific,28,16,0,Generic word from response,,0
+91,CISPR,Non-specific,28,16,3,EMC standard name (not a tool),,0
+92,Falstad,H2,27,25,0,Paul Falstad - online circuit simulator,https://www.falstad.com/circuit/,0
+93,EasyEDA 3D Viewer,H2,27,0,0,EasyEDA 3D visualization variant,https://easyeda.com/,0
+94,Steps,Non-specific,27,5,12,Response structure word,,0
+95,Month,Non-specific,26,13,0,Time word from response,,0
+96,Complementary Calculator,Near-miss,26,7,0,Generic reference to complementary DB calculators,,0
+97,FreeCAD,H2,26,1,0,Open-source parametric 3D CAD,https://www.freecad.org/,0
+98,ngspice,H2,26,1,0,Open-source SPICE circuit simulator,https://ngspice.sourceforge.io/,0
+99,Power Designer,Non-specific,26,18,0,Generic term (ambiguous),,1
+100,WebDesigner+,H2,26,0,0,ON Semiconductor WebDesigner variant,https://www.onsemi.com/design/webdesigner+,0
+101,Cadence OrCAD,H2,25,13,0,Cadence OrCAD - PCB design suite,https://www.orcad.com/,0
+102,Target,Non-specific,25,11,0,Generic word from response,,0
+103,EEWeb Calculator,Near-miss,25,4,0,DB: EEWeb Microstrip Impedance Calculator,,0
+104,Arbitrary Transmission Line Calculator,Near-miss,25,6,0,Could reference DB tools or Atlc,,0
+105,PDN Analyzer,Near-miss,24,18,0,Generic power delivery network analysis reference,,0
+106,Order,Non-specific,24,14,0,Generic word from response,,0
+107,Complete,Non-specific,24,6,4,Adjective from response,,0
+108,Export,Non-specific,24,5,4,Feature name from response,,0
+109,Qucs-S,H2,24,0,0,QUCS with SPICE - open-source simulator,https://ra3xdh.github.io/,0
+110,KiCad / Altium,H2,24,0,0,Reference to both KiCad and Altium tools,https://www.kicad.org/,0
+111,Simple,Non-specific,23,9,1,Adjective from response,,0
+112,Verification,Non-specific,23,5,0,Process name from response,,0
+113,Seamless,Non-specific,23,0,23,Adjective from response,,0
+114,Seeed Studio,H2,22,5,0,Hardware/IoT manufacturer with tools,https://www.seeedstudio.com/,0
+115,Panel,Non-specific,22,0,5,UI/feature term,,0
+116,AppCAD,H2,22,0,0,Broadcom/Avago - RF design calculator,https://www.broadcom.com/info/wireless/appcad,0
+117,SIMPLIS,H2,22,2,0,SIMPLIS Technologies - switching power supply simulation,https://www.simetrix.co.uk/,0
+118,Altair Flux,H2,22,0,0,Altair - electromagnetic and thermal simulation,https://altair.com/flux,0
+119,Impedance,Non-specific,21,7,0,Technical term,,1
+120,Mixed-Signal,Non-specific,21,5,4,Category descriptor,,0
+121,EEWeb Microstrip Calculator,Near-miss,21,1,1,DB: EEWeb Microstrip Impedance Calculator,,0
+122,Vector Network Analyzer,Non-specific,21,14,0,Instrument category,,0
+123,Spend,Non-specific,20,7,0,Verb from response,,0
+124,PCB Toolkit,Near-miss,20,14,0,DB: Saturn PCB Design Toolkit (shortened),,0
+125,Ansys HFSS,H2,20,1,0,Ansys - high-frequency EM simulation,https://www.ansys.com/products/electronics/ansys-hfss,0
+126,OpenEMS,H2,20,0,0,Open-source EM field solver,https://openems.de/,0
+127,Strong,Non-specific,20,0,18,Adjective from response,,0
+128,Expect,Non-specific,19,7,0,Verb from response,,0
+129,Apply,Non-specific,19,3,0,Verb from response,,0
+130,Atlc,H2,19,0,0,Arbitrary Transmission Line Calculator - open-source FEA,https://atlc.sourceforge.net/,0
+131,Use EasyEDA Pro,Near-miss,18,11,0,DB: EasyEDA (extended name),,0
+132,Windows,Non-specific,18,4,4,OS name (not EDA tool),,0
+133,TI Thermal Calculator,Near-miss,18,4,4,DB: TI PCB Thermal Calculator,,0
+134,Texas Instruments WEBENCH,H2,18,0,0,TI WEBENCH variant name,https://www.ti.com/design-resources/design-tools-simulation/webench-power-designer.html,0
+135,STAGE,Non-specific,18,11,0,JSON workflow structure (uppercase),,0
+136,Inner,Non-specific,17,8,0,Adjective from response,,0
+137,Multisim,H2,17,5,0,NI/Emona - circuit simulation (now part of NI),https://www.ni.com/en/shop/electronic-test-instrumentation/application-software-for-electronic-test-and-instrumentation-category/what-is-multisim.html,1
+138,EasyEDA Simulator,H2,17,8,0,EasyEDA simulation feature,https://easyeda.com/,0
+139,Footprint Editor,Non-specific,17,7,1,Generic EDA feature name,,0
+140,Simulation,Non-specific,17,10,0,Generic process name,,1
+141,Spectrum Analyzer,Non-specific,17,15,0,Instrument category,,0
+142,SMPS,Non-specific,17,6,0,Power supply acronym (not a tool),,0
+143,QuickField,H2,17,0,0,Tera Analysis - FEA electromagnetic simulation,https://quickfield.com/,0
+144,onsemi Design Tools,H2,17,0,0,ON Semiconductor design tool suite,https://www.onsemi.com/design,0
+145,Over,Non-specific,16,3,1,Preposition from response,,0
+146,Consider,Non-specific,16,8,0,Verb from response,,0
+147,ON Semiconductor WebDesigner,H2,16,0,0,ON Semi power supply WebDesigner tool,https://www.onsemi.com/design/webdesigner+,0
+148,SIMetrix/SIMPLIS,H2,16,0,0,SIMetrix/SIMPLIS - combined SPICE + switching sim,https://www.simetrix.co.uk/,0
+149,MagNet,H2,16,0,0,Infolytica/Mentor - magnetics FEA simulation,https://plm.sw.siemens.com/en-US/simcenter/electromagnetics-simulation/magnet/,0
+150,OpenModelica,H2,16,1,0,Open-source Modelica-based simulation,https://openmodelica.org/,0
+151,ON Semiconductor Power Supply Designer (PSD),H2,16,0,0,ON Semi PSD tool,https://www.onsemi.com/design/webdesigner+,0
+152,Content Manager,Non-specific,16,10,0,Generic feature name,,0
+153,Manufacturing,Non-specific,15,7,0,Process name,,0
+154,EasyEDA Gerber Viewer,H2,15,6,0,EasyEDA Gerber viewing feature,https://easyeda.com/,0
+155,EasyEDA + JLCPCB,H2,15,0,0,Combined EasyEDA/JLCPCB reference,https://easyeda.com/,0
+156,Ansys SIwave,H2,15,0,0,Ansys signal/power integrity analysis,https://www.ansys.com/products/electronics/ansys-siwave,0
+157,Compare,Non-specific,15,1,2,Verb from response,,0
+158,PCB Design Software,Non-specific,15,0,0,Generic category,,0
+159,Suggested,Non-specific,15,8,0,Adjective from response,,0
+160,Documentation,Non-specific,15,8,0,Generic term,,0
+161,Infineon IPOSIM,H2,15,0,0,Infineon - IGBT power loss simulator,https://www.infineon.com/cms/en/tools/landing/iposim.html,0
+162,Print,Non-specific,14,11,0,Verb/feature from response,,0
+163,Minimum,Non-specific,14,6,0,Adjective from response,,0
+164,FABRICATION,Non-specific,14,10,0,Process name (uppercase),,0
+165,Linux,Non-specific,14,1,0,Operating system name,,0
+166,SimScale,H2,14,1,0,Cloud-based engineering simulation platform,https://www.simscale.com/,0
+167,Using,Non-specific,14,11,0,Verb from response,,0
+168,Define,Non-specific,14,4,0,Verb from response,,0
+169,Keep,Non-specific,14,7,0,Verb from response,,0
+170,OrCAD PCB,H2,14,6,0,Cadence OrCAD PCB variant,https://www.orcad.com/,0
+171,Fritzing,H2,14,0,0,Open-source electronics prototyping tool,https://fritzing.org/,0
+172,Git,H2,14,0,0,Version control system (not EDA-specific),https://git-scm.com/,1
+173,KiCad EDA Suite,Near-miss,14,4,0,DB: KiCad (extended with EDA Suite),,0
+174,Sonnet,H2,14,0,0,Sonnet Software - planar 3D EM simulation,https://www.sonnetsoftware.com/,1
+175,OrCAD PSpice,H2,14,11,0,Cadence OrCAD PSpice variant,https://www.pspice.com/,0
+176,Power Supply WebDesigner,Near-miss,14,0,0,DB: overlaps ON Semi Design Tools in same domain,,0
+177,Cadence PSpice,H2,14,10,0,Cadence PSpice simulator variant name,https://www.pspice.com/,0
+178,Students,Non-specific,13,4,0,Noun from response,,0
+179,Open Saturn PCB Toolkit,Near-miss,13,10,0,Sentence fragment referencing DB tool,,0
+180,Calculate,Non-specific,13,4,0,Verb from response,,0
+181,Typically,Non-specific,13,5,0,Adverb from response,,0
+182,EasyEDA SPICE,H2,13,1,0,EasyEDA SPICE simulation feature,https://easyeda.com/,0
+183,OSH Park,H2,13,1,0,PCB manufacturing service,https://oshpark.com/,0
+184,Via Calculator,Near-miss,13,8,0,Generic calculator reference overlapping DB tools,,0
+185,Rich,Non-specific,13,0,13,Adjective from response,,0
+186,Megabyte Circuit,Near-miss,13,0,1,DB: Megabyte Circuit PCB Calculator,,0
+187,TI Calculator,Near-miss,13,0,3,DB: TI PCB Thermal Calculator,,0
+188,Current,Non-specific,13,4,0,Generic word from response,,0
+189,Digi-Key Calculator,Near-miss,13,1,0,DB: Digi-Key PCB Trace Width Calculator,,0
+190,TRAN Pout AVG,Non-specific,13,13,0,Simulation metric/command,,0
+191,Efficiency,Non-specific,13,4,0,Technical metric name,,0
+192,FCC Part,Non-specific,13,8,1,Regulatory standard reference,,0
+193,Broad,Non-specific,13,0,11,Adjective from response,,0
+194,Key Practical Tips,Non-specific,13,0,0,Response structure phrase,,0
+195,Excel,H2,12,1,0,Microsoft Excel - general-purpose spreadsheet,https://www.microsoft.com/en-us/microsoft-365/excel,1
+196,TINA-TI,H2,12,0,0,Texas Instruments - SPICE-based circuit simulator,https://www.ti.com/tool/TINA-TI,0
+197,EasyEDA BOM Manager,H2,12,1,0,EasyEDA BOM management feature,https://easyeda.com/,0

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 9 - Thinking Model Overhead Analysis (Two Generations)</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; background: #fff; padding: 8px; color: #1a1a2e; }
+  .figure-container { max-width: 700px; margin: 0 auto; }
+
+  .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+
+  .metric-panel { border: 1px solid #e0e0e0; border-radius: 10px; overflow: hidden; }
+  .metric-header { padding: 8px 14px; font-weight: 700; font-size: 11px; color: #fff; text-align: center; }
+  .header-latency { background: linear-gradient(135deg, #ff7043, #d84315); }
+  .header-tokens { background: linear-gradient(135deg, #5c6bc0, #283593); }
+  .header-json { background: linear-gradient(135deg, #26a69a, #00695c); }
+  .header-quality { background: linear-gradient(135deg, #7e57c2, #4527a0); }
+  .metric-body { padding: 12px; }
+
+  .gen-section-label { font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; display: inline-block; margin-bottom: 4px; }
+  .gen1-sl { background: #e8eaf6; color: #283593; }
+  .gen2-sl { background: #e0f2f1; color: #00695c; }
+  .gen-divider { height: 1px; background: #e0e0e0; margin: 6px 0; }
+
+  .provider-row { display: grid; grid-template-columns: 80px 1fr 1fr 60px; gap: 6px; align-items: center; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #f0f0f0; }
+  .provider-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .prov-name { font-size: 10px; font-weight: 600; }
+  .prov-sub { font-size: 8px; color: #888; }
+
+  .val-block { text-align: center; }
+  .val-label { font-size: 8px; color: #888; margin-bottom: 1px; }
+  .val-num { font-size: 14px; font-weight: 700; }
+  .val-unit { font-size: 8px; color: #888; }
+  .val-blue { color: #1565c0; }
+  .val-purple { color: #7b1fa2; }
+
+  .multiplier { font-size: 11px; font-weight: 700; text-align: center; padding: 2px 6px; border-radius: 10px; }
+  .mult-bad { background: #fce4ec; color: #c62828; }
+  .mult-neutral { background: #f5f5f5; color: #666; }
+  .mult-good { background: #e8f5e9; color: #2e7d32; }
+
+  /* Token breakdown */
+  .token-stack { width: 100%; height: 20px; border-radius: 4px; overflow: hidden; display: flex; font-size: 7px; font-weight: 600; color: #fff; }
+  .tok-output { background: #42a5f5; display: flex; align-items: center; justify-content: center; }
+  .tok-think { background: #7e57c2; display: flex; align-items: center; justify-content: center; }
+  .tok-label-row { display: flex; justify-content: space-between; font-size: 8px; color: #888; margin-top: 1px; }
+
+  .provider-row-tokens { display: grid; grid-template-columns: 80px 1fr 60px; gap: 6px; align-items: center; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #f0f0f0; }
+  .provider-row-tokens:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+</style>
+</head>
+<body>
+<div class="figure-container">
+  <div class="metrics-grid">
+    <!-- Latency Panel -->
+    <div class="metric-panel">
+      <div class="metric-header header-latency">Latency (seconds per query)</div>
+      <div class="metric-body">
+        <div class="gen-section-label gen1-sl">Generation 1</div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#10a37f">OpenAI</div><div class="prov-sub">GPT-4.1 / o4-mini</div></div>
+          <div class="val-block"><div class="val-label">Standard</div><div class="val-num val-blue">19.5<span class="val-unit">s</span></div></div>
+          <div class="val-block"><div class="val-label">Thinking</div><div class="val-num val-purple">29.8<span class="val-unit">s</span></div></div>
+          <div class="multiplier mult-bad">1.53&times;</div>
+        </div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#cc7722">Anthropic</div><div class="prov-sub">Sonnet 4.5 / think</div></div>
+          <div class="val-block"><div class="val-label">Standard</div><div class="val-num val-blue">65.6<span class="val-unit">s</span></div></div>
+          <div class="val-block"><div class="val-label">Thinking</div><div class="val-num val-purple">62.0<span class="val-unit">s</span></div></div>
+          <div class="multiplier mult-good">0.95&times;</div>
+        </div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#4285f4">Google</div><div class="prov-sub">Flash-Lite / Flash</div></div>
+          <div class="val-block"><div class="val-label">Standard</div><div class="val-num val-blue">6.0<span class="val-unit">s</span></div></div>
+          <div class="val-block"><div class="val-label">Thinking</div><div class="val-num val-purple">16.2<span class="val-unit">s</span></div></div>
+          <div class="multiplier mult-bad">2.70&times;</div>
+        </div>
+
+        <div class="gen-divider"></div>
+        <div class="gen-section-label gen2-sl">Generation 2</div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#10a37f">OpenAI</div><div class="prov-sub">GPT-5.2 std / think</div></div>
+          <div class="val-block"><div class="val-label">Standard</div><div class="val-num val-blue">34.5<span class="val-unit">s</span></div></div>
+          <div class="val-block"><div class="val-label">Thinking</div><div class="val-num val-purple">45.9<span class="val-unit">s</span></div></div>
+          <div class="multiplier mult-bad">1.33&times;</div>
+        </div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#cc7722">Anthropic</div><div class="prov-sub">Sonnet 4.6 std / think</div></div>
+          <div class="val-block"><div class="val-label">Standard</div><div class="val-num val-blue">60.8<span class="val-unit">s</span></div></div>
+          <div class="val-block"><div class="val-label">Thinking</div><div class="val-num val-purple">78.4<span class="val-unit">s</span></div></div>
+          <div class="multiplier mult-bad">1.29&times;</div>
+        </div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#4285f4">Google</div><div class="prov-sub">Flash-Lite 3.1 std / think</div></div>
+          <div class="val-block"><div class="val-label">Standard</div><div class="val-num val-blue">4.2<span class="val-unit">s</span></div></div>
+          <div class="val-block"><div class="val-label">Thinking</div><div class="val-num val-purple">9.5<span class="val-unit">s</span></div></div>
+          <div class="multiplier mult-bad">2.26&times;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thinking Tokens Panel -->
+    <div class="metric-panel">
+      <div class="metric-header header-tokens">Thinking Tokens (per query avg)</div>
+      <div class="metric-body">
+        <div class="gen-section-label gen1-sl">Generation 1</div>
+        <div class="provider-row-tokens">
+          <div><div class="prov-name" style="color:#10a37f">OpenAI</div><div class="prov-sub">o4-mini</div></div>
+          <div>
+            <div class="token-stack">
+              <div class="tok-output" style="width:38%">1,026 out</div>
+              <div class="tok-think" style="width:62%">1,673 think</div>
+            </div>
+            <div class="tok-label-row"><span>Output tokens</span><span>Thinking tokens</span></div>
+          </div>
+          <div style="text-align:center; font-size: 10px; font-weight:700; color:#7b1fa2;">+163%</div>
+        </div>
+        <div class="provider-row-tokens">
+          <div><div class="prov-name" style="color:#cc7722">Anthropic</div><div class="prov-sub">Sonnet 4.5 think</div></div>
+          <div>
+            <div class="token-stack">
+              <div class="tok-output" style="width:82%">2,424 out</div>
+              <div class="tok-think" style="width:18%">529 think</div>
+            </div>
+            <div class="tok-label-row"><span>Output tokens</span><span>Thinking</span></div>
+          </div>
+          <div style="text-align:center; font-size: 10px; font-weight:700; color:#7b1fa2;">+22%</div>
+        </div>
+        <div class="provider-row-tokens">
+          <div><div class="prov-name" style="color:#4285f4">Google</div><div class="prov-sub">Gemini 2.5 Flash</div></div>
+          <div>
+            <div class="token-stack">
+              <div class="tok-output" style="width:18%">374 out</div>
+              <div class="tok-think" style="width:82%">1,717 think</div>
+            </div>
+            <div class="tok-label-row"><span>Output</span><span>Thinking tokens</span></div>
+          </div>
+          <div style="text-align:center; font-size: 10px; font-weight:700; color:#7b1fa2;">+459%</div>
+        </div>
+
+        <div class="gen-divider"></div>
+        <div class="gen-section-label gen2-sl">Generation 2</div>
+        <div class="provider-row-tokens">
+          <div><div class="prov-name" style="color:#10a37f">OpenAI</div><div class="prov-sub">GPT-5.2 think</div></div>
+          <div>
+            <div class="token-stack">
+              <div class="tok-output" style="width:78%">2,103 out</div>
+              <div class="tok-think" style="width:22%">596 think</div>
+            </div>
+            <div class="tok-label-row"><span>Output tokens</span><span>Thinking</span></div>
+          </div>
+          <div style="text-align:center; font-size: 10px; font-weight:700; color:#7b1fa2;">+28%</div>
+        </div>
+        <div class="provider-row-tokens">
+          <div><div class="prov-name" style="color:#cc7722">Anthropic</div><div class="prov-sub">Sonnet 4.6 think</div></div>
+          <div>
+            <div class="token-stack">
+              <div class="tok-output" style="width:88%">3,768 out</div>
+              <div class="tok-think" style="width:12%">514</div>
+            </div>
+            <div class="tok-label-row"><span>Output tokens</span><span>Think</span></div>
+          </div>
+          <div style="text-align:center; font-size: 10px; font-weight:700; color:#7b1fa2;">+14%</div>
+        </div>
+        <div class="provider-row-tokens">
+          <div><div class="prov-name" style="color:#4285f4">Google</div><div class="prov-sub">Flash-Lite 3.1 think</div></div>
+          <div>
+            <div class="token-stack">
+              <div class="tok-output" style="width:1%"></div>
+              <div class="tok-think" style="width:99%">1,708 think</div>
+            </div>
+            <div class="tok-label-row"><span>1*</span><span>Thinking tokens</span></div>
+          </div>
+          <div style="text-align:center; font-size: 10px; font-weight:700; color:#7b1fa2;">accounting*</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JSON Compliance Panel -->
+    <div class="metric-panel">
+      <div class="metric-header header-json">JSON Schema Compliance Rate (%)</div>
+      <div class="metric-body">
+        <div class="gen-section-label gen1-sl">Generation 1</div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#10a37f">OpenAI</div></div>
+          <div class="val-block"><div class="val-label">Standard</div><div class="val-num val-blue">99.3<span class="val-unit">%</span></div></div>
+          <div class="val-block"><div class="val-label">Thinking</div><div class="val-num val-purple">98.6<span class="val-unit">%</span></div></div>
+          <div class="multiplier mult-neutral">-0.7pp</div>
+        </div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#cc7722">Anthropic</div></div>
+          <div class="val-block"><div class="val-label">Standard</div><div class="val-num val-blue">97.9<span class="val-unit">%</span></div></div>
+          <div class="val-block"><div class="val-label">Thinking</div><div class="val-num val-purple">99.3<span class="val-unit">%</span></div></div>
+          <div class="multiplier mult-good">+1.4pp</div>
+        </div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#4285f4">Google</div></div>
+          <div class="val-block"><div class="val-label">Standard</div><div class="val-num val-blue">100<span class="val-unit">%</span></div></div>
+          <div class="val-block"><div class="val-label">Thinking</div><div class="val-num" style="color:#c62828">78.5<span class="val-unit">%</span></div></div>
+          <div class="multiplier mult-bad">-21.5pp</div>
+        </div>
+
+        <div class="gen-divider"></div>
+        <div class="gen-section-label gen2-sl">Generation 2</div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#10a37f">OpenAI</div></div>
+          <div class="val-block"><div class="val-label">Standard</div><div class="val-num val-blue">100<span class="val-unit">%</span></div></div>
+          <div class="val-block"><div class="val-label">Thinking</div><div class="val-num val-purple">100<span class="val-unit">%</span></div></div>
+          <div class="multiplier mult-neutral">0.0pp</div>
+        </div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#cc7722">Anthropic</div></div>
+          <div class="val-block"><div class="val-label">Standard</div><div class="val-num val-blue">96.5<span class="val-unit">%</span></div></div>
+          <div class="val-block"><div class="val-label">Thinking</div><div class="val-num val-purple">100<span class="val-unit">%</span></div></div>
+          <div class="multiplier mult-good">+3.5pp</div>
+        </div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#4285f4">Google</div></div>
+          <div class="val-block"><div class="val-label">Standard</div><div class="val-num val-blue">100<span class="val-unit">%</span></div></div>
+          <div class="val-block"><div class="val-label">Thinking</div><div class="val-num val-purple">100<span class="val-unit">%</span></div></div>
+          <div class="multiplier mult-neutral">0.0pp</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tools & Output Panel -->
+    <div class="metric-panel">
+      <div class="metric-header header-quality">Tools per Query &amp; Output Tokens</div>
+      <div class="metric-body">
+        <div class="gen-section-label gen1-sl">Generation 1</div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#10a37f">OpenAI</div></div>
+          <div class="val-block"><div class="val-label">Std: 8.8 tools</div><div class="val-label" style="color:#7b1fa2;">Thn: 9.9 tools</div></div>
+          <div class="val-block"><div class="val-label">Std: 1,162 tok</div><div class="val-label" style="color:#7b1fa2;">Thn: 1,026 tok</div></div>
+          <div class="multiplier mult-neutral">&plusmn;</div>
+        </div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#cc7722">Anthropic</div></div>
+          <div class="val-block"><div class="val-label">Std: 15.6 tools</div><div class="val-label" style="color:#7b1fa2;">Thn: 12.7 tools</div></div>
+          <div class="val-block"><div class="val-label">Std: 2,843 tok</div><div class="val-label" style="color:#7b1fa2;">Thn: 2,424 tok</div></div>
+          <div class="multiplier mult-neutral">-15%</div>
+        </div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#4285f4">Google</div></div>
+          <div class="val-block"><div class="val-label">Std: 12.7 tools</div><div class="val-label" style="color:#7b1fa2;">Thn: 14.0 tools</div></div>
+          <div class="val-block"><div class="val-label">Std: 1,467 tok</div><div class="val-label" style="color:#7b1fa2;">Thn: 374 tok</div></div>
+          <div class="multiplier mult-bad">-74%</div>
+        </div>
+
+        <div class="gen-divider"></div>
+        <div class="gen-section-label gen2-sl">Generation 2</div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#10a37f">OpenAI</div></div>
+          <div class="val-block"><div class="val-label">Std: 14.2 tools</div><div class="val-label" style="color:#7b1fa2;">Thn: 14.3 tools</div></div>
+          <div class="val-block"><div class="val-label">Std: 2,057 tok</div><div class="val-label" style="color:#7b1fa2;">Thn: 2,103 tok</div></div>
+          <div class="multiplier mult-neutral">&plusmn;</div>
+        </div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#cc7722">Anthropic</div></div>
+          <div class="val-block"><div class="val-label">Std: 19.0 tools</div><div class="val-label" style="color:#7b1fa2;">Thn: 19.0 tools</div></div>
+          <div class="val-block"><div class="val-label">Std: 3,109 tok</div><div class="val-label" style="color:#7b1fa2;">Thn: 3,768 tok</div></div>
+          <div class="multiplier mult-neutral">+21%</div>
+        </div>
+        <div class="provider-row">
+          <div><div class="prov-name" style="color:#4285f4">Google</div></div>
+          <div class="val-block"><div class="val-label">Std: 8.0 tools</div><div class="val-label" style="color:#7b1fa2;">Thn: 7.2 tools</div></div>
+          <div class="val-block"><div class="val-label">Std: 830 tok</div><div class="val-label" style="color:#7b1fa2;">Thn: 1 tok*</div></div>
+          <div class="multiplier mult-bad">accounting*</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

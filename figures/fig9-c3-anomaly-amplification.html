@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figure 9 - C3 Anomaly Amplification Across Generations</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; background: #fff; padding: 8px; color: #1a1a2e; }
+  .figure-container { max-width: 700px; margin: 0 auto; }
+  .waterfall-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 24px; }
+  .gen-panel { background: #fafbfc; border: 1px solid #e8e8e8; border-radius: 8px; padding: 20px; }
+  .gen-label { font-size: 14px; font-weight: 700; text-align: center; margin-bottom: 16px; }
+
+  .provider-block { margin-bottom: 16px; }
+  .provider-name { font-size: 12px; font-weight: 600; color: #444; margin-bottom: 6px; }
+
+  .anomaly-bar { display: grid; grid-template-columns: 40px 1fr 70px; gap: 6px; align-items: center; margin-bottom: 4px; }
+  .cfg-label { font-size: 11px; font-weight: 600; color: #666; text-align: right; }
+  .bar-track { position: relative; height: 18px; background: #f0f0f0; border-radius: 3px; overflow: visible; }
+  .bar-fill { position: absolute; top: 0; left: 0; height: 100%; border-radius: 3px; }
+  .bar-c0 { opacity: 0.35; }
+  .bar-c3 { opacity: 0.85; }
+  .anomaly-delta { font-size: 11px; font-weight: 700; color: #d32f2f; }
+
+  .openai-fill { background: #10a37f; }
+  .anthropic-fill { background: #cc7722; }
+  .google-fill { background: #4285f4; }
+
+  /* Amplification arrow section */
+  .amplification-section { margin-top: 24px; padding: 20px; background: #fff3e0; border-radius: 8px; border: 1px solid #ffe0b2; }
+  .amp-title { font-size: 13px; font-weight: 700; text-align: center; margin-bottom: 16px; color: #e65100; }
+
+  .amp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .amp-card { text-align: center; padding: 12px; background: #fff; border-radius: 6px; border: 1px solid #ffe0b2; }
+  .amp-provider { font-size: 11px; font-weight: 600; color: #666; margin-bottom: 4px; }
+  .amp-values { display: flex; justify-content: center; align-items: center; gap: 8px; margin: 6px 0; }
+  .amp-gen1 { font-size: 14px; font-weight: 600; color: #888; }
+  .amp-arrow { font-size: 16px; color: #d32f2f; }
+  .amp-gen2 { font-size: 14px; font-weight: 700; color: #d32f2f; }
+  .amp-change { font-size: 12px; font-weight: 700; }
+  .amp-worse { color: #d32f2f; }
+  .amp-similar { color: #e65100; }
+
+  .scale-ref { display: flex; align-items: center; gap: 8px; margin-top: 16px; font-size: 10px; color: #888; justify-content: center; }
+  .scale-bar { height: 6px; border-radius: 3px; }
+
+</style>
+</head>
+<body>
+<div class="figure-container">
+  <div class="waterfall-grid">
+    <!-- Gen1 Panel -->
+    <div class="gen-panel">
+      <div class="gen-label">Generation 1</div>
+
+      <div class="provider-block">
+        <div class="provider-name" style="color:#10a37f">OpenAI (GPT-4.1)</div>
+        <div class="anomaly-bar">
+          <div class="cfg-label">C0</div>
+          <div class="bar-track"><div class="bar-fill openai-fill bar-c0" style="width:62.7%"></div></div>
+          <div style="font-size:11px;color:#888">62.7%</div>
+        </div>
+        <div class="anomaly-bar">
+          <div class="cfg-label">C3</div>
+          <div class="bar-track"><div class="bar-fill openai-fill bar-c3" style="width:74.0%"></div></div>
+          <div class="anomaly-delta">74.0% (+11.3pp)</div>
+        </div>
+      </div>
+
+      <div class="provider-block">
+        <div class="provider-name" style="color:#cc7722">Anthropic (Sonnet 4.5)</div>
+        <div class="anomaly-bar">
+          <div class="cfg-label">C0</div>
+          <div class="bar-track"><div class="bar-fill anthropic-fill bar-c0" style="width:74.0%"></div></div>
+          <div style="font-size:11px;color:#888">74.0%</div>
+        </div>
+        <div class="anomaly-bar">
+          <div class="cfg-label">C3</div>
+          <div class="bar-track"><div class="bar-fill anthropic-fill bar-c3" style="width:80.0%"></div></div>
+          <div class="anomaly-delta">80.0% (+6.0pp)</div>
+        </div>
+      </div>
+
+      <div class="provider-block">
+        <div class="provider-name" style="color:#4285f4">Google (Flash-Lite 2.5)</div>
+        <div class="anomaly-bar">
+          <div class="cfg-label">C0</div>
+          <div class="bar-track"><div class="bar-fill google-fill bar-c0" style="width:59.2%"></div></div>
+          <div style="font-size:11px;color:#888">59.2%</div>
+        </div>
+        <div class="anomaly-bar">
+          <div class="cfg-label">C3</div>
+          <div class="bar-track"><div class="bar-fill google-fill bar-c3" style="width:72.1%"></div></div>
+          <div class="anomaly-delta">72.1% (+12.9pp)</div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:12px;font-size:12px;font-weight:700;color:#e65100">
+        Avg increase: +10.1pp
+      </div>
+    </div>
+
+    <!-- Gen2 Panel -->
+    <div class="gen-panel" style="border-color:#ffcdd2">
+      <div class="gen-label" style="color:#d32f2f">Generation 2</div>
+
+      <div class="provider-block">
+        <div class="provider-name" style="color:#10a37f">OpenAI (GPT-5.2)</div>
+        <div class="anomaly-bar">
+          <div class="cfg-label">C0</div>
+          <div class="bar-track"><div class="bar-fill openai-fill bar-c0" style="width:60.3%"></div></div>
+          <div style="font-size:11px;color:#888">60.3%</div>
+        </div>
+        <div class="anomaly-bar">
+          <div class="cfg-label">C3</div>
+          <div class="bar-track"><div class="bar-fill openai-fill bar-c3" style="width:85.4%"></div></div>
+          <div class="anomaly-delta">85.4% (+25.0pp)</div>
+        </div>
+      </div>
+
+      <div class="provider-block">
+        <div class="provider-name" style="color:#cc7722">Anthropic (Sonnet 4.6)</div>
+        <div class="anomaly-bar">
+          <div class="cfg-label">C0</div>
+          <div class="bar-track"><div class="bar-fill anthropic-fill bar-c0" style="width:72.4%"></div></div>
+          <div style="font-size:11px;color:#888">72.4%</div>
+        </div>
+        <div class="anomaly-bar">
+          <div class="cfg-label">C3</div>
+          <div class="bar-track"><div class="bar-fill anthropic-fill bar-c3" style="width:82.6%"></div></div>
+          <div class="anomaly-delta">82.6% (+10.2pp)</div>
+        </div>
+      </div>
+
+      <div class="provider-block">
+        <div class="provider-name" style="color:#4285f4">Google (Flash-Lite 3.1)</div>
+        <div class="anomaly-bar">
+          <div class="cfg-label">C0</div>
+          <div class="bar-track"><div class="bar-fill google-fill bar-c0" style="width:67.3%"></div></div>
+          <div style="font-size:11px;color:#888">67.3%</div>
+        </div>
+        <div class="anomaly-bar">
+          <div class="cfg-label">C3</div>
+          <div class="bar-track"><div class="bar-fill google-fill bar-c3" style="width:77.3%"></div></div>
+          <div class="anomaly-delta">77.3% (+10.0pp)</div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:12px;font-size:12px;font-weight:700;color:#d32f2f">
+        Avg increase: +15.1pp (+50% amplification)
+      </div>
+    </div>
+  </div>
+
+  <!-- Amplification Summary -->
+  <div class="amplification-section">
+    <div class="amp-title">C3 Anomaly Amplification: Gen1 &rarr; Gen2</div>
+    <div class="amp-grid">
+      <div class="amp-card">
+        <div class="amp-provider">OpenAI</div>
+        <div class="amp-values">
+          <span class="amp-gen1">+11.3pp</span>
+          <span class="amp-arrow">&rarr;</span>
+          <span class="amp-gen2">+25.0pp</span>
+        </div>
+        <div class="amp-change amp-worse">2.2x worse</div>
+      </div>
+      <div class="amp-card">
+        <div class="amp-provider">Anthropic</div>
+        <div class="amp-values">
+          <span class="amp-gen1">+6.0pp</span>
+          <span class="amp-arrow">&rarr;</span>
+          <span class="amp-gen2">+10.2pp</span>
+        </div>
+        <div class="amp-change amp-similar">1.7x worse</div>
+      </div>
+      <div class="amp-card">
+        <div class="amp-provider">Google</div>
+        <div class="amp-values">
+          <span class="amp-gen1">+12.9pp</span>
+          <span class="amp-arrow">&rarr;</span>
+          <span class="amp-gen2">+10.0pp</span>
+        </div>
+        <div class="amp-change amp-similar">&asymp; stable</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
