@@ -258,5 +258,5 @@ This replication package is released under the [Creative Commons Attribution 4.0
 
 ## Contact
 
-- **Lavdim Menxhiqi** — lavdim.menxhiqi@ubt-uni.net (UBT — Higher Education Institution, Pristina, Kosovo)
+- **Lavdim Menxhiqi** — lavdim.menxhiqi@ubt-uni.net (Technical University of Sofia, Bulgaria)
 - **Galia Marinova** — gim@tu-sofia.bg (Technical University of Sofia, Bulgaria)
