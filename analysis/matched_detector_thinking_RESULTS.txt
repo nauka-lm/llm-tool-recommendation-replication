@@ -1,0 +1,67 @@
+============================================================================================================
+  SANITY CHECK — empty-gazetteer corrected (variant ii) must reproduce PRODUCTION thinking numbers
+============================================================================================================
+  Gen1 thn C0 openai    : production= 72.3  empty-gaz-corrected= 72.3  published= 72.3  OK
+  Gen1 thn C0 anthropic : production= 73.6  empty-gaz-corrected= 73.6  published= 73.6  OK
+  Gen1 thn C0 google    : production= 64.5  empty-gaz-corrected= 64.5  published= 64.5  OK
+  Gen1 thn C5 openai    : production=  6.6  empty-gaz-corrected=  6.6  published=  6.6  OK
+  Gen1 thn C5 anthropic : production= 11.3  empty-gaz-corrected= 11.3  published= 11.3  OK
+  Gen1 thn C5 google    : production=  5.5  empty-gaz-corrected=  5.5  published=  5.5  OK
+  Gen2 thn C0 openai    : production= 61.8  empty-gaz-corrected= 61.8  published= 61.8  OK
+  Gen2 thn C0 anthropic : production= 72.3  empty-gaz-corrected= 72.3  published= 72.3  OK
+  Gen2 thn C0 google    : production= 69.1  empty-gaz-corrected= 69.1  published= 69.1  OK
+  Gen2 thn C5 openai    : production=  3.3  empty-gaz-corrected=  3.3  published=  3.3  OK
+  Gen2 thn C5 anthropic : production= 14.9  empty-gaz-corrected= 14.9  published= 14.9  OK
+  Gen2 thn C5 google    : production=  5.2  empty-gaz-corrected=  5.2  published=  5.2  OK
+
+  ALL SANITY CHECKS PASSED
+
+============================================================================================================
+  (1) THINKING-MODE: production vs CORRECTED (recall-equalized) HR  [variant i]
+============================================================================================================
+  Gen  Model              | prodC0 corrC0 | prodC5 corrC5 | prodC3 corrC3
+  Gen1 o4-mini            |   72.3   83.0 |    6.6    7.6 |     --     --
+  Gen1 Sonnet 4.5 (thn)   |   73.6   79.1 |   11.3   13.4 |     --     --
+  Gen1 Gemini 2.5 Flash   |   64.5   73.9 |    5.5    6.4 |     --     --
+  Gen2 GPT-5.2 (thn)      |   61.8   81.3 |    3.3    3.6 |   86.3   86.7
+  Gen2 Sonnet 4.6 (thn)   |   72.3   78.2 |   14.9   11.8 |   83.9   84.6
+  Gen2 Gemini 3.1 FL (thn) |   69.1   78.6 |    5.2    5.1 |   78.7   80.1
+
+============================================================================================================
+  (2) CORRECTED C5 HR + 95% bootstrap CI (10k, seed 42) — ALL 12 MODEL CONFIGS
+============================================================================================================
+  Gen  Mode      Model               prodC5  corrC5      corr 95% CI
+  Gen1 standard  GPT-4.1                5.3     6.4  [  4.8,  7.6]
+  Gen1 standard  Sonnet 4.5            11.3    13.3  [ 10.0, 14.7]
+  Gen1 standard  Gemini 2.5 FL          3.8     5.9  [  4.2,  6.8]
+  Gen1 thinking  o4-mini                6.6     7.6  [  5.6,  9.0]
+  Gen1 thinking  Sonnet 4.5 (thn)      11.3    13.4  [ 10.1, 15.1]
+  Gen1 thinking  Gemini 2.5 Flash       5.5     6.4  [  4.8,  7.5]
+  Gen2 standard  GPT-5.2                3.3     3.8  [  2.9,  4.8]
+  Gen2 standard  Sonnet 4.6            13.3    10.8  [  8.8, 12.6]
+  Gen2 standard  Gemini 3.1 FL          5.9     6.1  [  3.8,  6.8]
+  Gen2 thinking  GPT-5.2 (thn)          3.3     3.6  [  2.6,  4.7]
+  Gen2 thinking  Sonnet 4.6 (thn)      14.9    11.8  [  9.7, 13.9]
+  Gen2 thinking  Gemini 3.1 FL (thn)     5.2     5.1  [  2.7,  5.6]
+
+============================================================================================================
+  (3) CORRECTED C5 cross-provider averages + min/max range (sets abstract C5 range)
+============================================================================================================
+  Gen1 standard : corrected C5 cross-provider avg =  8.5%   (per-model: 6.4, 13.3, 5.9)
+  Gen1 thinking : corrected C5 cross-provider avg =  9.1%   (per-model: 7.6, 13.4, 6.4)
+  Gen2 standard : corrected C5 cross-provider avg =  6.9%   (per-model: 3.8, 10.8, 6.1)
+  Gen2 thinking : corrected C5 cross-provider avg =  6.8%   (per-model: 3.6, 11.8, 5.1)
+
+  CORRECTED C5 range across all 12 models: 3.6% (GPT-5.2 (thn), Gen2 thinking)  to  13.4% (Sonnet 4.5 (thn), Gen1 thinking)
+  (production C5 range for reference: GPT-5.2 std 3.3% to Sonnet 4.6 std/thn ~13-15%)
+
+============================================================================================================
+  STD vs THINKING corrected-C5 difference (the 'reasoning gives no benefit' conclusion must survive)
+============================================================================================================
+  Gen  Provider    std corrC5  thn corrC5  thn-std   production(thn-std)
+  Gen1 openai             6.4         7.6     +1.1   +1.3
+  Gen1 anthropic         13.3        13.4     +0.1   -0.0
+  Gen1 google             5.9         6.4     +0.5   +1.7
+  Gen2 openai             3.8         3.6     -0.2   +0.0
+  Gen2 anthropic         10.8        11.8     +1.0   +1.7
+  Gen2 google             6.1         5.1     -1.0   -0.7

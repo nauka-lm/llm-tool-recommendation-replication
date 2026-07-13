@@ -1,0 +1,251 @@
+{
+  "gazetteer_canonical_to_regex": {
+    "ltspice": [
+      "ltspice"
+    ],
+    "pspice": [
+      "pspice"
+    ],
+    "ngspice": [
+      "ngspice"
+    ],
+    "micro-cap": [
+      "micro-?cap"
+    ],
+    "multisim": [
+      "multisim"
+    ],
+    "simetrix": [
+      "simetrix"
+    ],
+    "simplis": [
+      "simplis"
+    ],
+    "qucs": [
+      "qucs(?:-s)?",
+      "quite universal circuit simulator"
+    ],
+    "proteus": [
+      "proteus"
+    ],
+    "plecs": [
+      "plecs"
+    ],
+    "psim": [
+      "psim"
+    ],
+    "powersim": [
+      "powersim"
+    ],
+    "smartctrl": [
+      "smartctrl"
+    ],
+    "femm": [
+      "femm"
+    ],
+    "comsol": [
+      "comsol"
+    ],
+    "ansys": [
+      "ansys",
+      "ansoft"
+    ],
+    "openems": [
+      "openems"
+    ],
+    "simbeor": [
+      "simbeor"
+    ],
+    "hyperlynx": [
+      "hyperlynx"
+    ],
+    "altair flux": [
+      "altair flux"
+    ],
+    "cst": [
+      "cst studio",
+      "cst microwave"
+    ],
+    "polar si9000": [
+      "polar si9000",
+      "\\bsi9000\\b"
+    ],
+    "quickfield": [
+      "quickfield"
+    ],
+    "keysight ads": [
+      "keysight ads",
+      "agilent ads"
+    ],
+    "feko": [
+      "feko"
+    ],
+    "solidworks": [
+      "solidworks"
+    ],
+    "autocad": [
+      "autocad"
+    ],
+    "fusion360": [
+      "fusion 360",
+      "autodesk fusion"
+    ],
+    "freecad": [
+      "freecad"
+    ],
+    "autodesk inventor": [
+      "autodesk inventor"
+    ],
+    "altium": [
+      "altium"
+    ],
+    "orcad": [
+      "orcad"
+    ],
+    "cadence": [
+      "cadence"
+    ],
+    "mentor graphics": [
+      "mentor graphics",
+      "mentor xpedition"
+    ],
+    "zuken": [
+      "zuken"
+    ],
+    "diptrace": [
+      "diptrace"
+    ],
+    "fritzing": [
+      "fritzing"
+    ],
+    "pcb artist": [
+      "pcb artist"
+    ],
+    "upverter": [
+      "upverter"
+    ],
+    "matlab": [
+      "matlab",
+      "simulink",
+      "simscape"
+    ],
+    "openmodelica": [
+      "openmodelica"
+    ],
+    "mathematica": [
+      "mathematica"
+    ],
+    "scilab": [
+      "scilab"
+    ],
+    "gerbv": [
+      "gerbv"
+    ],
+    "viewmate": [
+      "viewmate"
+    ],
+    "cam350": [
+      "cam350"
+    ],
+    "octopart": [
+      "octopart"
+    ],
+    "jlcpcb": [
+      "jlcpcb"
+    ],
+    "pcbway": [
+      "pcbway"
+    ],
+    "oshpark": [
+      "osh ?park"
+    ],
+    "saleae": [
+      "saleae"
+    ],
+    "platformio": [
+      "platformio"
+    ],
+    "ltpowercad": [
+      "ltpowercad"
+    ],
+    "power stage designer": [
+      "power stage designer"
+    ],
+    "webdesigner": [
+      "webdesigner"
+    ],
+    "magnetics designer": [
+      "magnetics designer"
+    ]
+  },
+  "excluded_ambiguous_or_inventory_tokens": [
+    "EAGLE",
+    "jcalc",
+    "Maddox",
+    "Maxwell (alone)",
+    "Saber",
+    "Tina",
+    "Sonnet",
+    "WEBENCH (inventory)",
+    "Micron",
+    "KiCad (inventory)",
+    "EasyEDA (inventory)",
+    "Saturn PCB (inventory)",
+    "PowerEsim (inventory)",
+    "Phase",
+    "Step",
+    "Stage",
+    "Type",
+    "Layer",
+    "Score (label)"
+  ],
+  "label_words": [
+    "action",
+    "approach",
+    "checklist",
+    "configuration",
+    "considerations",
+    "final",
+    "general",
+    "guide",
+    "key",
+    "method",
+    "next",
+    "note",
+    "notes",
+    "outline",
+    "overview",
+    "phase",
+    "phases",
+    "plan",
+    "practical",
+    "process",
+    "proposed",
+    "recommendation",
+    "recommended",
+    "review",
+    "score",
+    "setup",
+    "stage",
+    "stages",
+    "step",
+    "steps",
+    "strategy",
+    "suggested",
+    "summary",
+    "tip",
+    "tips",
+    "top",
+    "workflow",
+    "workflows",
+    "your"
+  ],
+  "matching_rules": [
+    "case-insensitive word-boundary (\\b...\\b) match of canonical tool roots in RawResponse",
+    "a gazetteer tool is counted only when production did NOT already flag it (dedup by first token)",
+    "grounding = production GroundedToolNames count (unchanged)",
+    "variant i = real tools only (production slot-fill LABELS removed); variant ii = include labels",
+    "HR per cell = mean over 4 domains of (sum hallucinated / sum mentioned)"
+  ],
+  "fp_validation": "40-sample stratified C0 audit of gazetteer matches: ~100% precision (all genuine out-of-inventory tool recommendations)"
+}

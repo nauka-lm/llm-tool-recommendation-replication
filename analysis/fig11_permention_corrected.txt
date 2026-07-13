@@ -1,0 +1,16 @@
+TASK A — per-tool-mention C5 hallucination rate (micro/pooled)
+Gen  Mode     Model                         prod%  fig11  match  CORRECTED%
+Gen1 standard GPT-4.1                        5.58   5.58     OK        6.75
+Gen1 standard Claude Sonnet 4.5             10.83  10.83     OK       13.19
+Gen1 standard Gemini Flash-Lite 2.5          3.62   3.62     OK        5.79
+Gen1 thinking o4-mini                        6.92   6.92     OK        8.14
+Gen1 thinking Claude S. 4.5 (think)         10.95  10.95     OK       13.73
+Gen1 thinking Gemini Flash 2.5               5.26   5.26     OK        6.10
+Gen2 standard GPT-5.2                        3.48   3.48     OK        4.04
+Gen2 standard Claude Sonnet 4.6             13.57  13.60     OK       11.70
+Gen2 standard Gemini 3.1 Flash-Lite          5.54   5.50     OK        5.62
+Gen2 thinking GPT-5.2 (think)                3.59   3.59     OK        3.86
+Gen2 thinking Claude S. 4.6 (think)         15.20  15.20     OK       12.85
+Gen2 thinking Gemini 3.1 Fl.-Lite (think)    4.74   4.70     OK        4.56
+
+production sanity: ALL MATCH current fig11

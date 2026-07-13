@@ -1,0 +1,146 @@
+SANITY CHECK (production detector — must reproduce published RES-2 / RES-4)
+========================================================================================================
+  MODE = PRODUCTION   (per-query HR; pairing Domain/Prompt/Rep; Wilcoxon zero_method=wilcox; Bonferroni k=3)
+========================================================================================================
+
+  Gen1 openai     (n=144 paired queries)  cell mean HR%: C0=58.7 C1=17.7 C2=9.2 C3=68.9 C4=7.6 C5=5.1
+    Friedman C0-C5: chi2=486.71 p=5.91e-103  -> ordering SIGNIFICANT
+    [primary] C0 vs C5: W=0 p=1.4e-24 r_rb=-1.000  SIG  (C5<C0)
+    planned k=3 contrasts (Bonferroni-adjusted):
+      contrast     meanA->meanB       W     p_raw    p_bonf    r_rb            dir  sig(adj)
+      C2vsC4       9.2->  7.6     2333    0.0445     0.133  -0.222    B<A (helps)        no
+      C2vsC5       9.2->  5.1     1077  5.73e-05  0.000172  -0.485    B<A (helps)       yes
+      C4vsC5=M3    7.6->  5.1     1534   0.00564    0.0169  -0.327    B<A (helps)       yes
+
+  Gen1 anthropic  (n=144 paired queries)  cell mean HR%: C0=72.0 C1=34.3 C2=21.6 C3=76.9 C4=22.3 C5=10.6
+    Friedman C0-C5: chi2=542.08 p=6.56e-115  -> ordering SIGNIFICANT
+    [primary] C0 vs C5: W=2 p=2.31e-25 r_rb=-1.000  SIG  (C5<C0)
+    planned k=3 contrasts (Bonferroni-adjusted):
+      contrast     meanA->meanB       W     p_raw    p_bonf    r_rb            dir  sig(adj)
+      C2vsC4      21.6-> 22.3     5122     0.846         1  -0.019    B>A (hurts)        no
+      C2vsC5      21.6-> 10.6     1790  2.19e-11  6.56e-11  -0.647    B<A (helps)       yes
+      C4vsC5=M3   22.3-> 10.6     1171  6.74e-16  2.02e-15  -0.776    B<A (helps)       yes
+
+  Gen1 google     (n=144 paired queries)  cell mean HR%: C0=53.0 C1=13.2 C2=4.5 C3=66.5 C4=2.7 C5=3.5
+    Friedman C0-C5: chi2=502.56 p=2.24e-106  -> ordering SIGNIFICANT
+    [primary] C0 vs C5: W=1 p=6.49e-23 r_rb=-1.000  SIG  (C5<C0)
+    planned k=3 contrasts (Bonferroni-adjusted):
+      contrast     meanA->meanB       W     p_raw    p_bonf    r_rb            dir  sig(adj)
+      C2vsC4       4.5->  2.7      346   0.00181   0.00544  -0.497    B<A (helps)       yes
+      C2vsC5       4.5->  3.5     1090      0.37         1  -0.123    B<A (helps)        no
+      C4vsC5=M3    2.7->  3.5      868     0.128     0.385  +0.215    B>A (hurts)        no
+
+  Gen2 openai     (n=144 paired queries)  cell mean HR%: C0=54.1 C1=14.7 C2=3.1 C3=80.4 C4=3.5 C5=3.5
+    Friedman C0-C5: chi2=503.27 p=1.58e-106  -> ordering SIGNIFICANT
+    [primary] C0 vs C5: W=28 p=3.84e-23 r_rb=-0.994  SIG  (C5<C0)
+    planned k=3 contrasts (Bonferroni-adjusted):
+      contrast     meanA->meanB       W     p_raw    p_bonf    r_rb            dir  sig(adj)
+      C2vsC4       3.1->  3.5      779     0.055     0.165  +0.274    B>A (hurts)        no
+      C2vsC5       3.1->  3.5     1029     0.286     0.857  +0.148    B>A (hurts)        no
+      C4vsC5=M3    3.5->  3.5     1413     0.525         1  -0.083    B>A (hurts)        no
+
+  Gen2 anthropic  (n=144 paired queries)  cell mean HR%: C0=69.9 C1=26.1 C2=14.8 C3=80.2 C4=16.7 C5=13.2
+    Friedman C0-C5: chi2=531.26 p=1.42e-112  -> ordering SIGNIFICANT
+    [primary] C0 vs C5: W=0 p=2.22e-25 r_rb=-1.000  SIG  (C5<C0)
+    planned k=3 contrasts (Bonferroni-adjusted):
+      contrast     meanA->meanB       W     p_raw    p_bonf    r_rb            dir  sig(adj)
+      C2vsC4      14.8-> 16.7     3646    0.0202    0.0606  +0.229    B>A (hurts)        no
+      C2vsC5      14.8-> 13.2     3666    0.0117    0.0351  -0.246    B<A (helps)       yes
+      C4vsC5=M3   16.7-> 13.2     2458  1.75e-06  5.26e-06  -0.472    B<A (helps)       yes
+
+  Gen2 google     (n=144 paired queries)  cell mean HR%: C0=62.9 C1=16.0 C2=6.7 C3=75.3 C4=4.6 C5=5.4
+    Friedman C0-C5: chi2=545.70 p=1.08e-115  -> ordering SIGNIFICANT
+    [primary] C0 vs C5: W=4 p=3.16e-24 r_rb=-0.999  SIG  (C5<C0)
+    planned k=3 contrasts (Bonferroni-adjusted):
+      contrast     meanA->meanB       W     p_raw    p_bonf    r_rb            dir  sig(adj)
+      C2vsC4       6.7->  4.6      672   0.00352    0.0106  -0.410    B<A (helps)       yes
+      C2vsC5       6.7->  5.4      972     0.113      0.34  -0.218    B<A (helps)        no
+      C4vsC5=M3    4.6->  5.4      930      0.35         1  +0.133    B>A (hurts)        no
+
+
+########################################################################################################
+CORRECTED (recall-equalized detector — PRIMARY) 
+########################################################################################################
+========================================================================================================
+  MODE = CORRECTED   (per-query HR; pairing Domain/Prompt/Rep; Wilcoxon zero_method=wilcox; Bonferroni k=3)
+========================================================================================================
+
+  Gen1 openai     (n=144 paired queries)  cell mean HR%: C0=71.4 C1=18.2 C2=8.6 C3=71.8 C4=5.5 C5=6.2
+    Friedman C0-C5: chi2=529.72 p=3.06e-112  -> ordering SIGNIFICANT
+    [primary] C0 vs C5: W=0 p=2.19e-25 r_rb=-1.000  SIG  (C5<C0)
+    planned k=3 contrasts (Bonferroni-adjusted):
+      contrast     meanA->meanB       W     p_raw    p_bonf    r_rb            dir  sig(adj)
+      C2vsC4       8.6->  5.5     1264   0.00026   0.00078  -0.434    B<A (helps)       yes
+      C2vsC5       8.6->  6.2     1456    0.0117    0.0352  -0.304    B<A (helps)       yes
+      C4vsC5=M3    5.5->  6.2     1711     0.492         1  +0.085    B>A (hurts)        no
+
+  Gen1 anthropic  (n=144 paired queries)  cell mean HR%: C0=78.7 C1=33.4 C2=17.1 C3=78.8 C4=18.8 C5=12.3
+    Friedman C0-C5: chi2=551.60 p=5.77e-117  -> ordering SIGNIFICANT
+    [primary] C0 vs C5: W=0 p=2.2e-25 r_rb=-1.000  SIG  (C5<C0)
+    planned k=3 contrasts (Bonferroni-adjusted):
+      contrast     meanA->meanB       W     p_raw    p_bonf    r_rb            dir  sig(adj)
+      C2vsC4      17.1-> 18.8     4056      0.37         1  +0.090    B>A (hurts)        no
+      C2vsC5      17.1-> 12.3     2658  0.000311  0.000933  -0.366    B<A (helps)       yes
+      C4vsC5=M3   18.8-> 12.3     1823  1.89e-07  5.66e-07  -0.537    B<A (helps)       yes
+
+  Gen1 google     (n=144 paired queries)  cell mean HR%: C0=65.8 C1=13.6 C2=5.0 C3=68.0 C4=2.7 C5=5.4
+    Friedman C0-C5: chi2=531.56 p=1.23e-112  -> ordering SIGNIFICANT
+    [primary] C0 vs C5: W=1 p=1.02e-24 r_rb=-1.000  SIG  (C5<C0)
+    planned k=3 contrasts (Bonferroni-adjusted):
+      contrast     meanA->meanB       W     p_raw    p_bonf    r_rb            dir  sig(adj)
+      C2vsC4       5.0->  2.7      292  0.000107   0.00032  -0.606    B<A (helps)       yes
+      C2vsC5       5.0->  5.4     1340     0.522         1  +0.084    B>A (hurts)        no
+      C4vsC5=M3    2.7->  5.4      691   0.00201   0.00603  +0.428    B>A (hurts)       yes
+
+  Gen2 openai     (n=144 paired queries)  cell mean HR%: C0=75.5 C1=15.7 C2=2.7 C3=82.1 C4=2.3 C5=3.8
+    Friedman C0-C5: chi2=566.72 p=3.13e-120  -> ordering SIGNIFICANT
+    [primary] C0 vs C5: W=0 p=6.84e-25 r_rb=-1.000  SIG  (C5<C0)
+    planned k=3 contrasts (Bonferroni-adjusted):
+      contrast     meanA->meanB       W     p_raw    p_bonf    r_rb            dir  sig(adj)
+      C2vsC4       2.7->  2.3      680      0.75         1  -0.050    B<A (helps)        no
+      C2vsC5       2.7->  3.8      786    0.0412     0.124  +0.289    B>A (hurts)        no
+      C4vsC5=M3    2.3->  3.8      693    0.0131    0.0394  +0.354    B>A (hurts)       yes
+
+  Gen2 anthropic  (n=144 paired queries)  cell mean HR%: C0=76.1 C1=22.5 C2=7.7 C3=80.9 C4=11.5 C5=10.6
+    Friedman C0-C5: chi2=550.81 p=8.54e-117  -> ordering SIGNIFICANT
+    [primary] C0 vs C5: W=0 p=2.21e-25 r_rb=-1.000  SIG  (C5<C0)
+    planned k=3 contrasts (Bonferroni-adjusted):
+      contrast     meanA->meanB       W     p_raw    p_bonf    r_rb            dir  sig(adj)
+      C2vsC4       7.7-> 11.5     1420  8.14e-06  2.44e-05  +0.499    B>A (hurts)       yes
+      C2vsC5       7.7-> 10.6     2012    0.0094    0.0282  +0.291    B>A (hurts)       yes
+      C4vsC5=M3   11.5-> 10.6     2998     0.169     0.507  -0.146    B<A (helps)        no
+
+  Gen2 google     (n=144 paired queries)  cell mean HR%: C0=74.7 C1=16.6 C2=4.8 C3=77.1 C4=4.2 C5=5.2
+    Friedman C0-C5: chi2=580.37 p=3.52e-123  -> ordering SIGNIFICANT
+    [primary] C0 vs C5: W=0 p=4.56e-25 r_rb=-1.000  SIG  (C5<C0)
+    planned k=3 contrasts (Bonferroni-adjusted):
+      contrast     meanA->meanB       W     p_raw    p_bonf    r_rb            dir  sig(adj)
+      C2vsC4       4.8->  4.2      505     0.139     0.416  -0.238    B<A (helps)        no
+      C2vsC5       4.8->  5.2      914     0.821         1  +0.033    B>A (hurts)        no
+      C4vsC5=M3    4.2->  5.2      618     0.204     0.612  +0.197    B>A (hurts)        no
+
+
+########################################################################################################
+KEY CHANGE — M3 contribution (C4 -> C5) significance/direction: PRODUCTION vs CORRECTED
+########################################################################################################
+(Wilcoxon, Bonferroni k=3; r_rb sign: negative = M3 helps/lowers C5, positive = M3 hurts/raises C5)
+
+  cell             PRODUCTION (p_bonf, r_rb, verdict)        CORRECTED (p_bonf, r_rb, verdict)
+  Gen1 openai      0.017   -0.327  SIG helps             ->  1.0     +0.085  n.s.
+  Gen1 anthropic   2.0e-15 -0.776  SIG helps             ->  5.7e-07 -0.537  SIG helps (weaker)
+  Gen1 google      0.385   +0.215  n.s.                  ->  0.006   +0.428  SIG HURTS
+  Gen2 openai      1.0     -0.083  n.s.                  ->  0.039   +0.354  SIG HURTS
+  Gen2 anthropic   5.3e-06 -0.472  SIG helps             ->  0.507   -0.146  n.s.
+  Gen2 google      1.0     +0.133  n.s.                  ->  0.612   +0.197  n.s.
+
+INTERPRETATION: Under the recall-equalized (corrected) detector the apparent benefit of M3
+(JSON enforcement) at the full-architecture level largely disappears/reverses. M3 is significantly
+HELPFUL only for Gen1 Anthropic (weaker than production); significantly HARMFUL for Gen1 Google and
+Gen2 OpenAI; non-significant elsewhere. The production-detector picture (M3 sig-helps for Gen1
+OpenAI/Anthropic and Gen2 Anthropic) does not survive recall-equalization. This is consistent with the
+Option-B finding that the C3 anomaly is largely a detection-format artifact.
+
+UNCHANGED / ROBUST under corrected: (a) Friedman C0-C5 ordering remains highly significant for every
+provider x generation (all p < 1e-100); (b) the primary C0-vs-C5 contrast remains significant for all
+six cells (all p < 1e-24, r_rb ~ -1.0); (c) the grounding mechanisms M1/M2 remain the dominant
+reductions (C2-vs-C4 / C2-vs-C5 significant where M1+M2 add value).

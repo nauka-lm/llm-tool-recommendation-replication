@@ -1,0 +1,56 @@
+========================================================================================================================
+  MATCHED / RECALL-EQUALIZED DETECTOR — C3 anomaly robustness (Reviewer 3, Point 2)
+  Production (S1+S2+S3, as published) vs Corrected (recall-equalized: + missed out-of-inventory tools).
+  HR point = mean of per-domain HR (paper method). Gap CIs = per-query bootstrap (10k, seed 42).
+========================================================================================================================
+
+############ FULL ABLATION  C0-C5  (PRODUCTION vs CORRECTED variant i) ############
+
+  Gen1:  Provider   detector        C0     C1     C2     C3     C4     C5   C0->C5red
+        openai     production    62.7   17.6    9.7   74.0    7.5    5.3     +57.3
+        openai     corrected     73.0   18.7    8.9   75.5    5.4    6.4     +66.5
+        anthropic  production    74.0   35.5   22.1   80.0   22.6   11.3     +62.7
+        anthropic  corrected     79.6   35.4   18.0   81.4   19.6   13.3     +66.3
+        google     production    59.2   13.2    4.8   72.1    2.9    3.8     +55.4
+        google     corrected     69.4   14.2    5.3   73.0    2.6    5.9     +63.6
+
+  Gen2:  Provider   detector        C0     C1     C2     C3     C4     C5   C0->C5red
+        openai     production    60.3   13.7    2.9   85.6    3.6    3.3     +57.1
+        openai     corrected     78.5   15.4    2.5   86.1    2.4    3.8     +74.7
+        anthropic  production    72.4   26.2   15.2   82.6   16.3   13.3     +59.1
+        anthropic  corrected     77.7   22.9    8.5   83.2   11.6   10.8     +66.9
+        google     production    67.3   17.4    6.5   77.3    4.5    5.9     +61.3
+        google     corrected     77.5   18.2    4.6   78.8    4.1    6.1     +71.4
+
+  Corrected C0 baseline is HIGHER than production (its recall is raised to C3's level),
+  so the corrected C0->C5 reduction is equal or LARGER than production for every cell:
+    Gen1 openai    : production C0->C5 +57.3pp   corrected C0->C5 +66.5pp
+    Gen1 anthropic : production C0->C5 +62.7pp   corrected C0->C5 +66.3pp
+    Gen1 google    : production C0->C5 +55.4pp   corrected C0->C5 +63.6pp
+    Gen2 openai    : production C0->C5 +57.1pp   corrected C0->C5 +74.7pp
+    Gen2 anthropic : production C0->C5 +59.1pp   corrected C0->C5 +66.9pp
+    Gen2 google    : production C0->C5 +61.3pp   corrected C0->C5 +71.4pp
+
+############ C3 - C0 GAP: production vs corrected (variant i = tools, variant ii = + slot-fill labels) ############
+  Gen  Provider   | prodGAP | corrC0 corrC3  GAP_i     GAP_i 95%CI  Wilcox p       Cliff d | GAP_ii
+  Gen1 openai     |   +11.3 |   73.0   75.5   +2.5 [ -3.8, +4.6]  5.9e-01  +0.141(negl) |   +2.0
+  Gen1 anthropic  |    +6.0 |   79.6   81.4   +1.9 [ -3.1, +3.1]  1.3e-01  +0.154(smal) |   +0.3
+  Gen1 google     |   +12.9 |   69.4   73.0   +3.5 [ -2.6, +7.0]  1.6e-01  +0.073(negl) |   +3.0
+  Gen2 openai     |   +25.2 |   78.5   86.1   +7.5 [ +2.6,+10.7]  1.9e-04* +0.382(medi) |   +7.2
+  Gen2 anthropic  |   +10.2 |   77.7   83.2   +5.5 [ +1.8, +7.7]  2.1e-05* +0.329(smal) |   +4.0
+  Gen2 google     |   +10.1 |   77.5   78.8   +1.3 [ -1.9, +6.9]  3.0e-01  +0.128(negl) |   +0.4
+
+  CROSS-PROVIDER AVERAGE:
+    Gen1: production gap=+10.1 | corrected GAP_i=+2.6  GAP_ii=+1.8  (pooled Cliff d=+0.113 negligible)
+    Gen2: production gap=+15.2 | corrected GAP_i=+4.8  GAP_ii=+3.9  (pooled Cliff d=+0.278 small)
+
+  NOTE: variant i (tools only) ~= variant ii (incl. slot-fill labels) for every cell
+  => the residual C3>C0 gap is REAL-TOOL over-generation; the slot-filling-junk explanation is NOT supported.
+
+  Recall-augmentation diagnostic (avg NEW out-of-inventory tools added per response, C0 vs C3):
+    Gen1 openai    : C0 +2.62/resp   C3 +0.46/resp   (C0 gains the missed tools; C3 already caught them)
+    Gen1 anthropic : C0 +3.07/resp   C3 +1.05/resp   (C0 gains the missed tools; C3 already caught them)
+    Gen1 google    : C0 +1.94/resp   C3 +0.19/resp   (C0 gains the missed tools; C3 already caught them)
+    Gen2 openai    : C0 +3.62/resp   C3 +0.38/resp   (C0 gains the missed tools; C3 already caught them)
+    Gen2 anthropic : C0 +2.72/resp   C3 +0.71/resp   (C0 gains the missed tools; C3 already caught them)
+    Gen2 google    : C0 +2.26/resp   C3 +0.36/resp   (C0 gains the missed tools; C3 already caught them)

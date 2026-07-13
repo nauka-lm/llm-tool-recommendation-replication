@@ -1,0 +1,19 @@
+========================================================================================================
+  REASONING x C3 INTERACTION (Reviewer 3, Point 6) — Gen2, thinking-mode C3 vs standard-mode C3
+========================================================================================================
+  Provider    std C0  std C3  std anom |  thn C0  thn C3  thn anom | thn-std anom
+  openai        60.3    85.4     +25.1 |    61.8    86.3     +24.6 |         -0.5
+  anthropic     72.4    82.6     +10.2 |    72.3    83.9     +11.6 |         +1.4
+  google        67.3    77.3     +10.1 |    69.1    78.7      +9.5 |         -0.5
+
+  --- thinking C3 HR with 95% bootstrap CI, and C3 standard-vs-thinking test ---
+  Provider   thn C3 (perq mean, 95% CI)        std vs thn C3: Cliffs d  Wilcoxon(prompt-paired) p
+  openai      80.1% [76.0, 83.8]                +0.030 (negligible)       p=0.751 (n_pairs=48, nz=47)
+  anthropic   81.9% [80.0, 83.8]                +0.064 (negligible)       p=0.121 (n_pairs=48, nz=48)
+  google      76.6% [73.3, 79.8]                +0.026 (negligible)       p=0.174 (n_pairs=48, nz=47)
+
+  POOLED (all 3 providers) std-C3 vs thn-C3 per-query: Cliffs d = +0.032 (negligible)
+  Mean std C3 = 78.6%   Mean thn C3 = 79.5%   diff = +1.0 pp
+
+  --- ANOMALY SUMMARY (C3 - C0, pp) ---
+  standard anomaly avg = +15.1 pp ; thinking anomaly avg = +15.2 pp ; amplification = +0.1 pp
