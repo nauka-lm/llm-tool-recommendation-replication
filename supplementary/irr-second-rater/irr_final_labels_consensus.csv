@@ -1,0 +1,198 @@
+ID,ToolName,Rater1_Category,Rater2_Category,Final_Category
+1,LTspice,H2,H2,H2
+2,Saturn,Near-miss,Near-miss,Near-miss
+3,Altium,H2,H2,H2
+4,Temperature Rise Calculator,Near-miss,Non-specific,Near-miss
+5,PSpice,H2,H2,H2
+6,Fusion,H2,H2,H2
+7,Micron,Near-miss,H2,Near-miss
+8,SolidWorks,H2,H2,H2
+9,JLCPCB,H2,H2,H2
+10,FEMM,H2,H2,H2
+11,Skottans,Near-miss,Near-miss,Near-miss
+12,LTSpice,H2,H2,H2
+13,Sierra Circuits,Near-miss,Near-miss,Near-miss
+14,Practical,Non-specific,Non-specific,Non-specific
+15,Layer,Non-specific,Non-specific,Non-specific
+16,ANSYS Maxwell,H2,H2,H2
+17,Gerber,Non-specific,Non-specific,Non-specific
+18,Recommended,Non-specific,Non-specific,Non-specific
+19,Use Saturn PCB Toolkit,Near-miss,Near-miss,Near-miss
+20,Complementary Tools,Non-specific,Non-specific,Non-specific
+21,KiCad Calculator,Near-miss,Near-miss,Near-miss
+22,Design,Non-specific,Non-specific,Non-specific
+23,TI WEBENCH,Near-miss,Near-miss,Near-miss
+24,PLECS,H2,H2,H2
+25,PSIM,H2,H2,H2
+26,Cadence Allegro,H2,H2,H2
+27,Comprehensive,Non-specific,Non-specific,Non-specific
+28,KiCad PCB Calculator,Near-miss,Near-miss,Near-miss
+29,Autodesk Fusion,H2,H2,H2
+30,SPICE,Non-specific,Non-specific,Non-specific
+31,Field Solver,Non-specific,Non-specific,Non-specific
+32,Stage,Non-specific,Non-specific,Non-specific
+33,Your,Non-specific,Non-specific,Non-specific
+34,COMSOL,H2,H2,H2
+35,Circuit Digest Calculator,Near-miss,Near-miss,Near-miss
+36,Cadence Sigrity,H2,H2,H2
+37,WEBENCH Power Designer,H2,Near-miss,Near-miss
+38,Magnetics Designer,H2,H2,H2
+39,Weeks,Non-specific,Non-specific,Non-specific
+40,Thermal,Non-specific,Non-specific,Non-specific
+41,Polar Si9000,H2,H2,H2
+42,CST Studio,H2,H2,H2
+43,Score,Non-specific,Non-specific,Non-specific
+44,MATLAB/Simulink,H2,H2,H2
+45,EasyEDA PCB Editor,H2,Near-miss,Near-miss
+46,Keysight ADS,H2,H2,H2
+47,Mentor Graphics,H2,H2,H2
+48,WEBDESIGNER,H2,Non-specific,Near-miss
+49,Why Saturn PCB Toolkit,Near-miss,Near-miss,Near-miss
+50,Technick,Near-miss,Near-miss,Near-miss
+51,Quite Universal Circuit Simulator,H2,H2,H2
+52,KiCad PCB Editor,Near-miss,Near-miss,Near-miss
+53,AutoCAD,H2,H2,H2
+54,HyperLynx,H2,H2,H2
+55,Extensive,Non-specific,Non-specific,Non-specific
+56,QUCS,H2,H2,H2
+57,Logic Analyzer,Non-specific,Non-specific,Non-specific
+58,PCB Calculator,Near-miss,Near-miss,Near-miss
+59,EasyEDA Schematic,H2,Near-miss,Near-miss
+60,Schematic Editor,Non-specific,Non-specific,Non-specific
+61,Ansys Maxwell,H2,H2,H2
+62,Direct,Non-specific,Non-specific,Non-specific
+63,Spreadsheet,Non-specific,Non-specific,Non-specific
+64,Ansys Icepak,H2,H2,H2
+65,KiCad Schematic Editor,Near-miss,Near-miss,Near-miss
+66,Stackup,Non-specific,Near-miss,Near-miss
+67,Avoid,Non-specific,Non-specific,Non-specific
+68,PSPICE,H2,H2,H2
+69,PCB Editor,Non-specific,Non-specific,Non-specific
+70,Full,Non-specific,Non-specific,Non-specific
+71,Generate,Non-specific,Non-specific,Non-specific
+72,EMCLAB,Near-miss,Near-miss,Near-miss
+73,KiCad Gerber Viewer,Near-miss,Near-miss,Near-miss
+74,Analog Devices,H2,H2,H2
+75,PCBWay,H2,H2,H2
+76,Polar Si9000e,H2,H2,H2
+77,Strata Developer Studio,H2,Near-miss,H2
+78,Advanced,Non-specific,Non-specific,Non-specific
+79,Simbeor,H2,H2,H2
+80,PCB CAD,Non-specific,Non-specific,Non-specific
+81,Power Stage Designer,H2,Near-miss,Near-miss
+82,Getting Started,Non-specific,Non-specific,Non-specific
+83,Phases,Non-specific,Non-specific,Non-specific
+84,Power Analyzer,Non-specific,Non-specific,Non-specific
+85,Integrated,Non-specific,Non-specific,Non-specific
+86,TI Power Stage Designer,H2,Near-miss,Near-miss
+87,Download,Non-specific,Non-specific,Non-specific
+88,Bode,Non-specific,Non-specific,Non-specific
+89,Tier,Non-specific,Non-specific,Non-specific
+90,Budget,Non-specific,Non-specific,Non-specific
+91,CISPR,Non-specific,Non-specific,Non-specific
+92,Falstad,H2,H2,H2
+93,EasyEDA 3D Viewer,H2,Near-miss,Near-miss
+94,Steps,Non-specific,Non-specific,Non-specific
+95,Month,Non-specific,Non-specific,Non-specific
+96,Complementary Calculator,Near-miss,Non-specific,Non-specific
+97,FreeCAD,H2,H2,H2
+98,ngspice,H2,H2,H2
+99,Power Designer,Non-specific,Near-miss,Near-miss
+100,WebDesigner+,H2,Non-specific,Near-miss
+101,Cadence OrCAD,H2,H2,H2
+102,Target,Non-specific,Non-specific,Non-specific
+103,EEWeb Calculator,Near-miss,H2,Near-miss
+104,Arbitrary Transmission Line Calculator,Near-miss,H2,H2
+105,PDN Analyzer,Near-miss,H2,H2
+106,Order,Non-specific,Non-specific,Non-specific
+107,Complete,Non-specific,Non-specific,Non-specific
+108,Export,Non-specific,Non-specific,Non-specific
+109,Qucs-S,H2,H2,H2
+110,KiCad / Altium,H2,Near-miss,Near-miss
+111,Simple,Non-specific,Non-specific,Non-specific
+112,Verification,Non-specific,Non-specific,Non-specific
+113,Seamless,Non-specific,Non-specific,Non-specific
+114,Seeed Studio,H2,H2,H2
+115,Panel,Non-specific,Non-specific,Non-specific
+116,AppCAD,H2,H2,H2
+117,SIMPLIS,H2,H2,H2
+118,Altair Flux,H2,H2,H2
+119,Impedance,Non-specific,Non-specific,Non-specific
+120,Mixed-Signal,Non-specific,Non-specific,Non-specific
+121,EEWeb Microstrip Calculator,Near-miss,H2,Near-miss
+122,Vector Network Analyzer,Non-specific,H2,Non-specific
+123,Spend,Non-specific,Non-specific,Non-specific
+124,PCB Toolkit,Near-miss,H2,Near-miss
+125,Ansys HFSS,H2,H2,H2
+126,OpenEMS,H2,H2,H2
+127,Strong,Non-specific,Non-specific,Non-specific
+128,Expect,Non-specific,Near-miss,Non-specific
+129,Apply,Non-specific,Non-specific,Non-specific
+130,Atlc,H2,Near-miss,H2
+131,Use EasyEDA Pro,Near-miss,Near-miss,Near-miss
+132,Windows,Non-specific,Non-specific,Non-specific
+133,TI Thermal Calculator,Near-miss,H2,Near-miss
+134,Texas Instruments WEBENCH,H2,H2,H2
+135,STAGE,Non-specific,Non-specific,Non-specific
+136,Inner,Non-specific,Non-specific,Non-specific
+137,Multisim,H2,H2,H2
+138,EasyEDA Simulator,H2,H2,H2
+139,Footprint Editor,Non-specific,H2,Non-specific
+140,Simulation,Non-specific,Non-specific,Non-specific
+141,Spectrum Analyzer,Non-specific,H2,Non-specific
+142,SMPS,Non-specific,H2,Non-specific
+143,QuickField,H2,H2,H2
+144,onsemi Design Tools,H2,H2,H2
+145,Over,Non-specific,Non-specific,Non-specific
+146,Consider,Non-specific,Non-specific,Non-specific
+147,ON Semiconductor WebDesigner,H2,H2,H2
+148,SIMetrix/SIMPLIS,H2,H2,H2
+149,MagNet,H2,Non-specific,H2
+150,OpenModelica,H2,H2,H2
+151,ON Semiconductor Power Supply Designer (PSD),H2,H2,H2
+152,Content Manager,Non-specific,Non-specific,Non-specific
+153,Manufacturing,Non-specific,Non-specific,Non-specific
+154,EasyEDA Gerber Viewer,H2,H2,H2
+155,EasyEDA + JLCPCB,H2,H2,H2
+156,Ansys SIwave,H2,H2,H2
+157,Compare,Non-specific,Non-specific,Non-specific
+158,PCB Design Software,Non-specific,H2,Non-specific
+159,Suggested,Non-specific,Non-specific,Non-specific
+160,Documentation,Non-specific,Non-specific,Non-specific
+161,Infineon IPOSIM,H2,H2,H2
+162,Print,Non-specific,Non-specific,Non-specific
+163,Minimum,Non-specific,Non-specific,Non-specific
+164,FABRICATION,Non-specific,Non-specific,Non-specific
+165,Linux,Non-specific,Near-miss,H2
+166,SimScale,H2,H2,H2
+167,Using,Non-specific,Non-specific,Non-specific
+168,Define,Non-specific,Non-specific,Non-specific
+169,Keep,Non-specific,Near-miss,Non-specific
+170,OrCAD PCB,H2,H2,H2
+171,Fritzing,H2,H2,H2
+172,Git,H2,Near-miss,H2
+173,KiCad EDA Suite,Near-miss,H2,Near-miss
+174,Sonnet,H2,Near-miss,H2
+175,OrCAD PSpice,H2,H2,H2
+176,Power Supply WebDesigner,Near-miss,H2,Near-miss
+177,Cadence PSpice,H2,H2,H2
+178,Students,Non-specific,Non-specific,Non-specific
+179,Open Saturn PCB Toolkit,Near-miss,H2,Near-miss
+180,Calculate,Non-specific,Non-specific,Non-specific
+181,Typically,Non-specific,Non-specific,Non-specific
+182,EasyEDA SPICE,H2,H2,H2
+183,OSH Park,H2,H2,H2
+184,Via Calculator,Near-miss,H2,Near-miss
+185,Rich,Non-specific,Near-miss,Non-specific
+186,Megabyte Circuit,Near-miss,H2,Near-miss
+187,TI Calculator,Near-miss,Near-miss,Near-miss
+188,Current,Non-specific,Near-miss,Non-specific
+189,Digi-Key Calculator,Near-miss,H2,Near-miss
+190,TRAN Pout AVG,Non-specific,H2,Non-specific
+191,Efficiency,Non-specific,Non-specific,Non-specific
+192,FCC Part,Non-specific,H2,Non-specific
+193,Broad,Non-specific,Non-specific,Non-specific
+194,Key Practical Tips,Non-specific,Non-specific,Non-specific
+195,Excel,H2,Near-miss,H2
+196,TINA-TI,H2,H2,H2
+197,EasyEDA BOM Manager,H2,H2,H2

@@ -41,6 +41,8 @@ llm-tool-recommendation-replication/
 |   |   |-- phase2/                    # Gen1 thinking models (24 files, 864 queries)
 |   |   |-- phase3a/                   # Gen2 standard models (72 files, 2592 queries)
 |   |   |-- phase3b/                   # Gen2 thinking models (24 files, 864 queries)
+|   |   |-- temp-sensitivity/          # Common-temperature control re-run (Google at temp 1.0)
+|   |   |-- reasoning-c3/              # Reasoning-at-C3 re-run (Gen2, all three providers)
 |   |-- tool-inventory/
 |       |-- tool_inventory.json        # Verified engineering tools (ground truth)
 |
@@ -55,6 +57,12 @@ llm-tool-recommendation-replication/
 |   |-- sensitivity_analysis.py        # Detection threshold sweep
 |   |-- paired_wilcoxon_check.py       # Standard vs thinking Wilcoxon tests
 |   |-- wilcoxon_and_expected_h.py     # Combined tests and expected hallucinations
+|   |-- matched_detector_c3.py         # Recall-equalized detector: C3 detection-format bias
+|   |-- matched_detector_thinking.py   # Recall-equalized detector: reasoning variant
+|   |-- analyze_temp_sensitivity.py    # Common-temperature control (temperature confound)
+|   |-- analyze_reasoning_c3.py        # Reasoning-at-C3 experiment
+|   |-- corrected_ablation_contrasts.py # Ablation contrasts under recall-equalized detector
+|   |-- irr_second_rater.py            # Inter-rater reliability of the 197-name classification
 |
 |-- evaluation-harness/                # .NET 8 evaluation framework (C#)
 |   |-- README.md                      # Setup instructions for re-running experiments
@@ -68,6 +76,8 @@ llm-tool-recommendation-replication/
 |-- figures/                           # Interactive HTML visualizations
 |
 |-- supplementary/                     # Supplementary materials
+|   |-- supplement_197_classifications.csv  # 197-name classification (rater 1, evidence URLs, mention counts)
+|   |-- irr-second-rater/              # Independent second-rater verification (blind sheet, ratings, consensus)
 |
 |-- database/                          # Database schema and seed data
 |   |-- schema.sql                     # PostgreSQL table definitions
@@ -247,6 +257,12 @@ The CLI mode supports parallel execution per `(provider, category, domain)` to c
 | `sensitivity_analysis.py` | Section V.8 | Detection threshold sensitivity sweep |
 | `paired_wilcoxon_check.py` | Section IV.4 | Standard vs thinking Wilcoxon tests |
 | `wilcoxon_and_expected_h.py` | Tables 7, 12 | Combined statistical tests |
+| `matched_detector_c3.py` | Section 3 (detection), Threats to Validity | Recall-equalized detector: quantifies the C3 detection-format bias (C3-minus-C0 gap under equal recall) |
+| `matched_detector_thinking.py` | Results (Gen2 reasoning) | Recall-equalized detector applied to the reasoning-mode responses |
+| `analyze_temp_sensitivity.py` | Threats to Validity (temperature confound) | Common-temperature control: Google re-run at temperature 1.0 |
+| `analyze_reasoning_c3.py` | Results (Gen2 reasoning) | Reasoning-at-C3 experiment across the three Gen2 providers |
+| `corrected_ablation_contrasts.py` | Section 3 (ablation) | Ablation contrasts recomputed under the recall-equalized detector |
+| `irr_second_rater.py` | Section 4.2, Threats to Validity | Inter-rater reliability (Cohen's kappa) and consensus decomposition of the 197-name classification |
 
 All scripts read from `../data/results/` and use only Python standard library modules (except `statistical_analysis.py` which uses scipy).
 
