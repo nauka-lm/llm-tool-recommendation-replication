@@ -26,7 +26,7 @@ keywords:
   - engineering tool selection
 preferred-citation:
   type: article
-  title: "Hallucination Mitigation in LLM-Based Tool Recommendation: A Cross-Provider Architectural Ablation Study Across Two Model Generations"
+  title: "Hallucination Mitigation in Large Language Model-Based Tool Recommendation: A Cross-Provider Architectural Ablation Study Across Two Model Generations"
   authors:
     - family-names: Menxhiqi
       given-names: Lavdim
@@ -34,3 +34,10 @@ preferred-citation:
       given-names: Galia
   journal: "AI"
   year: 2026
+  volume: 7
+  issue: 7
+  start: 273
+  month: 7
+  doi: "10.3390/ai7070273"
+  url: "https://www.mdpi.com/2673-2688/7/7/273"
+  license: CC-BY-4.0

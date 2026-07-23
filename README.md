@@ -1,10 +1,12 @@
 # Replication Package: Hallucination Mitigation in LLM-Based Tool Recommendation
 
-**Paper**: *Hallucination Mitigation in LLM-Based Tool Recommendation: A Cross-Provider Architectural Ablation Study Across Two Model Generations*
+**Paper**: *Hallucination Mitigation in Large Language Model-Based Tool Recommendation: A Cross-Provider Architectural Ablation Study Across Two Model Generations*
 
 **Authors**: Lavdim Menxhiqi and Galia Marinova
 
-**Status**: Under review (2026)
+**Status**: Published (open access) in *AI* **2026**, *7*(7), 273 — https://doi.org/10.3390/ai7070273 (published 22 July 2026)
+
+**How to cite**: Menxhiqi, L.; Marinova, G. Hallucination Mitigation in Large Language Model-Based Tool Recommendation: A Cross-Provider Architectural Ablation Study Across Two Model Generations. *AI* **2026**, *7*(7), 273. https://doi.org/10.3390/ai7070273
 
 ---
 
@@ -16,11 +18,12 @@ This repository contains the complete replication package for reproducing all re
 
 | Finding | Detail |
 |---------|--------|
-| Architecture effectiveness | Generation-independent (~7.5 % avg hallucination rate at C5, std mode) |
-| Best model | GPT-5.2 at 3.3 % hallucination rate |
-| Thinking vs standard | Standard models match or beat thinking variants |
-| C3 anomaly | JSON enforcement alone *increases* hallucination (+9-15 pp) |
-| Minimum effective config | M1 + M2 (C4) captures the bulk of full-architecture benefit |
+| Architecture effectiveness | C0-to-C5 hallucination reduction from roughly 69-80 % to 4-13 % under the recall-equalized detector (the paper's primary metric); cross-provider C5 average comparable across generations (8.5 % Gen1, 6.9 % Gen2, standard mode) |
+| Lowest residual rate | GPT-5.2 (Gen2 standard) |
+| Thinking vs standard | Reasoning modes provide no statistically significant benefit under the architecture; standard models suffice |
+| C3 detection-format bias | The apparent JSON-only "anomaly" (+10.1 pp Gen1, +15.1 pp Gen2 under a naive detector) is largely a detection artifact: with recall equalized it shrinks to +2.6 / +4.8 pp and stays significant only for GPT-5.2 and Claude Sonnet 4.6 |
+| Minimum effective config | M1 + M2 (C4) captures the bulk of full-architecture benefit; vocabulary alone (C2) nearly matches C5 for Gen2 |
+| Residual-mention audit | Two independent raters (Cohen's kappa = 0.645), unanimous 197/197: **zero fabricated tool names**; 57.5 % of audited out-of-inventory mentions are real tools absent from the inventory |
 
 ---
 
@@ -174,25 +177,27 @@ Open any HTML file from `figures/` in a web browser.
 
 ## Key Results Summary
 
-### Gen1 C5 Hallucination Rates
+The published paper reports results under two detectors: the **recall-equalized detector** (the primary metric, which raises free-text recall to the level of JSON extraction) and the original **production detector** (kept for comparability). Both are implemented in `analysis/`.
 
-| Provider | Standard | Thinking |
-|----------|----------|----------|
-| OpenAI (GPT-4.1 / o4-mini) | 5.3 % | 6.6 % |
-| Anthropic (Claude Sonnet 4.5) | 11.3 % | 11.3 % |
-| Google (Flash-Lite / Flash) | 3.8 % | 5.5 % |
-| **Cross-provider average** | **6.8 %** | **7.8 %** |
+### C5 Hallucination Rates — recall-equalized detector (primary)
 
-### Gen2 C5 Hallucination Rates
+| Provider | Gen1 Standard | Gen2 Standard | Gen1 Thinking | Gen2 Thinking |
+|----------|---------------|---------------|---------------|---------------|
+| OpenAI | 6.4 % | 3.8 % | 7.6 % | 3.6 % |
+| Anthropic | 13.3 % | 10.8 % | 13.4 % | 11.8 % |
+| Google | 5.9 % | 6.1 % | 6.4 % | 5.1 % |
+| **Cross-provider average** | **8.5 %** | **6.9 %** | **9.1 %** | **6.8 %** |
 
-| Provider | Standard | Thinking |
-|----------|----------|----------|
-| OpenAI (GPT-5.2) | 3.3 % | 3.3 % |
-| Anthropic (Claude Sonnet 4.6) | 13.3 % | 14.9 % |
-| Google (Gemini 3.1 Flash-Lite) | 5.9 % | 5.2 % |
-| **Cross-provider average** | **7.5 %** | **7.8 %** |
+### C5 Hallucination Rates — production detector (as originally published in the run outputs)
 
-The cross-provider Gen1↔Gen2 averages under the full architecture (C5) differ by less than one percentage point on standard mode (6.8 % → 7.5 %), supporting the **generational-stability** finding across both model generations.
+| Provider | Gen1 Standard | Gen2 Standard | Gen1 Thinking | Gen2 Thinking |
+|----------|---------------|---------------|---------------|---------------|
+| OpenAI | 5.3 % | 3.3 % | 6.6 % | 3.3 % |
+| Anthropic | 11.3 % | 13.3 % | 11.3 % | 14.9 % |
+| Google | 3.8 % | 5.9 % | 5.5 % | 5.2 % |
+| **Cross-provider average** | **6.8 %** | **7.5 %** | **7.8 %** | **7.8 %** |
+
+Under the recall-equalized detector, the cross-provider C5 average is comparable across generations and improves slightly (8.5 % → 6.9 % standard mode); per-provider directions diverge (OpenAI and Anthropic improve, Google is essentially flat), so the paper describes the architecture's effectiveness as comparable in aggregate rather than uniform per provider.
 
 ---
 
